@@ -1,0 +1,49 @@
+footer {
+    background-color: #EBEBEB;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    @include box__size(auto, 100%);
+
+    .footer__content {
+        padding: $p__box;
+        
+        .footer__logo {
+            font-size: $f__size * 2;
+            font-weight: $f__weight + 200;
+            text-align: center;
+            @include mobile {
+                font-size: $f__size + 0.50;
+            }
+
+        }
+
+        .footer__socials {
+            list-style: none;
+            padding: 0;
+
+            .footer__item {
+                padding: 0;
+
+                .footer__item--link {
+                    text-decoration: none;
+                    color: #000;
+                    @include mobile {
+                        font-size: $f__size - 0.20;
+                    }
+
+                    &:hover {
+                        @include link__active;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+}

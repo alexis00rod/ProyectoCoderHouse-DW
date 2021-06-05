@@ -1,0 +1,62 @@
+@mixin box__size($h, $w) {
+    height: $h;
+    width: $w;
+    
+}
+
+@mixin box__shadow {
+    box-shadow: 5px 5px 10px grey;
+    
+}
+
+@mixin link__active{
+    text-decoration: underline;
+    text-transform: uppercase;
+
+}
+
+@mixin circle {
+    border-radius: 50%;
+    
+}
+
+@mixin mobile {
+    @media  only screen and (max-width:375px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media  only screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin article {
+    background-color: $color1;
+    padding: $p__box;
+
+}
+
+@mixin article__title {
+    font-size: $f__title;
+    font-weight: $f__weight;
+    padding: $p__content 0;
+    margin: 0;
+
+}
+
+@mixin article__text {
+    font-size: $f__text;
+
+}
+
+@mixin article__title__mobile {
+    font-size: $f__title - 0.10;
+
+}
+
+@mixin article__text__mobile {
+    font-size: $f__size - 0.20;
+
+}
