@@ -21,7 +21,7 @@
 }
 
 @mixin mobile {
-    @media  only screen and (max-width:375px) {
+    @media  only screen and (max-width:414px) {
         @content;
     }
 }
@@ -43,6 +43,7 @@
     font-weight: $f__weight;
     padding: $p__content 0;
     margin: 0;
+    text-align: center;
 
 }
 

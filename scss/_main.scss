@@ -1,6 +1,7 @@
 main {
     max-width: 1366px;
     margin: 0 auto;
+    @include box__size(100%, 100%);
     
     .hero {
         display: flex;
@@ -146,30 +147,27 @@ main {
     section {
         margin: 0 auto;
         max-height: 768px;
+        cursor: default;
         display: flex;
         justify-content: center;
         align-items: center;
-        cursor: default;
-        @include box__size(100vh, 90%);
+        @include box__size(100vh, 100%);
         @include tablet {
-            @include box__size(100vh, 100%);       
-        }
-        @include mobile {
-            @include box__size(100%, 100%);
+            @include box__size(auto, 100%);
 
         }
-
 
         .info__contact{
             display: flex;
             align-items: center;
-            margin: 1rem;
+            margin: 1rem;         
             @include tablet {
                 flex-direction: column;
                 justify-content: center;
-                @include box__size(100vh, 100%)
+                @include box__size(auto, 100%);
 
             }
+
 
             &__left {
                 border-top-left-radius: $p__border__r;
@@ -245,6 +243,7 @@ main {
             @include tablet {
                 flex-direction: column-reverse;
                 justify-content: center;
+                @include box__size(auto, 100%);
 
             }
 
@@ -378,10 +377,11 @@ main {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            @include box__size (100vh, 100%);
-            @include mobile {
-                @include box__size(100%, 100%);
-            }
+            @include box__size (100%, 100%);
+            // @include mobile {
+            //     @include box__size(100%, 100%);
+            // }
+
 
             .info__team__top {
                 margin: 0 auto;
@@ -540,12 +540,17 @@ main {
         }
 
         .carousel--img {
+            margin-bottom: 2rem;
             @include box__size(auto, 40%);
 
         }
 
         .bg__modal {
             background-color: #fff;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: $p__content - 0.50;
         }
 
         .carousel__oferta {
@@ -557,159 +562,181 @@ main {
     }
 
     .catalogo {
-        display: flex;
 
-    
-        .catalogo__left {
-            margin: 0 auto;
-            text-align: center;
-            @include box__size(auto, 20%);
-    
-            .nav__item {
-
-                &--title {
-                    text-align: start;
-                    font-size: $f__size;
-                    padding: $p__content;
-                    color: $color2;
-                    font-weight: $f__weight;
-                    
-                }
-
-                .nav__subitem {
-                    display: flex;
-                    flex-direction: column;
-
-                    &--title {
-                        text-align: center;
-                        font-size: $f__size;
-                        padding: $p__content;
-                        color: $color3;
-                        font-weight: $f__weight - 100;
-
-                    }
-
-                    &--link {
-                        text-decoration: none;
-                        text-align: end;
-                        font-weight: $f__weight - 100;
-                        color: $color4;
-
-                        &:hover {
-                            @include link__active;
-                        }
-
-                    }
-
-                }
-
+        .container__post {
+            display: flex;
+            @include mobile {
+                flex-direction: column;
             }
 
-    
-        }
-    
-        .catalogo__right {
-            @include box__size(auto, 80%);
-    
-            .catalogo__producto {
+            input[type="radio"]{
+                display: none;
+            }
+
+            [value="procesador"]:checked ~ .posts .post:not([data-category~="procesador"]){
+                display: none;
+            }
+            [value="tarjeta-grafica"]:checked ~ .posts .post:not([data-category~="tarjeta-grafica"]){
+                display: none;
+            }
+            [value="memoria-ram"]:checked ~ .posts .post:not([data-category~="memoria-ram"]){
+                display: none;
+            }
+            [value="fuente-alimentacion"]:checked ~ .posts .post:not([data-category~="fuente-alimentacion"]){
+                display: none;
+            }
+            [value="placa-base"]:checked ~ .posts .post:not([data-category~="placa-base"]){
+                display: none;
+            }
+
+            .container__category {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: column;
+                margin-top: 1rem;
+                @include box__size(auto, 25%);
+                @include mobile {
+                    @include box__size(auto, 100%);
+                    margin-left: 3rem;
+                }
+                @include tablet {
+                    @include box__size(auto, 25%);
+                    margin-left: 2rem;
+                    margin-top: 2rem;
+                }
+
+                label {
+                    color: $color4;
+                    cursor: pointer;
+                    font-size: $f__size + 0.30;
+                    @include mobile {
+                        @include box__size(auto, 80vw);
+
+                    }
+
+                    &:hover {
+                        @include link__active;
+
+                    }
+
+                }
 
             }
-    
-            .catalogo__producto--item {
-                cursor: default;
-                padding: $p__box;
-                @include box__size(auto, 16rem);
-    
-                &:hover {
-                    .catalogo__producto--img {
-                        background-color: $color2;
-                    }
 
-                    .catalogo__producto--info {
-                        border-left: 3px solid $color2;
-                        border-right: 3px solid $color2;
-                        border-bottom: 3px solid $color2;
-                    }
+            .posts {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                @include box__size(auto, 75%);
+                @include mobile {
+                    grid-template-columns: 1fr;
+                    @include box__size(auto, 100%);
+                    gap: 0;
                 }
-    
-                .catalogo__producto--img {
-                    text-align: center;
-                    background-color: $color4;
-                    padding: $p__content - 0.5;
-                    border-top-left-radius: $p__border__r;
-                    border-top-right-radius: $p__border__r;
-                    @include box__shadow;
-    
-    
-                    .catalogo__producto--name {
-                        text-align: center;
-                        font-size: $f__size + 0.20;
-                        padding-top: $p__content;
-                        font-weight: $f__weight + 100;
-    
-                    }
-    
-                    .modal__boton {
-                        border: none;
-                        background: none;
-                        @include box__size(auto, 100%);
+                @include tablet {
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                    @include box__size(auto, 100%);
+                }
 
-                        .img {
-                            text-align: center;
+                .post {
+                    padding: $p__content;
+                    @include mobile {
+                        display: flex;
+                        padding: $p__content;
+                        @include box__size(auto, 100%);
+                    }
+                    @include tablet {
+                        display: flex;
+                        @include box__size(auto, 100%);
+                    }
+
+                    .post__img {
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $color3;
+                        padding: $p__content;
+                        border-top-left-radius: $p__border__r;
+                        border-top-right-radius: $p__border__r;
+                        @include box__size(auto, 100%);
+                        @include mobile {
+                            border-top-right-radius: 0;
+                            border-bottom-left-radius: $p__border__r;
+                        }
+                        @include tablet {
+                            border-top-right-radius: 0;
+                            border-bottom-left-radius: $p__border__r;
+                        }
+
+                        img {
                             @include box__size(auto, 100%);
+                        }
+
+                    }
+
+                    .post__description {
+                        margin: 0;
+                        padding: $p__content;
+                        border: 3px solid $color3;
+                        border-bottom-left-radius: $p__border__r;
+                        border-bottom-right-radius: $p__border__r;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include box__size(auto, 100%);
+                        @include mobile {
+                            border-bottom-left-radius: 0;
+                            border-top-right-radius: $p__border__r;
+                        }
+                        @include tablet {
+                            border-bottom-left-radius: 0;
+                            border-top-right-radius: $p__border__r;
+                            transform: translateX(-3px);
+                        }
+
+                        h4 {
+                            font-size: $f__size;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            font-weight: 700;
+                            @include box__size(2rem, 100%);
+                        }
+
+                        span {
+                            font-size: $f__size * 2;
+                            font-weight: 900;
+                        }
+
+                        button {
+                            margin-top: 1rem;
+                            border: none;
+                            background-color: $color1;
+                            padding: $p__content - 0.20;
+                            text-transform: uppercase;
+                            font-size: $f__size - 0.15;
+                            border-radius: $p__border__r - 0.50;
+                            font-weight: 800;
+
+                            &:hover {
+                                background-color: $color2;
+                                color: white;
+                            }
 
                         }
 
                     }
-    
-                    .img {
-                        text-align: center;
-                        @include box__size(auto, 90%);
-                    }
-    
+
                 }
-    
-                .catalogo__producto--info {
-                    background-color: #fff;
-                    padding: $p__content;
-                    border-left: 2px solid $color4;
-                    border-right: 2px solid $color4;
-                    border-bottom: 2px solid $color4;
-                    border-bottom-left-radius: $p__border__r;
-                    border-bottom-right-radius: $p__border__r;
-                    @include box__shadow;
-    
-                    .catalogo__producto--precio {
-                        font-size: $f__size + 0.50;
-                        text-align: center;
-                        padding-bottom: $p__content;
-                        font-weight: $f__weight;
-    
-                    }
-    
-                    .boton {
-                       border: none;
-                       cursor: pointer;
-                       padding: $p__content - 0.5;
-                       font-weight: $f__weight;
-                       border-radius: $p__border__r - 1.25;
-                       background-color: $color5;
-    
-                       &:hover {
-                           background-color: $color2;
-    
-                       }
-    
-                    }
-    
-                }
-    
+
             }
             
         }
+
+        
     
     }
 

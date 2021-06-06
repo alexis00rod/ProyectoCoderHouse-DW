@@ -43,7 +43,7 @@ header .navbar .navbar__nav .navbar__item {
   border-radius: 1.5rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   header .navbar .navbar__nav .navbar__item {
     padding: 0.75rem;
   }
@@ -56,7 +56,7 @@ header .navbar .navbar__nav .navbar__item .navbar--link {
   padding: 0 1.5rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   header .navbar .navbar__nav .navbar__item .navbar--link {
     padding: 0;
     font-size: 0.9rem;
@@ -82,6 +82,8 @@ header .navbar .navbar__nav .navbar__item:hover:nth-child(4) {
 main {
   max-width: 1366px;
   margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 main .hero {
@@ -105,7 +107,7 @@ main .hero {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .hero {
     height: 100%;
     width: 100%;
@@ -131,7 +133,7 @@ main .hero .hero__left {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .hero .hero__left {
     height: auto;
     width: 80%;
@@ -155,7 +157,7 @@ main .hero .hero__left .hero__logo {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__logo {
     font-size: 2rem;
   }
@@ -179,7 +181,7 @@ main .hero .hero__left .hero__logo .logo__animation {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__logo .logo__animation {
     font-size: 2.5rem;
   }
@@ -198,7 +200,7 @@ main .hero .hero__left .hero__text {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__text {
     font-size: 0.8rem;
   }
@@ -218,7 +220,7 @@ main .hero .hero__left .hero__link {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__link {
     font-size: 1.3rem;
   }
@@ -295,6 +297,7 @@ main .hero .hero__right .hero__img {
 main section {
   margin: 0 auto;
   max-height: 768px;
+  cursor: default;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,21 +307,13 @@ main section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: default;
   height: 100vh;
-  width: 90%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
   main section {
-    height: 100vh;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  main section {
-    height: 100%;
+    height: auto;
     width: 100%;
   }
 }
@@ -342,7 +337,7 @@ main section .info__contact {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: 100vh;
+    height: auto;
     width: 100%;
   }
 }
@@ -365,7 +360,7 @@ main section .info__contact__left {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__contact__left {
     height: auto;
     width: 80%;
@@ -383,9 +378,10 @@ main section .info__contact__left .info__contact--title {
   font-weight: 700;
   padding: 1rem 0;
   margin: 0;
+  text-align: center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__contact__left .info__contact--title {
     font-size: 1.7rem;
   }
@@ -395,7 +391,7 @@ main section .info__contact__left .info__contact--text {
   font-size: 1.1rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__contact__left .info__contact--text {
     font-size: 0.8rem;
   }
@@ -417,7 +413,7 @@ main section .info__contact__right {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__contact__right {
     height: auto;
     width: 100%;
@@ -450,6 +446,8 @@ main section .info__service {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: auto;
+    width: 100%;
   }
 }
 
@@ -474,7 +472,7 @@ main section .info__service .info__service__left {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__left {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -515,7 +513,7 @@ main section .info__service .info__service__left .info__service--item .info__ser
   font-weight: 600;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__left .info__service--item .info__service__description .info__service--name {
     font-size: 1.2rem;
   }
@@ -525,7 +523,7 @@ main section .info__service .info__service__left .info__service--item .info__ser
   padding: 1rem 0;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__left .info__service--item .info__service__description .info__service--text {
     font-size: 0.8rem;
     padding: 0;
@@ -540,7 +538,7 @@ main section .info__service .info__service__left .info__service--item .info__ser
   color: #CFBDFF;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__left .info__service--item .info__service__description .info__service--boton {
     font-size: 0.8rem;
   }
@@ -570,7 +568,7 @@ main section .info__service .info__service__right {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__right {
     height: auto;
     width: 80%;
@@ -588,9 +586,10 @@ main section .info__service .info__service__right .info__service--title {
   font-weight: 700;
   padding: 1rem 0;
   margin: 0;
+  text-align: center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__right .info__service--title {
     font-size: 1.7rem;
   }
@@ -600,7 +599,7 @@ main section .info__service .info__service__right .info__service--text {
   font-size: 1.1rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__service .info__service__right .info__service--text {
     font-size: 0.8rem;
   }
@@ -620,15 +619,8 @@ main section .info__team {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-}
-
-@media only screen and (max-width: 375px) {
-  main section .info__team {
-    height: 100%;
-    width: 100%;
-  }
 }
 
 main section .info__team .info__team__top {
@@ -641,7 +633,7 @@ main section .info__team .info__team__top {
   width: 60%;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__top {
     height: auto;
     width: 70%;
@@ -659,9 +651,10 @@ main section .info__team .info__team__top .info__team--title {
   font-weight: 700;
   padding: 1rem 0;
   margin: 0;
+  text-align: center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__top .info__team--title {
     font-size: 1.7rem;
   }
@@ -671,7 +664,7 @@ main section .info__team .info__team__top .info__team--text {
   font-size: 1.1rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__top .info__team--text {
     font-size: 0.8rem;
   }
@@ -698,7 +691,7 @@ main section .info__team .info__team__bottom {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__bottom {
     height: auto;
     width: 90%;
@@ -739,7 +732,7 @@ main section .info__team .info__team__bottom .info__team--item .info__team--desc
           transform: translateY(-30px);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__bottom .info__team--item .info__team--description {
     padding: 1rem 0;
   }
@@ -752,7 +745,7 @@ main section .info__team .info__team__bottom .info__team--item .info__team--desc
   font-weight: 600;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__bottom .info__team--item .info__team--description .info__team--name {
     font-size: 0.8rem;
   }
@@ -764,7 +757,7 @@ main section .info__team .info__team__bottom .info__team--item .info__team--desc
   font-weight: 700 -200;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__bottom .info__team--item .info__team--description .info__team--text {
     font-size: 0.7rem;
   }
@@ -789,7 +782,7 @@ main section .info__team .info__team__bottom .info__team--item .info__team--desc
   padding: 0 0.5rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main section .info__team .info__team__bottom .info__team--item .info__team--description .info__team--socials .info__team--link {
     padding: 0;
   }
@@ -810,7 +803,7 @@ main .carousel {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .carousel h2 {
     font-size: 1rem;
   }
@@ -822,12 +815,17 @@ main .carousel:hover h2 {
 }
 
 main .carousel .carousel--img {
+  margin-bottom: 2rem;
   height: auto;
   width: 40%;
 }
 
 main .carousel .bg__modal {
   background-color: #fff;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.5rem;
 }
 
 main .carousel .carousel__oferta {
@@ -836,28 +834,46 @@ main .carousel .carousel__oferta {
   font-size: 0.8rem;
 }
 
-main .catalogo {
+main .catalogo .container__post {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-main .catalogo .catalogo__left {
-  margin: 0 auto;
-  text-align: center;
-  height: auto;
-  width: 20%;
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-main .catalogo .catalogo__left .nav__item--title {
-  text-align: start;
-  font-size: 1rem;
-  padding: 1rem;
-  color: #1C89E8;
-  font-weight: 700;
+main .catalogo .container__post input[type="radio"] {
+  display: none;
 }
 
-main .catalogo .catalogo__left .nav__item .nav__subitem {
+main .catalogo .container__post [value="procesador"]:checked ~ .posts .post:not([data-category~="procesador"]) {
+  display: none;
+}
+
+main .catalogo .container__post [value="tarjeta-grafica"]:checked ~ .posts .post:not([data-category~="tarjeta-grafica"]) {
+  display: none;
+}
+
+main .catalogo .container__post [value="memoria-ram"]:checked ~ .posts .post:not([data-category~="memoria-ram"]) {
+  display: none;
+}
+
+main .catalogo .container__post [value="fuente-alimentacion"]:checked ~ .posts .post:not([data-category~="fuente-alimentacion"]) {
+  display: none;
+}
+
+main .catalogo .container__post [value="placa-base"]:checked ~ .posts .post:not([data-category~="placa-base"]) {
+  display: none;
+}
+
+main .catalogo .container__post .container__category {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -865,127 +881,214 @@ main .catalogo .catalogo__left .nav__item .nav__subitem {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 1rem;
+  height: auto;
+  width: 25%;
 }
 
-main .catalogo .catalogo__left .nav__item .nav__subitem--title {
-  text-align: center;
-  font-size: 1rem;
-  padding: 1rem;
-  color: #5684FF;
-  font-weight: 600;
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post .container__category {
+    height: auto;
+    width: 100%;
+    margin-left: 3rem;
+  }
 }
 
-main .catalogo .catalogo__left .nav__item .nav__subitem--link {
-  text-decoration: none;
-  text-align: end;
-  font-weight: 600;
+@media only screen and (max-width: 768px) {
+  main .catalogo .container__post .container__category {
+    height: auto;
+    width: 25%;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+main .catalogo .container__post .container__category label {
   color: #7878EB;
+  cursor: pointer;
+  font-size: 1.3rem;
 }
 
-main .catalogo .catalogo__left .nav__item .nav__subitem--link:hover {
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post .container__category label {
+    height: auto;
+    width: 80vw;
+  }
+}
+
+main .catalogo .container__post .container__category label:hover {
   text-decoration: underline;
   text-transform: uppercase;
 }
 
-main .catalogo .catalogo__right {
+main .catalogo .container__post .posts {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   height: auto;
-  width: 80%;
+  width: 75%;
 }
 
-main .catalogo .catalogo__right .catalogo__producto {
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post .posts {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: auto;
+    width: 100%;
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main .catalogo .container__post .posts {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 0;
+    height: auto;
+    width: 100%;
+  }
+}
+
+main .catalogo .container__post .posts .post {
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post .posts .post {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main .catalogo .container__post .posts .post {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    width: 100%;
+  }
+}
+
+main .catalogo .container__post .posts .post .post__img {
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item {
-  cursor: default;
-  padding: 2rem;
-  height: auto;
-  width: 16rem;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item:hover .catalogo__producto--img {
-  background-color: #1C89E8;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item:hover .catalogo__producto--info {
-  border-left: 3px solid #1C89E8;
-  border-right: 3px solid #1C89E8;
-  border-bottom: 3px solid #1C89E8;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--img {
-  text-align: center;
-  background-color: #7878EB;
-  padding: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #5684FF;
+  padding: 1rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  -webkit-box-shadow: 5px 5px 10px grey;
-          box-shadow: 5px 5px 10px grey;
+  height: auto;
+  width: 100%;
 }
 
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--img .catalogo__producto--name {
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post .posts .post .post__img {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main .catalogo .container__post .posts .post .post__img {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 2rem;
+  }
+}
+
+main .catalogo .container__post .posts .post .post__img img {
+  height: auto;
+  width: 100%;
+}
+
+main .catalogo .container__post .posts .post .post__description {
+  margin: 0;
+  padding: 1rem;
+  border: 3px solid #5684FF;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (max-width: 414px) {
+  main .catalogo .container__post .posts .post .post__description {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main .catalogo .container__post .posts .post .post__description {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 2rem;
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+}
+
+main .catalogo .container__post .posts .post .post__description h4 {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
-  font-size: 1.2rem;
-  padding-top: 1rem;
+  font-weight: 700;
+  height: 2rem;
+  width: 100%;
+}
+
+main .catalogo .container__post .posts .post .post__description span {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+main .catalogo .container__post .posts .post .post__description button {
+  margin-top: 1rem;
+  border: none;
+  background-color: #94EAFF;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-radius: 1.5rem;
   font-weight: 800;
 }
 
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--img .modal__boton {
-  border: none;
-  background: none;
-  height: auto;
-  width: 100%;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--img .modal__boton .img {
-  text-align: center;
-  height: auto;
-  width: 100%;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--img .img {
-  text-align: center;
-  height: auto;
-  width: 90%;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--info {
-  background-color: #fff;
-  padding: 1rem;
-  border-left: 2px solid #7878EB;
-  border-right: 2px solid #7878EB;
-  border-bottom: 2px solid #7878EB;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  -webkit-box-shadow: 5px 5px 10px grey;
-          box-shadow: 5px 5px 10px grey;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--info .catalogo__producto--precio {
-  font-size: 1.5rem;
-  text-align: center;
-  padding-bottom: 1rem;
-  font-weight: 700;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--info .boton {
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-weight: 700;
-  border-radius: 0.75rem;
-  background-color: #CFBDFF;
-}
-
-main .catalogo .catalogo__right .catalogo__producto--item .catalogo__producto--info .boton:hover {
+main .catalogo .container__post .posts .post .post__description button:hover {
   background-color: #1C89E8;
+  color: white;
 }
 
 main .carrito {
@@ -1008,7 +1111,7 @@ main .carrito {
   width: 80%;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .carrito {
     height: 50vh;
     width: 90%;
@@ -1020,7 +1123,7 @@ main .carrito .carrito__contador {
   font-weight: 700;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .carrito .carrito__contador {
     font-size: 2rem;
   }
@@ -1030,7 +1133,7 @@ main .carrito .carrito__text {
   font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .carrito .carrito__text {
     font-size: 0.9rem;
   }
@@ -1056,7 +1159,7 @@ main .user {
   width: 80%;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user {
     height: 100%;
     width: 90%;
@@ -1071,7 +1174,7 @@ main .user .form {
           box-shadow: 5px 5px 10px grey;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form {
     height: auto;
     width: 100%;
@@ -1089,7 +1192,7 @@ main .user .form .form__title {
   font-weight: 700;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form .form__title {
     font-size: 1.4rem;
     padding: 1.5rem;
@@ -1111,7 +1214,7 @@ main .user .form .form__login {
   border-bottom-right-radius: 2rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form .form__login {
     padding: 1.5rem;
   }
@@ -1127,7 +1230,7 @@ main .user .form .form__login .form__input {
   padding: 1rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form .form__login .form__input {
     margin: 0.3rem;
   }
@@ -1156,7 +1259,7 @@ main .user .form .form__login .form__link {
   color: #5684FF;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form .form__login .form__link {
     font-size: 0.8rem;
   }
@@ -1177,7 +1280,7 @@ main .user .form .form__register {
   border-bottom-right-radius: 2rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form .form__register {
     padding: 1.5rem;
   }
@@ -1193,7 +1296,7 @@ main .user .form .form__register .form__register__input {
   padding: 0.5rem;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   main .user .form .form__register .form__register__input {
     margin: 0.3rem;
   }
@@ -1241,7 +1344,7 @@ footer .footer__content .footer__logo {
   text-align: center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   footer .footer__content .footer__logo {
     font-size: 1.5rem;
   }
@@ -1261,7 +1364,7 @@ footer .footer__content .footer__socials .footer__item .footer__item--link {
   color: #000;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   footer .footer__content .footer__socials .footer__item .footer__item--link {
     font-size: 0.8rem;
   }
