@@ -78,38 +78,9 @@
         @content;
     }
 }
+
 @mixin tablet-rotate {
     @media  only screen and (max-width:1024px) {
         @content;
     }
-}
-
-@mixin article {
-    background-color: $color1;
-    padding: $p__box;
-
-}
-
-@mixin article__title {
-    font-size: $f__title;
-    font-weight: $f__weight;
-    padding: $p__content 0;
-    margin: 0;
-    text-align: center;
-
-}
-
-@mixin article__text {
-    font-size: $f__text;
-
-}
-
-@mixin article__title__mobile {
-    font-size: $f__title - 0.10;
-
-}
-
-@mixin article__text__mobile {
-    font-size: $f__size - 0.20;
-
 }
