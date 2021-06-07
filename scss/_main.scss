@@ -1,14 +1,29 @@
 main {
     max-width: 1366px;
-    margin: 0 auto;
+    margin: 0 auto; 
     @include box__size(auto, 100%);
+    @include tablet-rotate {
+        padding: 0 1rem;
+    }
+    @include mobile-rotate {
+        padding: 0;
+    }
     
     .hero {
         display: flex;
         align-items: center;
         justify-content: center;
-        @include box__size(calc(100vh - 80px), 100%);
+        @include box__size(calc(90vh), 100%);
         @include tablet {
+            flex-direction: column;
+
+        }
+        @include mobile-rotate {
+            @include box__size(90vh, 100%);
+            flex-direction: row;
+
+        }
+        @include mobile {
             flex-direction: column;
 
         }
@@ -34,14 +49,20 @@ main {
                 font-size: $f__size * 5;
                 font-weight: $f__weight;
                 @include box__size(auto, 100%);
+                @include small-mobile {
+                    font-size: f$f__size * 2;
+                }   
                 @include tablet {
                     padding: 0;
                     font-size: $f__size * 3.8;
                 }
+                @include small-mobile-rotate {
+                    font-size: $f__size * 2.8;
+                    
+                }
                 @include mobile {
                     font-size: $f__size * 3;
                 }
-                
                 
                 .logo__animation {
                     text-transform: uppercase;
@@ -50,12 +71,20 @@ main {
                     animation-name: logo;
                     animation-duration: 5s;
                     animation-iteration-count: infinite;
+                    @include small-mobile {
+                        font-size: f$f__size * 2.5;
+                    }  
+                    @include mobile {
+                        font-size: $f__size * 3.5;
+                    }
                     @include tablet {
                         font-size: $f__size * 4.2;
                     }
-
-                    @include mobile {
+                    @include mobile-rotate {
                         font-size: $f__size * 3.5;
+                    }
+                    @include small-mobile-rotate {
+                        font-size: $f__size * 3.2;
                     }
     
                 }
@@ -67,13 +96,23 @@ main {
                 font-size: $f__size + 0.30;
                 font-weight: $f__weight - 200;
                 cursor: default;
-
                 @include tablet {
                     font-size: $f__size + 0.10;
-                }
 
+                }
+                @include mobile-rotate {
+                    font-size: $f__size;
+                    padding: 0;
+
+                }
                 @include mobile {
                     font-size: $f__size - 0.10;
+                    padding: $p__content;
+
+                }
+                @include small-mobile {
+                    font-size: $f__size - 0.20;
+                    
                 }
 
             }
@@ -512,9 +551,14 @@ main {
             flex-direction: column;
 
         }
+        @include tablet-rotate {
+            @include box__size(100%, 100%);
+            margin: 0 auto;
+            padding: 1rem;
+        }
         @include mobile {
             padding: 1rem;
-            @include box__size(100%, 100%)
+            @include box__size(100%, 100%);
         }
 
 
@@ -531,6 +575,10 @@ main {
                 border-bottom-left-radius: 0;
                 @include box__size(auto, 60%);
             }
+            @include tablet-rotate {
+                padding: $p__content;
+                
+            }
             @include mobile {
                 @include box__size(auto, 80%);
                 padding: $p__content;
@@ -540,6 +588,10 @@ main {
                 padding: $p__content;
                 font-weight: $f__weight;
                 text-align: center;
+                @include tablet-rotate {
+                    padding: $p__content - 0.50;
+                    font-size: $f__size + 0.30;
+                }
 
             }
 
@@ -547,7 +599,10 @@ main {
                 padding: $p__content;
                 font-size: $f__size;
                 text-align: center;
-
+                @include tablet-rotate {
+                    padding: 0;
+                    font-size: $f__size - 0.10;
+                }
                 @include mobile {
                     padding: 0;
                 }
@@ -565,15 +620,24 @@ main {
             @include tablet {
                 padding: $p__content;
                 @include box__size(auto, 90%);
-
+                
+            }
+            @include tablet-rotate{
+                padding: $p__content;
+                transform: translateX(-5px);
+                
             }
             @include mobile {
                 @include box__size(auto, 95%);
                 flex-wrap: wrap;
-
+                
+            }
+            @include small-mobile {
+                padding: 0.1rem;
+                
             }
             
-
+            
             video {
                 @include box__size(auto, 100%);
                 padding: $p__box;
@@ -586,6 +650,9 @@ main {
                 @include box__size(auto, 50%);
                 padding: $p__box;
                 @include tablet {
+                    padding: $p__content;
+                }
+                @include tablet-rotate {
                     padding: $p__content;
                 }
                 @include mobile {
@@ -609,6 +676,12 @@ main {
                     @include tablet {
                         padding: $p__content;
                     }
+                    @include tablet-rotate {
+                        padding: $p__content;
+                    }
+                    @include small-mobile {
+                        padding: 0.2rem 0.5rem;
+                    }
 
                     .card__title {
                         font-size: $f__title - 0.30;
@@ -617,12 +690,18 @@ main {
                         @include tablet {
                             padding: 0;
                         }
+                        @include small-mobile {
+                            font-size: $f__title - 0.60;
+                        }
 
                     }
 
                     .card__text {
                         margin: 0.5rem;
                         font-size: $f__size - 0.10;
+                        @include small-mobile {
+                            font-size: $f__size - 0.20;
+                        }
                     }
 
                     .card__button {
@@ -654,16 +733,25 @@ main {
                     transform: translateY(-20px);
                     @include flex(center, center);
                     flex-direction: column;
+                    @include small-mobile {
+                        padding: 0.2rem 0.5rem;
+                    }
 
                     .team__name {
                         font-size: $f__size - 0.10;
                         font-weight: $f__weight;
                         text-align: center;
+                        @include small-mobile {
+                            margin: 0;
+                        }
 
                     }
 
                     .team__work {
                         font-size: $f__size - 0.20;
+                        @include small-mobile {
+                            margin: 0;
+                        }
 
                     }
                     .team__contact {
@@ -681,15 +769,26 @@ main {
 
     .carousel {
         margin: 0 auto;
+        padding: 1rem;
         text-align: center;
         cursor: default;
         @include box__size(auto, 70%);
         @include tablet {
             @include box__size(auto, 100%);
         }
+        @include small-mobile-rotate {
+            margin-top: 0.9rem;
+            padding: 0.2rem;
+            
+            h2 {
+                font-size: $f__size + 0.30;
+            }
+
+        }
         @include mobile {
             h2 {
                 font-size: $f__size;
+
             }
             
         }
@@ -758,23 +857,33 @@ main {
                 flex-direction: column;
                 margin-top: 1rem;
                 @include box__size(auto, 25%);
-                @include mobile {
-                    @include box__size(auto, 100%);
-                    margin-left: 3rem;
+                @include tablet-rotate {
+                    @include box__size(auto, 30%);
+                    
                 }
                 @include tablet {
                     @include box__size(auto, 25%);
-                    margin-left: 2rem;
-                    margin-top: 2rem;
+                    margin-left: 0.5rem;
+                    
+                }
+                @include mobile-rotate {
+                    margin-left: 1rem;
+                }
+                @include mobile {
+                    @include box__size(auto, 100%);
+                    margin-left: 3rem;
+
                 }
 
                 label {
-                    color: $color4;
                     cursor: pointer;
                     font-size: $f__size + 0.30;
                     @include mobile {
                         @include box__size(auto, 80vw);
 
+                    }
+                    @include tablet-rotate {
+                        font-size: $f__size + 0.10;
                     }
 
                     &:hover {
@@ -795,6 +904,10 @@ main {
                     grid-template-columns: 1fr;
                     @include box__size(auto, 100%);
                     gap: 0;
+                }
+                @include tablet-rotate {
+                    grid-template-columns: repeat(3, 1fr);
+                    @include box__size(auto, 70%);
                 }
                 @include tablet {
                     grid-template-columns: 1fr;
@@ -819,18 +932,18 @@ main {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background-color: $color3;
+                        background-color: $color2;
                         padding: $p__content;
-                        border-top-left-radius: $p__border__r;
-                        border-top-right-radius: $p__border__r;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
                         @include box__size(auto, 100%);
                         @include mobile {
                             border-top-right-radius: 0;
-                            border-bottom-left-radius: $p__border__r;
+                            border-bottom-left-radius: 10px;
                         }
                         @include tablet {
                             border-top-right-radius: 0;
-                            border-bottom-left-radius: $p__border__r;
+                            border-bottom-left-radius: 10px;
                         }
 
                         img {
@@ -842,9 +955,9 @@ main {
                     .post__description {
                         margin: 0;
                         padding: $p__content;
-                        border: 3px solid $color3;
-                        border-bottom-left-radius: $p__border__r;
-                        border-bottom-right-radius: $p__border__r;
+                        border: 3px solid $color2;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
@@ -852,11 +965,11 @@ main {
                         @include box__size(auto, 100%);
                         @include mobile {
                             border-bottom-left-radius: 0;
-                            border-top-right-radius: $p__border__r;
+                            border-top-right-radius: 10px;
                         }
                         @include tablet {
                             border-bottom-left-radius: 0;
-                            border-top-right-radius: $p__border__r;
+                            border-top-right-radius: 10px;
                             transform: translateX(-3px);
                         }
 
@@ -867,17 +980,29 @@ main {
                             justify-content: center;
                             text-align: center;
                             font-weight: 700;
-                            @include box__size(2rem, 100%);
+                            @include small-mobile {
+                                font-size: $f__size - 0.20;
+
+                            }
+
                         }
 
                         span {
                             font-size: $f__size * 2;
                             font-weight: 900;
+                            @include small-mobile {
+                                font-size: $f__size + 0.50;
+                                
+                            }
                         }
 
                         button {
                             margin-top: 1rem;
-                            @include boton--secondary;
+                            @include boton--primary;
+                            @include small-mobile {
+                                font-size: $f__size - 0.20;
+                                
+                            }
 
                         }
 
@@ -901,8 +1026,14 @@ main {
         align-items: center;
         cursor: default;
         @include box__size(60vh, 80%);
+        @include small-mobile-rotate {
+            margin-top: 0.9rem;
+            padding: 0.2rem;
+
+        }    
         @include mobile {
             @include box__size(50vh, 90%)
+
         }
 
         .carrito__contador {
@@ -924,12 +1055,22 @@ main {
 
     .user {
         margin: 0 auto;
-        display: flex;
+        @include flex(center, center);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         cursor: default;
         @include box__size(100%, 80%);
+        @include tablet-rotate {
+            @include box__size(100%, 90%);
+        }
+        @include mobile-rotate {
+            margin-top: 1rem;
+            padding: 0.2rem;   
+        }
+        @include small-mobile-rotate {
+            margin-top: 1rem;
+            padding: 0.2rem;
+
+        }    
         @include mobile {
             @include box__size(100%, 90%);
         }
@@ -938,63 +1079,103 @@ main {
             border-radius: $p__border__r;
             @include box__size(auto, 50%);
             @include box__shadow;
+            @include tablet-rotate {
+                @include box__size(auto, 70%);
+
+            }
+            @include mobile-rotate {
+                @include box__size(auto, 100%);
+
+            }
             @include mobile {
                 @include box__size(auto, 100%);
+
             }
 
             .form__title {
                 margin: 0;
                 text-align: center;
                 font-size: $f__size + 0.80;
-                background-color: $color3;
+                background-color: $color2;
                 border-top-left-radius: $p__border__r;
                 border-top-right-radius: $p__border__r;
                 padding: $p__box;
                 font-weight: $f__weight;
+                @include mobile-rotate {
+                    padding: $p__content;
+
+                }
                 @include mobile {
                     font-size: $f__size + 0.40;
                     padding: $p__box - 0.50;
                 }
+
             }
 
             .form__login {
-                display: flex;
-                flex-direction: column;
                 text-align: center;
-                border: solid 2px $color3;
+                border: solid 2px $color2;
                 padding: $p__box;
                 border-bottom-left-radius: $p__border__r;
                 border-bottom-right-radius: $p__border__r;
+                @include flex(center, center);
+                flex-direction: column;
+                @include mobile-rotate {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    padding: $p__content;
+
+                }
                 @include mobile {
                     padding: $p__box - 0.50;
+                    flex-direction: column;
+                }
+
+                p {
+                    @include box__size(auto, 100%);
+                    margin: 1rem 0;
+                    @include mobile-rotate {
+                        margin: 0.5rem 0;
+
+                    }
+
                 }
 
                 .form__input {
-                    margin: 1rem;
+                    margin: 0 auto;
                     outline: none;
                     border: none;
                     transition: 0.2s;
                     border-bottom: 1px solid grey;
                     padding: $p__content;
+                    @include box__size(auto, 80%);
+                    @include mobile-rotate {
+                        @include box__size(auto, 40%);
+                        padding: $p__content - 0.50;
+                        font-size: $f__size - 0.10;
+                        
+                    }
                     @include mobile {
-                        margin: 0.3rem;
+                        @include box__size(auto, 80%);
+
                     }
 
                     &:focus {
-                        border-bottom: solid 3px $color3;
+                        border-bottom: solid 3px $color2;
+
                     }
 
                 }
 
                 .form__boton {
-                    margin: 1rem auto;
-                    @include boton--secondary;
+                    margin: 0.2rem;
+                    @include boton--primary;
                     @include box__size(auto, 12rem);
 
                 }
 
                 .form__link {
-                    color: $color3;
+                    color: $color2;
                     @include mobile {
                         font-size: $f__size - 0.20;
                     }
@@ -1003,15 +1184,20 @@ main {
             }
 
             .form__register {
-                display: flex;
+                @include flex(center, center);
                 flex-direction: column;
-                text-align: center;
-                border: solid 2px $color3;
+                border: solid 2px $color2;
                 padding: $p__box;
                 border-bottom-left-radius: $p__border__r;
                 border-bottom-right-radius: $p__border__r;
                 @include mobile {
                     padding: $p__box - 0.50;
+                }
+                @include mobile-rotate {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    padding: $p__content;
+
                 }
 
                 .form__register__input {
@@ -1021,8 +1207,14 @@ main {
                     border-bottom: 1px solid grey;
                     margin: 1rem;
                     padding: $p__content - 0.50;
+                    @include box__size(auto, 80%);
+                    @include mobile-rotate {
+                        @include box__size(auto, 40%);
+                        margin: 0.5rem;
+
+                    }
                     @include mobile {
-                        margin: 0.3rem;
+                        @include box__size(auto, 80%);
                     }
 
                     &:focus {
@@ -1033,7 +1225,7 @@ main {
 
                 .form__register__boton {
                     margin: 1rem auto;
-                    @include boton--secondary;
+                    @include boton--primary;
                     @include box__size(auto, 12rem);
 
                 }

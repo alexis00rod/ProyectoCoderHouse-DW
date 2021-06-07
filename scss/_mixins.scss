@@ -19,6 +19,7 @@
 
 @mixin boton--primary {
     text-decoration: none;
+    border: none;
     color: white;
     background: $color5;
     border-bottom: 3px solid $color4;
@@ -28,24 +29,9 @@
     font-weight: $f__weight;
     text-align: center;
     box-shadow: 1px 2px 5px grey;
-}
-
-@mixin boton--secondary {
-    width: 8rem;
-    padding: $p__content - 0.60;
-    background-color: $color1;
-    border-radius: 6px;
-    border: none;
-    border-bottom: solid 4px $color2;
-    font-size: $f__size;
-    font-weight: $f__weight;
-    text-align: center;
-    color: #2e2e2e;
-    box-shadow: 1px 2px 5px grey;
 
     &:hover {
-        background-color: $color6;
-        color: #fff;
+        opacity: 0.7;
     }
 
 }
@@ -62,14 +48,38 @@
     
 }
 
+// medias
+
+@mixin small-mobile-rotate {
+    @media  only screen and (max-width:667px) {
+        @content;
+    }
+}
+
+@mixin small-mobile {
+    @media  only screen and (max-width:320px) {
+        @content;
+    }
+}
 @mixin mobile {
     @media  only screen and (max-width:414px) {
         @content;
     }
 }
 
+@mixin mobile-rotate{
+    @media  only screen and (max-width:736px) {
+        @content;
+    }
+}
+
 @mixin tablet {
     @media  only screen and (max-width:768px) {
+        @content;
+    }
+}
+@mixin tablet-rotate {
+    @media  only screen and (max-width:1024px) {
         @content;
     }
 }
