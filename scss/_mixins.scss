@@ -4,9 +4,29 @@
     
 }
 
+@mixin flex ($justify, $align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+
+}
+
+
 @mixin box__shadow {
     box-shadow: 5px 5px 10px grey;
     
+}
+
+@mixin boton--primary {
+    text-decoration: none;
+    color: white;
+    background: $color5;
+    border-bottom: 4px solid $color4;
+    padding: $p__content - 0.40;
+    border-radius: 6px;
+    font-size: $f__size + 0.10;
+    font-weight: $f__weight;
+    text-align: center;
 }
 
 @mixin link__active{

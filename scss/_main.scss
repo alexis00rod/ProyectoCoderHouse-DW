@@ -1,18 +1,16 @@
 main {
     max-width: 1366px;
     margin: 0 auto;
-    @include box__size(100%, 100%);
+    @include box__size(auto, 100%);
     
     .hero {
         display: flex;
-        max-height: 768px;
-        @include box__size(80vh, 100%);
+        align-items: center;
+        justify-content: center;
+        @include box__size(calc(100vh - 80px), 100%);
         @include tablet {
             flex-direction: column;
-            align-items: center;
-        }
-        @include mobile {
-            @include box__size(100%, 100%)
+
         }
     
         .hero__left {
@@ -23,9 +21,10 @@ main {
             @include tablet {
                 padding: $p__box - 1;
                 text-align: center;
+                @include box__size(auto, 80%);
             }
             @include mobile {
-                @include box__size(auto, 80%);
+                @include box__size(auto, 100%);
             }
     
             .hero__logo {
@@ -37,10 +36,10 @@ main {
                 @include box__size(auto, 100%);
                 @include tablet {
                     padding: 0;
-                    font-size: $f__size * 3.5;
+                    font-size: $f__size * 3.8;
                 }
                 @include mobile {
-                    font-size: $f__size * 2;
+                    font-size: $f__size * 3;
                 }
                 
                 
@@ -52,11 +51,11 @@ main {
                     animation-duration: 5s;
                     animation-iteration-count: infinite;
                     @include tablet {
-                        font-size: $f__size * 4;
+                        font-size: $f__size * 4.2;
                     }
 
                     @include mobile {
-                        font-size: $f__size * 2.5;
+                        font-size: $f__size * 3.5;
                     }
     
                 }
@@ -65,41 +64,31 @@ main {
     
             .hero__text {
                 padding: $p__content;
-                font-size: $f__size + 0.20;
+                font-size: $f__size + 0.30;
                 font-weight: $f__weight - 200;
                 cursor: default;
 
                 @include tablet {
-                    font-size: $f__size;
+                    font-size: $f__size + 0.10;
                 }
 
                 @include mobile {
-                    font-size: $f__size - 0.20;
+                    font-size: $f__size - 0.10;
                 }
 
             }
     
             .hero__link {
-                text-decoration: none;
-                padding: $p__content;
-                font-size: $f__size * 2;
-                font-weight: $f__weight - 200;
-                color: $color5;
+                margin-left: 1rem;
+                margin-top: 1rem;
+                @include boton--primary;
                 @include tablet {
-                    font-size: $f__size + 0.60;
+                    margin: 0;
+                    font-size: $f__size - 0.10;
                 }
-                @include mobile {
-                    font-size: $f__size + 0.30;
-                }
-    
-                &:hover {
-                    color: $color4;
-                    letter-spacing: 3px;
-                    @include link__active;
-                    
-                }
-    
+
             }
+
         }
     
         .hero__right {
@@ -109,7 +98,8 @@ main {
             @include box__size(auto, 50%);
             @include tablet {
                 padding: 0;
-                @include box__size (auto, 80%)
+                margin-top: 1rem;
+                @include box__size (auto, 90%)
             }
     
             .hero__img {
@@ -515,6 +505,184 @@ main {
         
     }
     
+    article {
+        @include flex (center, center);
+        @include box__size(100vh, 100%);
+        @include tablet {
+            flex-direction: column;
+
+        }
+        @include mobile {
+            padding: 1rem;
+            @include box__size(100%, 100%)
+        }
+
+
+        .article__left {
+            @include box__size(auto, 30%);
+            @include flex(center, center);
+            flex-direction: column;
+            background: $color1;
+            padding: $p__box;
+            border-top-left-radius: $p__border__r;
+            border-bottom-left-radius: $p__border__r;
+            @include tablet {
+                border-top-right-radius: $p__border__r;
+                border-bottom-left-radius: 0;
+                @include box__size(auto, 60%);
+            }
+            @include mobile {
+                @include box__size(auto, 80%);
+                padding: $p__content;
+            }
+
+            .article__title {
+                padding: $p__content;
+                font-weight: $f__weight;
+                text-align: center;
+
+            }
+
+            .article__text {
+                padding: $p__content;
+                font-size: $f__size;
+                text-align: center;
+
+                @include mobile {
+                    padding: 0;
+                }
+
+            }
+
+        }
+
+        .article__right {
+            @include box__size(auto, 70%);
+            padding: $p__box;
+            background: $color2;
+            border-radius: $p__border__r;
+            @include flex(center, center);
+            @include tablet {
+                padding: $p__content;
+                @include box__size(auto, 90%);
+
+            }
+            @include mobile {
+                @include box__size(auto, 95%);
+                flex-wrap: wrap;
+
+            }
+            
+
+            video {
+                @include box__size(auto, 100%);
+                padding: $p__box;
+                @include mobile {
+                    padding: $p__content;
+                }
+            }
+
+            .article__card {
+                @include box__size(auto, 50%);
+                padding: $p__box;
+                @include tablet {
+                    padding: $p__content;
+                }
+                @include mobile {
+                    @include box__size(auto, 100%);
+
+                }
+                
+                img {
+                    @include box__size(auto, 100%);
+                    border-radius: $p__border__r - 0.75;
+                }
+
+                .card__body {
+                    background:#fff;
+                    padding: $p__box;
+                    margin: 0 1.5rem;
+                    @include flex(center, center);
+                    flex-direction: column;
+                    border-radius: $p__border__r - 0.75;
+                    transform: translateY(-20px);
+                    @include tablet {
+                        padding: $p__content;
+                    }
+                    @include mobile {
+                        
+                        
+                    }
+
+                    .card__title {
+                        font-size: $f__title - 0.30;
+                        font-weight: $f__weight;
+                        padding: 0 $p__content;
+                        @include tablet {
+                            padding: 0;
+                        }
+
+                    }
+
+                    .card__text {
+                        margin: 0.5rem;
+                        font-size: $f__size - 0.10;
+                    }
+
+                    .card__button {
+                        margin: 0.5rem;
+                        @include boton--primary;
+                        @include tablet {
+                            padding: $p__content - 0.50;
+                        }
+                    }
+
+                }
+            }
+
+            .article__team {
+                @include box__size(auto, 50%);
+                padding: $p__box - 0.70;
+                @include flex(center, center);
+                flex-direction: column;
+
+                .img__thumbnail {
+                    @include box__size(auto, 100%);
+                    @include circle;
+                }
+
+                .team__description {
+                    background-color: #fff;
+                    padding: $p__content;
+                    border-radius: $p__border__r - 0.75;
+                    transform: translateY(-20px);
+                    @include flex(center, center);
+                    flex-direction: column;
+
+                    .team__name {
+                        font-size: $f__size - 0.10;
+                        font-weight: $f__weight;
+                        text-align: center;
+
+                    }
+
+                    .team__work {
+                        font-size: $f__size - 0.20;
+
+                    }
+                    .team__contact {
+                        text-align: center;
+                    }
+
+
+                }
+
+            }
+
+        }
+
+    }
+
     .carousel {
         margin: 0 auto;
         text-align: center;

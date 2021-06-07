@@ -82,7 +82,7 @@ header .navbar .navbar__nav .navbar__item:hover:nth-child(4) {
 main {
   max-width: 1366px;
   margin: 0 auto;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -90,8 +90,13 @@ main .hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 768px;
-  height: 80vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: calc(100vh - 80px);
   width: 100%;
 }
 
@@ -101,16 +106,6 @@ main .hero {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media only screen and (max-width: 414px) {
-  main .hero {
-    height: 100%;
-    width: 100%;
   }
 }
 
@@ -130,13 +125,15 @@ main .hero .hero__left {
   main .hero .hero__left {
     padding: 1rem;
     text-align: center;
+    height: auto;
+    width: 80%;
   }
 }
 
 @media only screen and (max-width: 414px) {
   main .hero .hero__left {
     height: auto;
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -153,13 +150,13 @@ main .hero .hero__left .hero__logo {
 @media only screen and (max-width: 768px) {
   main .hero .hero__left .hero__logo {
     padding: 0;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
   }
 }
 
 @media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__logo {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
@@ -177,60 +174,54 @@ main .hero .hero__left .hero__logo .logo__animation {
 
 @media only screen and (max-width: 768px) {
   main .hero .hero__left .hero__logo .logo__animation {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 }
 
 @media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__logo .logo__animation {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
 
 main .hero .hero__left .hero__text {
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   cursor: default;
 }
 
 @media only screen and (max-width: 768px) {
   main .hero .hero__left .hero__text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
 @media only screen and (max-width: 414px) {
   main .hero .hero__left .hero__text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
 main .hero .hero__left .hero__link {
+  margin-left: 1rem;
+  margin-top: 1rem;
   text-decoration: none;
-  padding: 1rem;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #CFBDFF;
+  color: white;
+  background: #CFBDFF;
+  border-bottom: 4px solid #7878EB;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
   main .hero .hero__left .hero__link {
-    font-size: 1.6rem;
+    margin: 0;
+    font-size: 0.9rem;
   }
-}
-
-@media only screen and (max-width: 414px) {
-  main .hero .hero__left .hero__link {
-    font-size: 1.3rem;
-  }
-}
-
-main .hero .hero__left .hero__link:hover {
-  color: #7878EB;
-  letter-spacing: 3px;
-  text-decoration: underline;
-  text-transform: uppercase;
 }
 
 main .hero .hero__right {
@@ -248,8 +239,9 @@ main .hero .hero__right {
 @media only screen and (max-width: 768px) {
   main .hero .hero__right {
     padding: 0;
+    margin-top: 1rem;
     height: auto;
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -786,6 +778,289 @@ main section .info__team .info__team__bottom .info__team--item .info__team--desc
   main section .info__team .info__team__bottom .info__team--item .info__team--description .info__team--socials .info__team--link {
     padding: 0;
   }
+}
+
+main article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  main article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  main article {
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+main article .article__left {
+  height: auto;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #94EAFF;
+  padding: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  main article .article__left {
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0;
+    height: auto;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  main article .article__left {
+    height: auto;
+    width: 80%;
+    padding: 1rem;
+  }
+}
+
+main article .article__left .article__title {
+  padding: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+main article .article__left .article__text {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 414px) {
+  main article .article__left .article__text {
+    padding: 0;
+  }
+}
+
+main article .article__right {
+  height: auto;
+  width: 70%;
+  padding: 2rem;
+  background: #1C89E8;
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  main article .article__right {
+    padding: 1rem;
+    height: auto;
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  main article .article__right {
+    height: auto;
+    width: 95%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+main article .article__right video {
+  height: auto;
+  width: 100%;
+  padding: 2rem;
+}
+
+@media only screen and (max-width: 414px) {
+  main article .article__right video {
+    padding: 1rem;
+  }
+}
+
+main article .article__right .article__card {
+  height: auto;
+  width: 50%;
+  padding: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  main article .article__right .article__card {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  main article .article__right .article__card {
+    height: auto;
+    width: 100%;
+  }
+}
+
+main article .article__right .article__card img {
+  height: auto;
+  width: 100%;
+  border-radius: 1.25rem;
+}
+
+main article .article__right .article__card .card__body {
+  background: #fff;
+  padding: 2rem;
+  margin: 0 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1.25rem;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+@media only screen and (max-width: 768px) {
+  main article .article__right .article__card .card__body {
+    padding: 1rem;
+  }
+}
+
+main article .article__right .article__card .card__body .card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  main article .article__right .article__card .card__body .card__title {
+    padding: 0;
+  }
+}
+
+main article .article__right .article__card .card__body .card__text {
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+main article .article__right .article__card .card__body .card__button {
+  margin: 0.5rem;
+  text-decoration: none;
+  color: white;
+  background: #CFBDFF;
+  border-bottom: 4px solid #7878EB;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  main article .article__right .article__card .card__body .card__button {
+    padding: 0.5rem;
+  }
+}
+
+main article .article__right .article__team {
+  height: auto;
+  width: 50%;
+  padding: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main article .article__right .article__team .img__thumbnail {
+  height: auto;
+  width: 100%;
+  border-radius: 50%;
+}
+
+main article .article__right .article__team .team__description {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main article .article__right .article__team .team__description .team__name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+main article .article__right .article__team .team__description .team__work {
+  font-size: 0.8rem;
+}
+
+main article .article__right .article__team .team__description .team__contact {
+  text-align: center;
 }
 
 main .carousel {
