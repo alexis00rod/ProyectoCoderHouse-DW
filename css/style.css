@@ -209,12 +209,14 @@ main .hero .hero__left .hero__link {
   text-decoration: none;
   color: white;
   background: #CFBDFF;
-  border-bottom: 4px solid #7878EB;
+  border-bottom: 3px solid #7878EB;
   padding: 0.6rem;
   border-radius: 6px;
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
+  -webkit-box-shadow: 1px 2px 5px grey;
+          box-shadow: 1px 2px 5px grey;
 }
 
 @media only screen and (max-width: 768px) {
@@ -363,6 +365,7 @@ main section .info__contact__left {
 main section .info__contact__left:hover .info__contact--title {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 main section .info__contact__left .info__contact--title {
@@ -483,6 +486,7 @@ main section .info__service .info__service__left .info__service--item {
 main section .info__service .info__service__left .info__service--item:hover .info__service--name {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 main section .info__service .info__service__left .info__service--item .info__service--img {
@@ -539,6 +543,7 @@ main section .info__service .info__service__left .info__service--item .info__ser
 main section .info__service .info__service__left .info__service--item .info__service__description .info__service--boton:hover {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
   color: #7878EB;
 }
 
@@ -571,6 +576,7 @@ main section .info__service .info__service__right {
 main section .info__service .info__service__right:hover .info__service--title {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 main section .info__service .info__service__right .info__service--title {
@@ -636,6 +642,7 @@ main section .info__team .info__team__top {
 main section .info__team .info__team__top:hover .info__team--title {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 main section .info__team .info__team__top .info__team--title {
@@ -989,12 +996,14 @@ main article .article__right .article__card .card__body .card__button {
   text-decoration: none;
   color: white;
   background: #CFBDFF;
-  border-bottom: 4px solid #7878EB;
+  border-bottom: 3px solid #7878EB;
   padding: 0.6rem;
   border-radius: 6px;
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
+  -webkit-box-shadow: 1px 2px 5px grey;
+          box-shadow: 1px 2px 5px grey;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1087,6 +1096,7 @@ main .carousel {
 main .carousel:hover h2 {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 main .carousel .carousel--img {
@@ -1194,6 +1204,7 @@ main .catalogo .container__post .container__category label {
 main .catalogo .container__post .container__category label:hover {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 main .catalogo .container__post .posts {
@@ -1352,18 +1363,23 @@ main .catalogo .container__post .posts .post .post__description span {
 
 main .catalogo .container__post .posts .post .post__description button {
   margin-top: 1rem;
-  border: none;
+  width: 8rem;
+  padding: 0.4rem;
   background-color: #94EAFF;
-  padding: 0.8rem;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  border-radius: 1.5rem;
-  font-weight: 800;
+  border-radius: 6px;
+  border: none;
+  border-bottom: solid 4px #1C89E8;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2e2e2e;
+  -webkit-box-shadow: 1px 2px 5px grey;
+          box-shadow: 1px 2px 5px grey;
 }
 
 main .catalogo .container__post .posts .post .post__description button:hover {
-  background-color: #1C89E8;
-  color: white;
+  background-color: #5BA7FF;
+  color: #fff;
 }
 
 main .carrito {
@@ -1517,17 +1533,25 @@ main .user .form .form__login .form__input:focus {
 
 main .user .form .form__login .form__boton {
   margin: 1rem auto;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 0.5rem;
+  width: 8rem;
+  padding: 0.4rem;
   background-color: #94EAFF;
-  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  border-bottom: solid 4px #1C89E8;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2e2e2e;
+  -webkit-box-shadow: 1px 2px 5px grey;
+          box-shadow: 1px 2px 5px grey;
   height: auto;
   width: 12rem;
 }
 
 main .user .form .form__login .form__boton:hover {
-  background-color: #1C89E8;
+  background-color: #5BA7FF;
+  color: #fff;
 }
 
 main .user .form .form__login .form__link {
@@ -1583,16 +1607,25 @@ main .user .form .form__register .form__register__input:focus {
 
 main .user .form .form__register .form__register__boton {
   margin: 1rem auto;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 0.5rem;
+  width: 8rem;
+  padding: 0.4rem;
   background-color: #94EAFF;
+  border-radius: 6px;
+  border: none;
+  border-bottom: solid 4px #1C89E8;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2e2e2e;
+  -webkit-box-shadow: 1px 2px 5px grey;
+          box-shadow: 1px 2px 5px grey;
   height: auto;
   width: 12rem;
 }
 
 main .user .form .form__register .form__register__boton:hover {
-  background-color: #1C89E8;
+  background-color: #5BA7FF;
+  color: #fff;
 }
 
 footer {
@@ -1648,6 +1681,7 @@ footer .footer__content .footer__socials .footer__item .footer__item--link {
 footer .footer__content .footer__socials .footer__item .footer__item--link:hover {
   text-decoration: underline;
   text-transform: uppercase;
+  margin-left: 0.8rem;
 }
 
 * {

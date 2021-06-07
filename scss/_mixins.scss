@@ -21,17 +21,39 @@
     text-decoration: none;
     color: white;
     background: $color5;
-    border-bottom: 4px solid $color4;
+    border-bottom: 3px solid $color4;
     padding: $p__content - 0.40;
     border-radius: 6px;
     font-size: $f__size + 0.10;
     font-weight: $f__weight;
     text-align: center;
+    box-shadow: 1px 2px 5px grey;
+}
+
+@mixin boton--secondary {
+    width: 8rem;
+    padding: $p__content - 0.60;
+    background-color: $color1;
+    border-radius: 6px;
+    border: none;
+    border-bottom: solid 4px $color2;
+    font-size: $f__size;
+    font-weight: $f__weight;
+    text-align: center;
+    color: #2e2e2e;
+    box-shadow: 1px 2px 5px grey;
+
+    &:hover {
+        background-color: $color6;
+        color: #fff;
+    }
+
 }
 
 @mixin link__active{
     text-decoration: underline;
     text-transform: uppercase;
+    margin-left: 0.8rem;
 
 }
 

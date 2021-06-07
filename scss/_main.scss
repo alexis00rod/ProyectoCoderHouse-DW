@@ -877,18 +877,7 @@ main {
 
                         button {
                             margin-top: 1rem;
-                            border: none;
-                            background-color: $color1;
-                            padding: $p__content - 0.20;
-                            text-transform: uppercase;
-                            font-size: $f__size - 0.15;
-                            border-radius: $p__border__r - 0.50;
-                            font-weight: 800;
-
-                            &:hover {
-                                background-color: $color2;
-                                color: white;
-                            }
+                            @include boton--secondary;
 
                         }
 
@@ -999,17 +988,8 @@ main {
 
                 .form__boton {
                     margin: 1rem auto;
-                    border: none;
-                    padding: $p__content - 0.30;
-                    border-radius: $p__border__r - 1.5;
-                    background-color: $color1;
-                    font-weight: 600;
+                    @include boton--secondary;
                     @include box__size(auto, 12rem);
-
-                    &:hover{
-                        background-color: $color2;
-
-                    }
 
                 }
 
@@ -1053,16 +1033,8 @@ main {
 
                 .form__register__boton {
                     margin: 1rem auto;
-                    border: none;
-                    padding: $p__content - 0.30;
-                    border-radius: $p__border__r - 1.5;
-                    background-color: $color1;
+                    @include boton--secondary;
                     @include box__size(auto, 12rem);
-                    
-                    &:hover{
-                        background-color: $color2;
-
-                    }
 
                 }
 
