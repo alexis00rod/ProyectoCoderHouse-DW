@@ -609,10 +609,6 @@ main {
                     @include tablet {
                         padding: $p__content;
                     }
-                    @include mobile {
-                        
-                        
-                    }
 
                     .card__title {
                         font-size: $f__title - 0.30;
