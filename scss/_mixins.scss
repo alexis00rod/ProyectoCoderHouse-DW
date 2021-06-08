@@ -86,7 +86,7 @@
 // medias
 
 @mixin small-mobile-rotate {
-    @media  only screen and (max-width:667px) {
+    @media  only screen and (max-height:667px) {
         @content;
     }
 }
@@ -103,13 +103,19 @@
 }
 
 @mixin mobile-rotate{
-    @media  only screen and (max-width:736px) {
+    @media  only screen and (max-height:736px) {
         @content;
     }
 }
 
 @mixin tablet {
     @media  only screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin tablet-rotate {
+    @media  only screen and (max-height:768px) {
         @content;
     }
 }

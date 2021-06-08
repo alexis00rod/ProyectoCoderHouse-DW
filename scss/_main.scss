@@ -12,9 +12,14 @@ main {
     
     .hero {
         @include flex(center, center);
-        @include box__size(80vh, 100%);
+        text-align: center;
+        @include box__size(100vh, 100%);
         @include desktop {
             flex-direction: column;
+
+        }
+        @include tablet-rotate{
+            flex-direction: row;
 
         }
         @include mobile-rotate {
@@ -34,16 +39,20 @@ main {
             @include desktop{
                 @include box__size(auto, 80%);
                 text-align: center;
-
+                
             }
             @include tablet {
                 padding: $p__box - 1;
-
+                
+            }
+            @include tablet-rotate {
+                @include box__size(auto, 50%);
+                
             }
             @include mobile {
                 @include box__size(auto, 100%);
             }
-    
+            
             .hero__logo {
                 text-decoration: none;
                 color: #000;
@@ -66,7 +75,8 @@ main {
                     
                 }
                 @include mobile {
-                    font-size: $f__size * 3;
+                    font-size: $f__size * 2;
+
                 }
                 
                 .logo__animation {
@@ -79,14 +89,14 @@ main {
                     @include small-mobile {
                         font-size: f$f__size * 2.5;
                     }  
-                    @include mobile {
-                        font-size: $f__size * 3.5;
-                    }
                     @include tablet {
                         font-size: $f__size * 4.2;
                     }
                     @include mobile-rotate {
                         font-size: $f__size * 3.5;
+                    }
+                    @include mobile {
+                        font-size: $f__size * 2.2;
                     }
                     @include small-mobile-rotate {
                         font-size: $f__size * 3.2;
@@ -101,18 +111,18 @@ main {
                 font-size: $f__size + 0.30;
                 font-weight: $f__weight - 200;
                 cursor: default;
+                text-align: start;
+                @include box__size(auto, 100%);
                 @include tablet {
                     font-size: $f__size + 0.10;
 
                 }
                 @include mobile-rotate {
                     font-size: $f__size;
-                    padding: 0;
 
                 }
                 @include mobile {
-                    font-size: $f__size - 0.10;
-                    padding: $p__content;
+                    font-size: $f__size - 0.20;
 
                 }
                 @include small-mobile {
@@ -123,13 +133,8 @@ main {
             }
     
             .hero__link {
-                margin-left: 1rem;
-                margin-top: 1rem;
+                margin: 0.5rem;
                 @include boton--primary;
-                @include tablet {
-                    margin: 0;
-                    font-size: $f__size - 0.10;
-                }
 
             }
 
@@ -138,15 +143,24 @@ main {
         .hero__right {
             display: flex;
             align-items: center;
-            padding: $p__box * 2;
+            padding: $p__box;
             @include box__size(auto, 50%);
             @include desktop{
                 @include box__size(auto, 100%);
+
             }
             @include tablet {
                 padding: 0;
                 margin-top: 1rem;
-                @include box__size (auto, 90%)
+                @include box__size (auto, 100%)
+                
+            }
+            @include tablet-rotate {
+                @include box__size(auto, 50%);
+
+            }
+            @include mobile {
+                @include box__size(auto, 100%);
             }
     
             .hero__img {
@@ -234,6 +248,7 @@ main {
                 padding: $p__content;
                 font-size: $f__size;
                 text-align: center;
+                text-align: start;
                 @include desktop {
                     padding: 0;
                     font-size: $f__size - 0.10;
@@ -336,7 +351,9 @@ main {
 
                     .card__text {
                         margin: 0.5rem;
+                        padding: $p__content;
                         font-size: $f__size - 0.10;
+                        text-align: start;
                         @include small-mobile {
                             font-size: $f__size - 0.20;
                         }
@@ -393,7 +410,18 @@ main {
 
                     }
                     .team__contact {
-                        text-align: center;
+
+                        a {
+                            color: #000;
+                            text-decoration: none;
+
+                            &:hover{ 
+                                color: $color5;
+
+                            }
+
+                        }
+
                     }
 
 
@@ -658,12 +686,10 @@ main {
 
     .carrito {
         margin: 0 auto;
-        display: flex;
+        @include flex(center, center);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         cursor: default;
-        @include box__size(60vh, 80%);
+        @include box__size(100vh, 80%);
         @include small-mobile-rotate {
             margin-top: 2rem;
             padding: 0.2rem;
@@ -696,22 +722,7 @@ main {
         @include flex(center, center);
         flex-direction: column;
         cursor: default;
-        @include box__size(100%, 80%);
-        @include desktop {
-            @include box__size(100%, 90%);
-        }
-        @include mobile-rotate {
-            margin-top: 1rem;
-            padding: 0.2rem;   
-        }
-        @include small-mobile-rotate {
-            margin-top: 2rem;
-            padding: 0.2rem;
-
-        }    
-        @include mobile {
-            @include box__size(auto, 90%);
-        }
+        @include box__size(100vh, 80%);
 
         .form {
             border-radius: $p__border__r;

@@ -1,77 +1,60 @@
 header {
 
-    .navbar {
+    nav {
         max-width: 1280px;
+        @include box__size(80px, 100%);
+        @include flex(space-evenly, center);
+        background-color: #fff;
+        position: fixed;
         margin: 0 auto;
         padding: 0;
-        @include flex(space-evenly, center);
-        @include box__size(10vh, 100%);
-        
-    
-        .navbar__logo {
-            font-weight: $f__weight;
-            font-size: $f__size;
-            cursor: default;
-            @include tablet {
-                display: none;   
-            }
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 999;
+        @include mobile {
+            @include box__size(50px, 100%);
 
         }
-           
-        .navbar__nav {
-            display: flex;
-            align-items: center;
+        @include small-mobile {
+            @include box__size(40px, 100%);
+        }
+
+        h1 {
+            font-size: $f__size * 1.5;
+            font-weight: $f__weight + 100;
             padding: 0;
-        
-            .navbar__item {
-                list-style: none;
-                cursor: pointer;
-                padding: $p__content 0;
-                border-radius: $p__border__r - 0.50;
-                @include mobile {
-                    padding: $p__content - 0.25;
-                }
-                
-                .navbar--link {
+            margin: 0;
+
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            @include flex(center, center);
+
+            li {
+
+                a {
                     text-decoration: none;
-                    color: #000;
+                    font-size: $f__size * 1.5;
                     font-weight: $f__weight;
-                    padding: 0 $p__content + 0.50;
-                    @include mobile {
-                        padding: 0;
-                        font-size: $f__size - 0.10;
+                    margin: 0;
+                    padding: 0 6px;
+                    color: #000;
+
+                    &:hover {
+                        color: $color4;
+
                     }
 
-                }
-
-                &:hover {
-
-                    &:nth-child(1) {
-                        background-color: $color1;
-                        
-                    }
-
-                    &:nth-child(2) {
-                        background-color: $color2;
-                        
-                    }
-
-                    &:nth-child(3) {
-                        background-color: $color3;
-                        
-                    }
-
-                    &:nth-child(4) {
-                        background-color: $color4;
-                        
-                    }
-    
                 }
 
             }
 
         }
-        
+
     }
 
 }

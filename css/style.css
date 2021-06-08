@@ -1,48 +1,47 @@
-header .navbar {
+header nav {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0;
+  height: 80px;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 10vh;
-  width: 100%; }
-  header .navbar .navbar__logo {
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: default; }
-    @media only screen and (max-width: 768px) {
-      header .navbar .navbar__logo {
-        display: none; } }
-  header .navbar .navbar__nav {
+  background-color: #fff;
+  position: fixed;
+  margin: 0 auto;
+  padding: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999; }
+  @media only screen and (max-width: 414px) {
+    header nav {
+      height: 50px;
+      width: 100%; } }
+  @media only screen and (max-width: 320px) {
+    header nav {
+      height: 40px;
+      width: 100%; } }
+  header nav h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 0;
+    margin: 0; }
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-items: center;
-    padding: 0; }
-    header .navbar .navbar__nav .navbar__item {
-      list-style: none;
-      cursor: pointer;
-      padding: 1rem 0;
-      border-radius: 17.5px; }
-      @media only screen and (max-width: 414px) {
-        header .navbar .navbar__nav .navbar__item {
-          padding: 0.75rem; } }
-      header .navbar .navbar__nav .navbar__item .navbar--link {
-        text-decoration: none;
-        color: #000;
-        font-weight: 700;
-        padding: 0 1.5rem; }
-        @media only screen and (max-width: 414px) {
-          header .navbar .navbar__nav .navbar__item .navbar--link {
-            padding: 0;
-            font-size: 0.9rem; } }
-      header .navbar .navbar__nav .navbar__item:hover:nth-child(1) {
-        background-color: #94EAFF; }
-      header .navbar .navbar__nav .navbar__item:hover:nth-child(2) {
-        background-color: #1C89E8; }
-      header .navbar .navbar__nav .navbar__item:hover:nth-child(3) {
-        background-color: #5684FF; }
-      header .navbar .navbar__nav .navbar__item:hover:nth-child(4) {
-        background-color: #7878EB; }
+    justify-content: center;
+    align-items: center; }
+    header nav ul li a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      padding: 0 6px;
+      color: #000; }
+      header nav ul li a:hover {
+        color: #7878EB; }
 
 main {
   max-width: 1280px;
@@ -53,19 +52,23 @@ main {
   @media only screen and (max-width: 1024px) {
     main {
       padding: 0 1rem; } }
-  @media only screen and (max-width: 736px) {
+  @media only screen and (max-height: 736px) {
     main {
       padding: 0; } }
   main .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    text-align: center;
+    height: 100vh;
     width: 100%; }
     @media only screen and (max-width: 1024px) {
       main .hero {
         flex-direction: column; } }
-    @media only screen and (max-width: 736px) {
+    @media only screen and (max-height: 768px) {
+      main .hero {
+        flex-direction: row; } }
+    @media only screen and (max-height: 736px) {
       main .hero {
         height: 90vh;
         width: 100%;
@@ -88,6 +91,10 @@ main {
       @media only screen and (max-width: 768px) {
         main .hero .hero__left {
           padding: 1rem; } }
+      @media only screen and (max-height: 768px) {
+        main .hero .hero__left {
+          height: auto;
+          width: 50%; } }
       @media only screen and (max-width: 414px) {
         main .hero .hero__left {
           height: auto;
@@ -107,15 +114,15 @@ main {
           main .hero .hero__left .hero__logo {
             padding: 0;
             font-size: 3.8rem; } }
-        @media only screen and (max-width: 736px) {
+        @media only screen and (max-height: 736px) {
           main .hero .hero__left .hero__logo {
             font-size: 2.8rem; } }
-        @media only screen and (max-width: 667px) {
+        @media only screen and (max-height: 667px) {
           main .hero .hero__left .hero__logo {
             font-size: 2.8rem; } }
         @media only screen and (max-width: 414px) {
           main .hero .hero__left .hero__logo {
-            font-size: 3rem; } }
+            font-size: 2rem; } }
         main .hero .hero__left .hero__logo .logo__animation {
           text-transform: uppercase;
           color: #94EAFF;
@@ -126,40 +133,40 @@ main {
           @media only screen and (max-width: 320px) {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: f 2.5rem; } }
-          @media only screen and (max-width: 414px) {
-            main .hero .hero__left .hero__logo .logo__animation {
-              font-size: 3.5rem; } }
           @media only screen and (max-width: 768px) {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: 4.2rem; } }
-          @media only screen and (max-width: 736px) {
+          @media only screen and (max-height: 736px) {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: 3.5rem; } }
-          @media only screen and (max-width: 667px) {
+          @media only screen and (max-width: 414px) {
+            main .hero .hero__left .hero__logo .logo__animation {
+              font-size: 2.2rem; } }
+          @media only screen and (max-height: 667px) {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: 3.2rem; } }
       main .hero .hero__left .hero__text {
         padding: 1rem;
         font-size: 1.3rem;
         font-weight: 500;
-        cursor: default; }
+        cursor: default;
+        text-align: start;
+        height: auto;
+        width: 100%; }
         @media only screen and (max-width: 768px) {
           main .hero .hero__left .hero__text {
             font-size: 1.1rem; } }
-        @media only screen and (max-width: 736px) {
+        @media only screen and (max-height: 736px) {
           main .hero .hero__left .hero__text {
-            font-size: 1rem;
-            padding: 0; } }
+            font-size: 1rem; } }
         @media only screen and (max-width: 414px) {
           main .hero .hero__left .hero__text {
-            font-size: 0.9rem;
-            padding: 1rem; } }
+            font-size: 0.8rem; } }
         @media only screen and (max-width: 320px) {
           main .hero .hero__left .hero__text {
             font-size: 0.8rem; } }
       main .hero .hero__left .hero__link {
-        margin-left: 1rem;
-        margin-top: 1rem;
+        margin: 0.5rem;
         text-decoration: none;
         border: none;
         color: white;
@@ -173,14 +180,10 @@ main {
         box-shadow: 1px 2px 5px grey; }
         main .hero .hero__left .hero__link:hover {
           opacity: 0.7; }
-        @media only screen and (max-width: 768px) {
-          main .hero .hero__left .hero__link {
-            margin: 0;
-            font-size: 0.9rem; } }
     main .hero .hero__right {
       display: flex;
       align-items: center;
-      padding: 4rem;
+      padding: 2rem;
       height: auto;
       width: 50%; }
       @media only screen and (max-width: 1024px) {
@@ -192,7 +195,15 @@ main {
           padding: 0;
           margin-top: 1rem;
           height: auto;
-          width: 90%; } }
+          width: 100%; } }
+      @media only screen and (max-height: 768px) {
+        main .hero .hero__right {
+          height: auto;
+          width: 50%; } }
+      @media only screen and (max-width: 414px) {
+        main .hero .hero__right {
+          height: auto;
+          width: 100%; } }
       main .hero .hero__right .hero__img {
         height: auto;
         width: 100%; }
@@ -264,7 +275,8 @@ main {
       main article .article__left .article__text {
         padding: 1rem;
         font-size: 1rem;
-        text-align: center; }
+        text-align: center;
+        text-align: start; }
         @media only screen and (max-width: 1024px) {
           main article .article__left .article__text {
             padding: 0;
@@ -361,7 +373,9 @@ main {
                 font-size: 1.2rem; } }
           main article .article__right .article__card .card__body .card__text {
             margin: 0.5rem;
-            font-size: 0.9rem; }
+            padding: 1rem;
+            font-size: 0.9rem;
+            text-align: start; }
             @media only screen and (max-width: 320px) {
               main article .article__right .article__card .card__body .card__text {
                 font-size: 0.8rem; } }
@@ -419,8 +433,11 @@ main {
             @media only screen and (max-width: 320px) {
               main article .article__right .article__team .team__description .team__work {
                 margin: 0; } }
-          main article .article__right .article__team .team__description .team__contact {
-            text-align: center; }
+          main article .article__right .article__team .team__description .team__contact a {
+            color: #000;
+            text-decoration: none; }
+            main article .article__right .article__team .team__description .team__contact a:hover {
+              color: #CFBDFF; }
   main .carousel {
     margin: 0 auto;
     padding: 1rem;
@@ -432,7 +449,7 @@ main {
       main .carousel {
         height: auto;
         width: 100%; } }
-    @media only screen and (max-width: 667px) {
+    @media only screen and (max-height: 667px) {
       main .carousel {
         margin-top: 0.9rem;
         padding: 0.2rem; }
@@ -491,7 +508,7 @@ main {
           height: auto;
           width: 25%;
           margin-left: 0.5rem; } }
-      @media only screen and (max-width: 736px) {
+      @media only screen and (max-height: 736px) {
         main .catalogo .container__post .container__category {
           margin-left: 1rem; } }
       @media only screen and (max-width: 414px) {
@@ -629,13 +646,13 @@ main {
   main .carrito {
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     cursor: default;
-    height: 60vh;
+    height: 100vh;
     width: 80%; }
-    @media only screen and (max-width: 667px) {
+    @media only screen and (max-height: 667px) {
       main .carrito {
         margin-top: 2rem;
         padding: 0.2rem; } }
@@ -661,24 +678,8 @@ main {
     align-items: center;
     flex-direction: column;
     cursor: default;
-    height: 100%;
+    height: 100vh;
     width: 80%; }
-    @media only screen and (max-width: 1024px) {
-      main .user {
-        height: 100%;
-        width: 90%; } }
-    @media only screen and (max-width: 736px) {
-      main .user {
-        margin-top: 1rem;
-        padding: 0.2rem; } }
-    @media only screen and (max-width: 667px) {
-      main .user {
-        margin-top: 2rem;
-        padding: 0.2rem; } }
-    @media only screen and (max-width: 414px) {
-      main .user {
-        height: auto;
-        width: 90%; } }
     main .user .form {
       border-radius: 18px;
       height: auto;
@@ -687,7 +688,7 @@ main {
         main .user .form {
           height: auto;
           width: 70%; } }
-      @media only screen and (max-width: 736px) {
+      @media only screen and (max-height: 736px) {
         main .user .form {
           height: auto;
           width: 100%; } }
@@ -705,7 +706,7 @@ main {
         padding: 2rem;
         font-weight: 800;
         color: #fff; }
-        @media only screen and (max-width: 736px) {
+        @media only screen and (max-height: 736px) {
           main .user .form .form__title {
             padding: 1rem; } }
         @media only screen and (max-width: 414px) {
@@ -722,7 +723,7 @@ main {
         justify-content: center;
         align-items: center;
         flex-direction: column; }
-        @media only screen and (max-width: 736px) {
+        @media only screen and (max-height: 736px) {
           main .user .form .form__user {
             flex-direction: row;
             flex-wrap: wrap;
@@ -736,7 +737,7 @@ main {
           width: 100%;
           margin: 0.8rem 0;
           font-size: 0.9rem; }
-          @media only screen and (max-width: 736px) {
+          @media only screen and (max-height: 736px) {
             main .user .form .form__user p {
               margin: 0.5rem 0; } }
           main .user .form .form__user p a {
@@ -751,7 +752,7 @@ main {
           padding-bottom: 1rem;
           height: auto;
           width: 100%; }
-          @media only screen and (max-width: 736px) {
+          @media only screen and (max-height: 736px) {
             main .user .form .form__user .login__with {
               height: auto;
               width: 30%;
@@ -769,7 +770,7 @@ main {
             box-shadow: 1px 2px 3px grey; }
             main .user .form .form__user .login__with .login__fb:hover {
               opacity: 0.7; }
-            @media only screen and (max-width: 667px) {
+            @media only screen and (max-height: 667px) {
               main .user .form .form__user .login__with .login__fb {
                 height: 50px;
                 width: 100px; } }
@@ -786,7 +787,7 @@ main {
             box-shadow: 1px 2px 3px grey; }
             main .user .form .form__user .login__with .login__g:hover {
               opacity: 0.7; }
-            @media only screen and (max-width: 667px) {
+            @media only screen and (max-height: 667px) {
               main .user .form .form__user .login__with .login__g {
                 height: 50px;
                 width: 100px; } }
@@ -797,7 +798,7 @@ main {
           flex-direction: column;
           height: auto;
           width: 100%; }
-          @media only screen and (max-width: 736px) {
+          @media only screen and (max-height: 736px) {
             main .user .form .form__user .login__user {
               height: auto;
               width: 70%; } }
@@ -815,7 +816,7 @@ main {
             main .user .form .form__user .login__user .form__inputs:focus {
               border-bottom: solid 2px #1C89E8;
               font-weight: 800; }
-            @media only screen and (max-width: 736px) {
+            @media only screen and (max-height: 736px) {
               main .user .form .form__user .login__user .form__inputs {
                 height: auto;
                 width: 100%; } }
