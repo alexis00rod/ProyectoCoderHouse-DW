@@ -1,8 +1,9 @@
 main {
-    max-width: 1366px;
+    max-width: 1280px;
     margin: 0 auto; 
+    padding: 0;
     @include box__size(auto, 100%);
-    @include tablet-rotate {
+    @include desktop {
         padding: 0 1rem;
     }
     @include mobile-rotate {
@@ -10,11 +11,9 @@ main {
     }
     
     .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include box__size(calc(90vh), 100%);
-        @include tablet {
+        @include flex(center, center);
+        @include box__size(80vh, 100%);
+        @include desktop {
             flex-direction: column;
 
         }
@@ -29,14 +28,17 @@ main {
         }
     
         .hero__left {
-            display: flex;
-            align-items: center;
+            @include flex(center, center);
             padding: $p__box * 2;
             @include box__size(auto, 50%);
+            @include desktop{
+                @include box__size(auto, 80%);
+                text-align: center;
+
+            }
             @include tablet {
                 padding: $p__box - 1;
-                text-align: center;
-                @include box__size(auto, 80%);
+
             }
             @include mobile {
                 @include box__size(auto, 100%);
@@ -55,6 +57,9 @@ main {
                 @include tablet {
                     padding: 0;
                     font-size: $f__size * 3.8;
+                }
+                @include mobile-rotate {
+                    font-size: $f__size * 2.8;
                 }
                 @include small-mobile-rotate {
                     font-size: $f__size * 2.8;
@@ -135,6 +140,9 @@ main {
             align-items: center;
             padding: $p__box * 2;
             @include box__size(auto, 50%);
+            @include desktop{
+                @include box__size(auto, 100%);
+            }
             @include tablet {
                 padding: 0;
                 margin-top: 1rem;
@@ -176,12 +184,9 @@ main {
     article {
         @include flex (center, center);
         @include box__size(100vh, 100%);
-        @include tablet {
-            flex-direction: column;
-
-        }
-        @include tablet-rotate {
+        @include desktop {
             @include box__size(100%, 100%);
+            flex-direction: column;
             margin: 0 auto;
             padding: 1rem;
         }
@@ -199,14 +204,15 @@ main {
             padding: $p__box;
             border-top-left-radius: $p__border__r;
             border-bottom-left-radius: $p__border__r;
-            @include tablet {
+            @include desktop {
+                @include box__size(auto, 70%);
                 border-top-right-radius: $p__border__r;
                 border-bottom-left-radius: 0;
-                @include box__size(auto, 60%);
-            }
-            @include tablet-rotate {
-                padding: $p__content;
+                padding: $p__box;
                 
+            }
+            @include tablet {
+                @include box__size(auto, 60%);
             }
             @include mobile {
                 @include box__size(auto, 80%);
@@ -217,7 +223,7 @@ main {
                 padding: $p__content;
                 font-weight: $f__weight;
                 text-align: center;
-                @include tablet-rotate {
+                @include desktop {
                     padding: $p__content - 0.50;
                     font-size: $f__size + 0.30;
                 }
@@ -228,7 +234,7 @@ main {
                 padding: $p__content;
                 font-size: $f__size;
                 text-align: center;
-                @include tablet-rotate {
+                @include desktop {
                     padding: 0;
                     font-size: $f__size - 0.10;
                 }
@@ -251,7 +257,8 @@ main {
                 @include box__size(auto, 90%);
                 
             }
-            @include tablet-rotate{
+            @include desktop{
+                @include box__size(auto, 90%);
                 padding: $p__content;
                 transform: translateX(-5px);
                 
@@ -281,7 +288,7 @@ main {
                 @include tablet {
                     padding: $p__content;
                 }
-                @include tablet-rotate {
+                @include desktop {
                     padding: $p__content;
                 }
                 @include mobile {
@@ -305,7 +312,7 @@ main {
                     @include tablet {
                         padding: $p__content;
                     }
-                    @include tablet-rotate {
+                    @include desktop {
                         padding: $p__content;
                     }
                     @include small-mobile {
@@ -315,7 +322,9 @@ main {
                     .card__title {
                         font-size: $f__title - 0.30;
                         font-weight: $f__weight;
-                        padding: 0 $p__content;
+                        text-align: center;
+                        @include box__size(3rem, 100%);
+                        @include flex(center, center);
                         @include tablet {
                             padding: 0;
                         }
@@ -486,7 +495,7 @@ main {
                 flex-direction: column;
                 margin-top: 1rem;
                 @include box__size(auto, 25%);
-                @include tablet-rotate {
+                @include desktop {
                     @include box__size(auto, 30%);
                     
                 }
@@ -511,7 +520,7 @@ main {
                         @include box__size(auto, 80vw);
 
                     }
-                    @include tablet-rotate {
+                    @include desktop {
                         font-size: $f__size + 0.10;
                     }
 
@@ -534,7 +543,7 @@ main {
                     @include box__size(auto, 100%);
                     gap: 0;
                 }
-                @include tablet-rotate {
+                @include desktop {
                     grid-template-columns: repeat(3, 1fr);
                     @include box__size(auto, 70%);
                 }
@@ -656,7 +665,7 @@ main {
         cursor: default;
         @include box__size(60vh, 80%);
         @include small-mobile-rotate {
-            margin-top: 0.9rem;
+            margin-top: 2rem;
             padding: 0.2rem;
 
         }    
@@ -688,7 +697,7 @@ main {
         flex-direction: column;
         cursor: default;
         @include box__size(100%, 80%);
-        @include tablet-rotate {
+        @include desktop {
             @include box__size(100%, 90%);
         }
         @include mobile-rotate {
@@ -696,19 +705,18 @@ main {
             padding: 0.2rem;   
         }
         @include small-mobile-rotate {
-            margin-top: 1rem;
+            margin-top: 2rem;
             padding: 0.2rem;
 
         }    
         @include mobile {
-            @include box__size(100%, 90%);
+            @include box__size(auto, 90%);
         }
 
         .form {
             border-radius: $p__border__r;
-            @include box__size(auto, 50%);
-            @include box__shadow;
-            @include tablet-rotate {
+            @include box__size(auto, 60%);
+            @include desktop {
                 @include box__size(auto, 70%);
 
             }
@@ -724,12 +732,13 @@ main {
             .form__title {
                 margin: 0;
                 text-align: center;
-                font-size: $f__size + 0.80;
+                font-size: $f__size * 2;
                 background-color: $color2;
                 border-top-left-radius: $p__border__r;
                 border-top-right-radius: $p__border__r;
                 padding: $p__box;
-                font-weight: $f__weight;
+                font-weight: $f__weight + 100;
+                color: #fff;
                 @include mobile-rotate {
                     padding: $p__content;
 
@@ -741,7 +750,7 @@ main {
 
             }
 
-            .form__login {
+            .form__user {
                 text-align: center;
                 border: solid 2px $color2;
                 padding: $p__box;
@@ -762,110 +771,89 @@ main {
 
                 p {
                     @include box__size(auto, 100%);
-                    margin: 1rem 0;
+                    margin: 0.8rem 0;
+                    font-size: $f__size - 0.10;
                     @include mobile-rotate {
                         margin: 0.5rem 0;
 
                     }
 
+                    a {
+                        color: $color4;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+
+                        }
+
+                    }
+
                 }
 
-                .form__input {
-                    margin: 0 auto;
-                    outline: none;
-                    border: none;
-                    transition: 0.2s;
-                    border-bottom: 1px solid grey;
-                    padding: $p__content;
-                    @include box__size(auto, 80%);
+                .login__with {
+                    @include flex(center, center);
+                    padding-bottom: 1rem;
+                    @include box__size(auto, 100%);
                     @include mobile-rotate {
-                        @include box__size(auto, 40%);
-                        padding: $p__content - 0.50;
-                        font-size: $f__size - 0.10;
+                        @include box__size(auto, 30%);
+                        flex-direction: column;
                         
                     }
-                    @include mobile {
-                        @include box__size(auto, 80%);
+                    
+                    .login__fb {
+                        background-color: #4267b2;
+                        @include boton--secondary;
+                        @include small-mobile-rotate {
+                            @include box__size(50px, 100px);
+                        }
+
+                    }
+    
+                    .login__g {
+                        background-color: #dc3545;
+                        @include boton--secondary;
+                        @include small-mobile-rotate {
+                            @include box__size(50px, 100px);
+                        }
 
                     }
 
-                    &:focus {
-                        border-bottom: solid 3px $color2;
-
-                    }
-
                 }
 
-                .form__boton {
-                    margin: 0.2rem;
-                    @include boton--primary;
-                    @include box__size(auto, 12rem);
-
-                }
-
-                .form__link {
-                    color: $color2;
-                    @include mobile {
-                        font-size: $f__size - 0.20;
-                    }
-                }
-
-            }
-
-            .form__register {
-                @include flex(center, center);
-                flex-direction: column;
-                border: solid 2px $color2;
-                padding: $p__box;
-                border-bottom-left-radius: $p__border__r;
-                border-bottom-right-radius: $p__border__r;
-                @include mobile {
-                    padding: $p__box - 0.50;
-                }
-                @include mobile-rotate {
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    padding: $p__content;
-
-                }
-
-                .form__register__input {
-                    outline: none;
-                    border: none;
-                    transition: 0.2s;
-                    border-bottom: 1px solid grey;
-                    margin: 1rem;
-                    padding: $p__content - 0.50;
-                    @include box__size(auto, 80%);
+                .login__user {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    @include box__size(auto, 100%);
                     @include mobile-rotate {
-                        @include box__size(auto, 40%);
+                        @include box__size(auto, 70%);
+                    }
+
+                    .form__inputs {
+                        @include input--enter;
+                        @include box__size(auto, 70%);
+                        @include mobile-rotate {
+                            @include box__size(auto, 100%);
+                            
+                        }
+    
+                    }
+    
+                    .form__boton {
                         margin: 0.5rem;
-
-                    }
-                    @include mobile {
-                        @include box__size(auto, 80%);
-                    }
-
-                    &:focus {
-                        border-bottom: solid 3px $color2;
+                        @include boton--primary;
+                        @include box__size(auto, 12rem);
+    
                     }
 
                 }
 
-                .form__register__boton {
-                    margin: 1rem auto;
-                    @include boton--primary;
-                    @include box__size(auto, 12rem);
-
-                }
 
 
             }
 
         }
 
-
     }
-
 
 }

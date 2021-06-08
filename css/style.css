@@ -81,8 +81,9 @@ header .navbar .navbar__nav .navbar__item:hover:nth-child(4) {
 }
 
 main {
-  max-width: 1366px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0;
   height: auto;
   width: 100%;
 }
@@ -103,17 +104,17 @@ main .hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: calc(90vh);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   main .hero {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -146,6 +147,9 @@ main .hero .hero__left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -154,12 +158,17 @@ main .hero .hero__left {
   width: 50%;
 }
 
+@media only screen and (max-width: 1024px) {
+  main .hero .hero__left {
+    height: auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   main .hero .hero__left {
     padding: 1rem;
-    text-align: center;
-    height: auto;
-    width: 80%;
   }
 }
 
@@ -190,6 +199,12 @@ main .hero .hero__left .hero__logo {
   main .hero .hero__left .hero__logo {
     padding: 0;
     font-size: 3.8rem;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  main .hero .hero__left .hero__logo {
+    font-size: 2.8rem;
   }
 }
 
@@ -320,6 +335,13 @@ main .hero .hero__right {
   width: 50%;
 }
 
+@media only screen and (max-width: 1024px) {
+  main .hero .hero__right {
+    height: auto;
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   main .hero .hero__right {
     padding: 0;
@@ -384,19 +406,14 @@ main article {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  main article {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
 @media only screen and (max-width: 1024px) {
   main article {
     height: 100%;
     width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 0 auto;
     padding: 1rem;
   }
@@ -432,18 +449,20 @@ main article .article__left {
   border-bottom-left-radius: 18px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   main article .article__left {
+    height: auto;
+    width: 70%;
     border-top-right-radius: 18px;
     border-bottom-left-radius: 0;
-    height: auto;
-    width: 60%;
+    padding: 2rem;
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   main article .article__left {
-    padding: 1rem;
+    height: auto;
+    width: 60%;
   }
 }
 
@@ -514,6 +533,8 @@ main article .article__right {
 
 @media only screen and (max-width: 1024px) {
   main article .article__right {
+    height: auto;
+    width: 90%;
     padding: 1rem;
     -webkit-transform: translateX(-5px);
             transform: translateX(-5px);
@@ -621,7 +642,18 @@ main article .article__right .article__card .card__body {
 main article .article__right .article__card .card__body .card__title {
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 0 1rem;
+  text-align: center;
+  height: 3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1135,7 +1167,7 @@ main .carrito {
 
 @media only screen and (max-width: 667px) {
   main .carrito {
-    margin-top: 0.9rem;
+    margin-top: 2rem;
     padding: 0.2rem;
   }
 }
@@ -1204,14 +1236,14 @@ main .user {
 
 @media only screen and (max-width: 667px) {
   main .user {
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 0.2rem;
   }
 }
 
 @media only screen and (max-width: 414px) {
   main .user {
-    height: 100%;
+    height: auto;
     width: 90%;
   }
 }
@@ -1219,9 +1251,7 @@ main .user {
 main .user .form {
   border-radius: 18px;
   height: auto;
-  width: 50%;
-  -webkit-box-shadow: 5px 5px 10px grey;
-          box-shadow: 5px 5px 10px grey;
+  width: 60%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1248,12 +1278,13 @@ main .user .form {
 main .user .form .form__title {
   margin: 0;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   background-color: #1C89E8;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   padding: 2rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: #fff;
 }
 
 @media only screen and (max-width: 736px) {
@@ -1269,7 +1300,7 @@ main .user .form .form__title {
   }
 }
 
-main .user .form .form__login {
+main .user .form .form__user {
   text-align: center;
   border: solid 2px #1C89E8;
   padding: 2rem;
@@ -1291,7 +1322,7 @@ main .user .form .form__login {
 }
 
 @media only screen and (max-width: 736px) {
-  main .user .form .form__login {
+  main .user .form .form__user {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1303,7 +1334,7 @@ main .user .form .form__login {
 }
 
 @media only screen and (max-width: 414px) {
-  main .user .form .form__login {
+  main .user .form .form__user {
     padding: 1.5rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1312,83 +1343,105 @@ main .user .form .form__login {
   }
 }
 
-main .user .form .form__login p {
+main .user .form .form__user p {
   height: auto;
   width: 100%;
-  margin: 1rem 0;
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
 }
 
 @media only screen and (max-width: 736px) {
-  main .user .form .form__login p {
+  main .user .form .form__user p {
     margin: 0.5rem 0;
   }
 }
 
-main .user .form .form__login .form__input {
-  margin: 0 auto;
-  outline: none;
-  border: none;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-bottom: 1px solid grey;
-  padding: 1rem;
+main .user .form .form__user p a {
+  color: #7878EB;
+  text-decoration: none;
+}
+
+main .user .form .form__user p a:hover {
+  text-decoration: underline;
+}
+
+main .user .form .form__user .login__with {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 1rem;
   height: auto;
-  width: 80%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 736px) {
-  main .user .form .form__login .form__input {
+  main .user .form .form__user .login__with {
     height: auto;
-    width: 40%;
-    padding: 0.5rem;
-    font-size: 0.9rem;
+    width: 30%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 414px) {
-  main .user .form .form__login .form__input {
-    height: auto;
-    width: 80%;
-  }
-}
-
-main .user .form .form__login .form__input:focus {
-  border-bottom: solid 3px #1C89E8;
-}
-
-main .user .form .form__login .form__boton {
-  margin: 0.2rem;
-  text-decoration: none;
-  border: none;
-  color: white;
-  background: #CFBDFF;
-  border-bottom: 3px solid #7878EB;
-  padding: 0.6rem;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: 700;
+main .user .form .form__user .login__with .login__fb {
+  background-color: #4267b2;
+  height: 50px;
+  width: 150px;
   text-align: center;
-  -webkit-box-shadow: 1px 2px 5px grey;
-          box-shadow: 1px 2px 5px grey;
-  height: auto;
-  width: 12rem;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 0.2rem;
+  padding: 0;
+  -webkit-box-shadow: 1px 2px 3px grey;
+          box-shadow: 1px 2px 3px grey;
 }
 
-main .user .form .form__login .form__boton:hover {
+main .user .form .form__user .login__with .login__fb:hover {
   opacity: 0.7;
 }
 
-main .user .form .form__login .form__link {
-  color: #1C89E8;
-}
-
-@media only screen and (max-width: 414px) {
-  main .user .form .form__login .form__link {
-    font-size: 0.8rem;
+@media only screen and (max-width: 667px) {
+  main .user .form .form__user .login__with .login__fb {
+    height: 50px;
+    width: 100px;
   }
 }
 
-main .user .form .form__register {
+main .user .form .form__user .login__with .login__g {
+  background-color: #dc3545;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 0.2rem;
+  padding: 0;
+  -webkit-box-shadow: 1px 2px 3px grey;
+          box-shadow: 1px 2px 3px grey;
+}
+
+main .user .form .form__user .login__with .login__g:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 667px) {
+  main .user .form .form__user .login__with .login__g {
+    height: 50px;
+    width: 100px;
+  }
+}
+
+main .user .form .form__user .login__user {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1402,63 +1455,44 @@ main .user .form .form__register {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: solid 2px #1C89E8;
-  padding: 2rem;
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
-}
-
-@media only screen and (max-width: 414px) {
-  main .user .form .form__register {
-    padding: 1.5rem;
-  }
-}
-
-@media only screen and (max-width: 736px) {
-  main .user .form .form__register {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding: 1rem;
-  }
-}
-
-main .user .form .form__register .form__register__input {
-  outline: none;
-  border: none;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-bottom: 1px solid grey;
-  margin: 1rem;
-  padding: 0.5rem;
   height: auto;
-  width: 80%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 736px) {
-  main .user .form .form__register .form__register__input {
+  main .user .form .form__user .login__user {
     height: auto;
-    width: 40%;
-    margin: 0.5rem;
+    width: 70%;
   }
 }
 
-@media only screen and (max-width: 414px) {
-  main .user .form .form__register .form__register__input {
+main .user .form .form__user .login__user .form__inputs {
+  margin: 3px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  border-bottom: solid 2px grey;
+  outline: none;
+  font-size: 0.9rem;
+  color: #000;
+  height: auto;
+  width: 70%;
+}
+
+main .user .form .form__user .login__user .form__inputs:focus {
+  border-bottom: solid 2px #1C89E8;
+  font-weight: 800;
+}
+
+@media only screen and (max-width: 736px) {
+  main .user .form .form__user .login__user .form__inputs {
     height: auto;
-    width: 80%;
+    width: 100%;
   }
 }
 
-main .user .form .form__register .form__register__input:focus {
-  border-bottom: solid 3px #1C89E8;
-}
-
-main .user .form .form__register .form__register__boton {
-  margin: 1rem auto;
+main .user .form .form__user .login__user .form__boton {
+  margin: 0.5rem;
   text-decoration: none;
   border: none;
   color: white;
@@ -1475,7 +1509,7 @@ main .user .form .form__register .form__register__boton {
   width: 12rem;
 }
 
-main .user .form .form__register .form__register__boton:hover {
+main .user .form .form__user .login__user .form__boton:hover {
   opacity: 0.7;
 }
 
@@ -1540,7 +1574,7 @@ footer .footer__content .footer__socials .footer__item .footer__item--link:hover
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
