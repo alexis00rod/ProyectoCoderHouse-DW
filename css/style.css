@@ -440,9 +440,51 @@ main {
             text-decoration: none; }
             main article .article__right .article__team .team__description .team__contact a:hover {
               color: #CFBDFF; }
+  main .search__section {
+    margin-top: 80px;
+    padding: 2rem;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    main .search__section form {
+      margin: 0 auto;
+      height: auto;
+      width: 40%; }
+      @media only screen and (max-width: 768px) {
+        main .search__section form {
+          height: auto;
+          width: 50%; } }
+      @media only screen and (max-width: 414px) {
+        main .search__section form {
+          height: auto;
+          width: 100%; } }
+      main .search__section form fieldset {
+        border: 3px solid #7878EB;
+        border-radius: 6px;
+        padding: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        main .search__section form fieldset:hover {
+          border: 3px solid #1C89E8; }
+          main .search__section form fieldset:hover button {
+            background-color: #1C89E8; }
+        main .search__section form fieldset input {
+          outline: none;
+          border-radius: 6px;
+          border: none;
+          height: auto;
+          width: 100%; }
+        main .search__section form fieldset button {
+          border: none;
+          background-color: #7878EB;
+          color: #fff;
+          padding: 5px;
+          border-radius: 6px; }
   main .carousel {
     margin: 0 auto;
-    padding: 1rem;
     text-align: center;
     cursor: default;
     height: auto;
@@ -451,29 +493,15 @@ main {
       main .carousel {
         height: auto;
         width: 100%; } }
-    @media only screen and (max-height: 667px) {
-      main .carousel {
-        margin-top: 0.9rem;
-        padding: 0.2rem; }
-        main .carousel h2 {
-          font-size: 1.3rem; } }
-    @media only screen and (max-width: 414px) {
-      main .carousel h2 {
-        font-size: 1rem; } }
-    main .carousel:hover h2 {
-      text-decoration: underline;
-      text-transform: uppercase;
-      margin-left: 0.8rem; }
     main .carousel .carousel--img {
       margin-bottom: 2rem;
-      height: auto;
-      width: 40%; }
+      height: 100%;
+      width: 50%;
+      max-width: 300px; }
     main .carousel .bg__modal {
       background-color: #fff;
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0.5rem; }
+      padding: 0;
+      padding-top: 10px; }
     main .carousel .carousel__oferta {
       color: grey;
       text-decoration: line-through;

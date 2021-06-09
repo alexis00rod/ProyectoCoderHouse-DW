@@ -435,53 +435,84 @@ main {
 
     }
 
+    .search__section {
+        margin-top: 80px;
+        padding: $p__box;
+        @include box__size(auto, 100%);
+        @include flex(center, center);
+
+        form {
+            margin: 0 auto;
+            @include box__size(auto, 40%);
+            @include tablet {
+                @include box__size(auto, 50%);
+
+            }
+            @include mobile {
+                @include box__size(auto, 100%);
+
+            }
+
+            fieldset {
+                border: 3px solid $color4;
+                border-radius: 6px;
+                padding: 6px;
+                @include flex(space-between, center);
+
+                &:hover {
+                    border: 3px solid $color2;
+
+                    button {
+                        background-color: $color2;
+
+                    }
+
+                }
+
+
+                input {
+                    outline: none;
+                    border-radius: 6px;
+                    border: none;
+                    @include box__size(auto, 100%);
+
+                }
+
+                button {
+                    border: none;
+                    background-color: $color4;
+                    color: #fff;
+                    padding: 5px;
+                    border-radius: 6px;
+
+                }
+
+            }
+
+        }
+
+    }
+
     .carousel {
         margin: 0 auto;
-        padding: 1rem;
         text-align: center;
         cursor: default;
         @include box__size(auto, 70%);
         @include tablet {
             @include box__size(auto, 100%);
         }
-        @include small-mobile-rotate {
-            margin-top: 0.9rem;
-            padding: 0.2rem;
-            
-            h2 {
-                font-size: $f__size + 0.30;
-            }
-
-        }
-        @include mobile {
-            h2 {
-                font-size: $f__size;
-
-            }
-            
-        }
-
-        &:hover {
-            
-            h2 {
-                @include link__active;
-
-            }
-
-        }
 
         .carousel--img {
             margin-bottom: 2rem;
-            @include box__size(auto, 40%);
+            @include box__size(100%, 50%);
+            max-width: 300px;
 
         }
 
         .bg__modal {
             background-color: #fff;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-            padding-top: $p__content - 0.50;
+            padding: 0;
+            padding-top: 10px;
         }
 
         .carousel__oferta {
