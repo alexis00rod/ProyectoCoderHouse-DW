@@ -23,7 +23,6 @@ main {
 
         }
         @include mobile-rotate {
-            @include box__size(90vh, 100%);
             flex-direction: row;
 
         }
@@ -218,6 +217,7 @@ main {
             padding: $p__box;
             border-top-left-radius: $p__border__r;
             border-bottom-left-radius: $p__border__r;
+            cursor: default;
             @include desktop {
                 @include box__size(auto, 70%);
                 border-top-right-radius: $p__border__r;
@@ -300,6 +300,7 @@ main {
             .article__card {
                 @include box__size(auto, 50%);
                 padding: $p__box;
+                cursor: default;
                 @include tablet {
                     padding: $p__content;
                 }
@@ -386,6 +387,7 @@ main {
                     padding: $p__content;
                     border-radius: $p__border__r - 0.75;
                     transform: translateY(-20px);
+                    cursor: default;
                     @include flex(center, center);
                     flex-direction: column;
                     @include small-mobile {
@@ -583,6 +585,7 @@ main {
 
                 .post {
                     padding: $p__content;
+                    cursor: default;
                     @include mobile {
                         display: flex;
                         padding: $p__content;
