@@ -724,7 +724,7 @@ main {
         padding: 0.2rem; } }
     @media only screen and (max-width: 414px) {
       main .carrito {
-        height: 50vh;
+        height: 100vh;
         width: 90%; } }
     main .carrito .carrito__contador {
       font-size: 3rem;

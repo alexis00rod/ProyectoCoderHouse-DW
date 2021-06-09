@@ -732,7 +732,7 @@ main {
 
         }    
         @include mobile {
-            @include box__size(50vh, 90%)
+            @include box__size(100vh, 90%)
 
         }
 
