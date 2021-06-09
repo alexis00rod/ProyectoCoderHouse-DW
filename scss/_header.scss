@@ -1,23 +1,50 @@
 header {
+    position: fixed;
+    margin: 0 auto;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: $color7;
+    @include box__size(60px, 100%);
 
-    nav {
-        max-width: 1280px;
-        @include box__size(80px, 100%);
-        @include flex(space-evenly, center);
-        background-color: #fff;
-        position: fixed;
-        margin: 0 auto;
-        padding: 0;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 999;
-        @include mobile {
-            @include box__size(50px, 100%);
+    #boton__menu {
+        display: none;
+
+    }
+
+    label {
+        font-size: $f__title - 0.50;
+        padding: $p__content;
+        display: none;
+        text-align: end;
+        @include tablet{
+            display: block;
 
         }
-        @include small-mobile {
-            @include box__size(40px, 100%);
+
+        &:hover {
+            color: $color4;
+
+        }
+
+    }
+
+    .menu {
+        max-width: 1280px;
+        margin: 0 auto;
+        background-color: $color7;
+        @include flex(space-evenly, center);
+        transition: all 0.5s;
+        @include box__size(80px, 100%);
+        @include tablet {
+            position: absolute;
+            flex-direction: column;
+            width: 70%;
+            margin-left: -70%;
+            @include box__size(50vh, 70%);
+
         }
 
         h1 {
@@ -26,7 +53,7 @@ header {
             padding: 0;
             margin: 0;
             cursor: default;
-
+    
         }
 
         ul {
@@ -34,7 +61,7 @@ header {
             padding: 0;
             margin: 0;
             @include flex(center, center);
-
+            
             li {
 
                 a {
@@ -56,6 +83,11 @@ header {
 
         }
 
+    }
+
+    #boton__menu:checked ~ .menu {
+        margin: 0;
+        
     }
 
 }
