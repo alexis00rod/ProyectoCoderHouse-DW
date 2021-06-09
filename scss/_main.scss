@@ -11,6 +11,7 @@ main {
     }
     
     .hero {
+        padding-top: 50px;
         @include flex(center, center);
         text-align: center;
         @include box__size(100vh, 100%);
@@ -49,7 +50,7 @@ main {
                 
             }
             @include mobile {
-                @include box__size(auto, 100%);
+                @include box__size(auto, 90%);
             }
             
             .hero__logo {
@@ -122,6 +123,7 @@ main {
                 }
                 @include mobile {
                     font-size: $f__size - 0.20;
+                    padding: 0;
 
                 }
                 @include small-mobile {

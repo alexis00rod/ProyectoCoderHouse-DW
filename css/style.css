@@ -17,8 +17,14 @@ header {
     align-items: center; }
     @media only screen and (max-width: 768px) {
       header nav {
+        height: 60px;
+        width: 100%;
         justify-content: space-between;
         padding: 1rem 2rem; } }
+    @media only screen and (max-width: 414px) {
+      header nav {
+        height: 40px;
+        width: 100%; } }
     header nav #check {
       display: none; }
       header nav #check:checked ~ ul {
@@ -44,11 +50,14 @@ header {
           position: fixed;
           z-index: 999;
           background-color: #E8FFFF;
-          top: 80px;
+          top: 60px;
           left: -100%;
           transition: all 0.5s;
           height: 30vh;
           width: 50%; } }
+      @media only screen and (max-width: 414px) {
+        header nav ul {
+          top: 40px; } }
       header nav ul li {
         display: inline-block;
         padding: 2rem;
@@ -81,6 +90,7 @@ main {
     main {
       padding: 0; } }
   main .hero {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +131,7 @@ main {
       @media only screen and (max-width: 414px) {
         main .hero .hero__left {
           height: auto;
-          width: 100%; } }
+          width: 90%; } }
       main .hero .hero__left .hero__logo {
         text-decoration: none;
         color: #000;
@@ -184,7 +194,8 @@ main {
             font-size: 1rem; } }
         @media only screen and (max-width: 414px) {
           main .hero .hero__left .hero__text {
-            font-size: 0.8rem; } }
+            font-size: 0.8rem;
+            padding: 0; } }
         @media only screen and (max-width: 320px) {
           main .hero .hero__left .hero__text {
             font-size: 0.8rem; } }

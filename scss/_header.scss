@@ -14,9 +14,14 @@ header {
         @include box__size(80px, 100%);
         @include flex(space-evenly, center);
         @include tablet {
+            @include box__size(60px, 100%);
             justify-content: space-between;
             padding: 1rem 2rem;
         }
+        @include mobile {
+            @include box__size(40px, 100%);
+        }
+
 
         #check {
             display: none;
@@ -53,11 +58,15 @@ header {
                 position: fixed;
                 z-index: 999;
                 background-color: $color7;
-                top: 80px;
+                top: 60px;
                 left: -100%;
                 transition: all 0.5s;
                 @include box__size(30vh, 50%);
             }
+            @include mobile {
+                top: 40px;
+            }
+
             li {
                 display: inline-block;
                 padding: $p__box;
