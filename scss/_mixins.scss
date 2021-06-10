@@ -1,3 +1,5 @@
+// Box
+
 @mixin box__size($h, $w) {
     height: $h;
     width: $w;
@@ -16,6 +18,8 @@
     box-shadow: 5px 5px 10px grey;
     
 }
+
+// Botones
 
 @mixin boton--primary {
     text-decoration: none;
@@ -53,6 +57,15 @@
 
 }
 
+@mixin link__active{
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-left: 0.8rem;
+
+}
+
+// Input
+
 @mixin input--enter {
     margin: 3px auto;
     padding: 10px;
@@ -71,19 +84,13 @@
     
 }
 
-@mixin link__active{
-    text-decoration: underline;
-    text-transform: uppercase;
-    margin-left: 0.8rem;
-
-}
 
 @mixin circle {
     border-radius: 50%;
     
 }
 
-// medias
+// Medias
 
 @mixin small-mobile-rotate {
     @media  only screen and (max-height:667px) {

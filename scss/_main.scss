@@ -1,15 +1,13 @@
 main {
     max-width: 1280px;
     margin: 0 auto; 
-    padding: 0;
     @include box__size(auto, 100%);
     @include desktop {
         padding: 0 1rem;
     }
-    @include mobile-rotate {
-        padding: 0;
-    }
     
+    // Hero
+
     .hero {
         padding-top: 50px;
         @include flex(center, center);
@@ -196,6 +194,8 @@ main {
     
     }
   
+    // Articles
+
     article {
         @include flex (center, center);
         @include box__size(100vh, 100%);
@@ -437,11 +437,21 @@ main {
 
     }
 
+    // Tienda
+
+    // Barra de busqueda
+
     .search__section {
         margin-top: 80px;
         padding: $p__box;
         @include box__size(auto, 100%);
         @include flex(center, center);
+        @include tablet {
+            margin-top: 50px;
+        }
+        @include mobile {
+            margin-top: 40px;
+        }
 
         form {
             margin: 0 auto;
@@ -495,6 +505,8 @@ main {
 
     }
 
+    // Productos destacados
+
     .carousel {
         margin: 0 auto;
         text-align: center;
@@ -507,7 +519,6 @@ main {
         .carousel--img {
             margin-bottom: 2rem;
             @include box__size(100%, 50%);
-            max-width: 300px;
 
         }
 
@@ -525,7 +536,10 @@ main {
 
     }
 
+    // Catalogo
+
     .catalogo {
+        @include box__size(auto, 100%);
 
         .container__post {
             display: flex;
@@ -553,23 +567,13 @@ main {
                 display: none;
             }
 
+            // Categorias
+
             .container__category {
                 display: flex;
                 flex-direction: column;
                 margin-top: 1rem;
-                @include box__size(auto, 25%);
-                @include desktop {
-                    @include box__size(auto, 30%);
-                    
-                }
-                @include tablet {
-                    @include box__size(auto, 25%);
-                    margin-left: 0.5rem;
-                    
-                }
-                @include mobile-rotate {
-                    margin-left: 1rem;
-                }
+                @include box__size(auto, 25vw);
                 @include mobile {
                     @include box__size(auto, 100%);
                     margin-left: 3rem;
@@ -596,11 +600,13 @@ main {
 
             }
 
+            // Productos
+
             .posts {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 1rem;
-                @include box__size(auto, 75%);
+                @include box__size(auto, 75vw);
                 @include mobile {
                     grid-template-columns: 1fr;
                     @include box__size(auto, 100%);
@@ -720,6 +726,8 @@ main {
     
     }
 
+    // Carrito
+
     .carrito {
         margin: 0 auto;
         @include flex(center, center);
@@ -732,7 +740,7 @@ main {
 
         }    
         @include mobile {
-            @include box__size(100vh, 90%)
+            @include box__size(100vh, 90%);
 
         }
 
@@ -753,12 +761,20 @@ main {
 
     }
 
+    // Usuario
+
     .user {
         margin: 0 auto;
         @include flex(center, center);
         flex-direction: column;
         cursor: default;
         @include box__size(100vh, 80%);
+        @include tablet {
+            margin-top: 50px;
+        }
+        @include mobile {
+            margin-top: 40px;
+        }
 
         .form {
             border-radius: $p__border__r;
