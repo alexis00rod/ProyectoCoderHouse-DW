@@ -70,10 +70,10 @@ header {
             margin: 0;
             padding: 0; } }
         header nav ul li a {
-          text-decoration: none;
-          color: #000;
           font-size: 1.2rem;
-          font-weight: 700; }
+          font-weight: 700;
+          text-decoration: none;
+          color: #000; }
           header nav ul li a:hover {
             color: #7878EB; }
 
@@ -90,7 +90,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 100vh;
     width: 100%; }
     @media only screen and (max-width: 1024px) {
@@ -107,19 +106,16 @@ main {
         flex-direction: column; } }
     main .hero .hero__left {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
-      padding: 4rem;
-      height: auto;
+      flex-direction: column;
+      padding: 2rem;
+      height: 40%;
       width: 50%; }
       @media only screen and (max-width: 1024px) {
         main .hero .hero__left {
           height: auto;
-          width: 80%;
-          text-align: center; } }
-      @media only screen and (max-width: 768px) {
-        main .hero .hero__left {
-          padding: 1rem; } }
+          width: 80%; } }
       @media only screen and (max-height: 768px) {
         main .hero .hero__left {
           height: auto;
@@ -127,11 +123,16 @@ main {
       @media only screen and (max-width: 414px) {
         main .hero .hero__left {
           height: auto;
-          width: 90%; } }
+          width: 100%; } }
+      @media only screen and (max-height: 736px) {
+        main .hero .hero__left {
+          height: 100%;
+          width: 100%; } }
       main .hero .hero__left .hero__logo {
         text-decoration: none;
         color: #000;
-        padding: 1rem;
+        padding: 0;
+        margin: 0;
         font-size: 5rem;
         font-weight: 700;
         height: auto;
@@ -146,7 +147,7 @@ main {
         @media only screen and (max-height: 736px) {
           main .hero .hero__left .hero__logo {
             font-size: 2.8rem; } }
-        @media only screen and (max-height: 667px) {
+        @media only screen and (max-height: 320px) {
           main .hero .hero__left .hero__logo {
             font-size: 2.8rem; } }
         @media only screen and (max-width: 414px) {
@@ -171,11 +172,11 @@ main {
           @media only screen and (max-width: 414px) {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: 2.2rem; } }
-          @media only screen and (max-height: 667px) {
+          @media only screen and (max-height: 320px) {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: 3.2rem; } }
       main .hero .hero__left .hero__text {
-        padding: 1rem;
+        padding: 1rem 4rem;
         font-size: 1.3rem;
         font-weight: 500;
         cursor: default;
@@ -195,21 +196,40 @@ main {
         @media only screen and (max-width: 320px) {
           main .hero .hero__left .hero__text {
             font-size: 0.8rem; } }
-      main .hero .hero__left .hero__link {
-        margin: 0.5rem;
-        text-decoration: none;
-        border: none;
-        color: white;
-        background: #CFBDFF;
-        border-bottom: 3px solid #7878EB;
-        padding: 0.6rem;
-        border-radius: 6px;
-        font-size: 1.1rem;
-        font-weight: 700;
-        text-align: center;
-        box-shadow: 1px 2px 5px grey; }
-        main .hero .hero__left .hero__link:hover {
-          opacity: 0.7; }
+      main .hero .hero__left ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: auto;
+        width: 80%;
+        display: flex;
+        justify-content: start;
+        align-items: center; }
+        @media only screen and (max-width: 1024px) {
+          main .hero .hero__left ul {
+            justify-content: center; } }
+        @media only screen and (max-width: 768px) {
+          main .hero .hero__left ul {
+            height: auto;
+            width: 100%; } }
+        main .hero .hero__left ul .hero__link {
+          margin-left: 1rem;
+          text-decoration: none;
+          border: none;
+          color: white;
+          background: #CFBDFF;
+          border-bottom: 3px solid #7878EB;
+          padding: 0.6rem;
+          border-radius: 6px;
+          font-size: 1.1rem;
+          font-weight: 700;
+          text-align: center;
+          box-shadow: 1px 2px 5px grey; }
+          main .hero .hero__left ul .hero__link:hover {
+            opacity: 0.7; }
+          @media only screen and (max-width: 1024px) {
+            main .hero .hero__left ul .hero__link {
+              margin: 1rem; } }
     main .hero .hero__right {
       display: flex;
       align-items: center;
@@ -234,6 +254,9 @@ main {
         main .hero .hero__right {
           height: auto;
           width: 100%; } }
+      @media only screen and (max-height: 320px) {
+        main .hero .hero__right {
+          display: none; } }
       main .hero .hero__right .hero__img {
         height: auto;
         width: 100%; }
@@ -296,6 +319,7 @@ main {
           width: 80%;
           padding: 1rem; } }
       main article .article__left .article__title {
+        margin: 0;
         padding: 1rem;
         font-weight: 700;
         text-align: center; }
@@ -339,10 +363,11 @@ main {
         main article .article__right {
           height: auto;
           width: 95%;
-          flex-wrap: wrap; } }
+          flex-wrap: wrap;
+          padding: 1rem 0; } }
       @media only screen and (max-width: 320px) {
         main article .article__right {
-          padding: 0.1rem; } }
+          padding: 0; } }
       main article .article__right video {
         height: auto;
         width: 100%;
@@ -404,7 +429,6 @@ main {
               main article .article__right .article__card .card__body .card__title {
                 font-size: 1.2rem; } }
           main article .article__right .article__card .card__body .card__text {
-            margin: 0.5rem;
             padding: 1rem;
             font-size: 0.9rem;
             text-align: start; }
@@ -432,7 +456,7 @@ main {
       main article .article__right .article__team {
         height: auto;
         width: 50%;
-        padding: 1.3rem;
+        padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -471,82 +495,158 @@ main {
             text-decoration: none; }
             main article .article__right .article__team .team__description .team__contact a:hover {
               color: #CFBDFF; }
-  main .search__section {
-    margin-top: 80px;
-    padding: 2rem;
-    height: auto;
+  main section {
+    height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center; }
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column; }
+    @media only screen and (max-width: 1024px) {
+      main section {
+        height: 100%;
+        width: 100%; } }
     @media only screen and (max-width: 768px) {
-      main .search__section {
-        margin-top: 50px; } }
-    @media only screen and (max-width: 414px) {
-      main .search__section {
-        margin-top: 40px; } }
-    main .search__section form {
-      margin: 0 auto;
+      main section {
+        height: 100vh;
+        width: 100%; } }
+    main section .search__section {
+      margin: 0;
+      margin-top: 80px;
+      padding: 2rem;
       height: auto;
-      width: 40%; }
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
       @media only screen and (max-width: 768px) {
-        main .search__section form {
-          height: auto;
-          width: 50%; } }
+        main section .search__section {
+          margin-top: 50px; } }
       @media only screen and (max-width: 414px) {
-        main .search__section form {
+        main section .search__section {
+          margin-top: 40px; } }
+      main section .search__section form {
+        margin: 0 auto;
+        height: auto;
+        width: 40%; }
+        @media only screen and (max-width: 768px) {
+          main section .search__section form {
+            height: auto;
+            width: 50%; } }
+        @media only screen and (max-width: 414px) {
+          main section .search__section form {
+            height: auto;
+            width: 100%; } }
+        main section .search__section form fieldset {
+          border: 3px solid #7878EB;
+          border-radius: 6px;
+          padding: 6px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          main section .search__section form fieldset:hover {
+            border: 3px solid #1C89E8;
+            box-shadow: 0px 2px 5px 0px grey; }
+            main section .search__section form fieldset:hover button {
+              background-color: #1C89E8; }
+          main section .search__section form fieldset input {
+            outline: none;
+            border-radius: 6px;
+            border: none;
+            height: auto;
+            width: 100%; }
+          main section .search__section form fieldset button {
+            border: none;
+            background-color: #7878EB;
+            color: #fff;
+            padding: 5px;
+            border-radius: 6px; }
+            main section .search__section form fieldset button:hover {
+              opacity: 0.7; }
+    main section .carousel {
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+      cursor: default;
+      height: auto;
+      width: 70%; }
+      @media only screen and (max-width: 768px) {
+        main section .carousel {
           height: auto;
           width: 100%; } }
-      main .search__section form fieldset {
-        border: 3px solid #7878EB;
-        border-radius: 6px;
-        padding: 6px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center; }
-        main .search__section form fieldset:hover {
-          border: 3px solid #1C89E8; }
-          main .search__section form fieldset:hover button {
-            background-color: #1C89E8; }
-        main .search__section form fieldset input {
-          outline: none;
-          border-radius: 6px;
-          border: none;
-          height: auto;
-          width: 100%; }
-        main .search__section form fieldset button {
-          border: none;
-          background-color: #7878EB;
-          color: #fff;
-          padding: 5px;
-          border-radius: 6px; }
-  main .carousel {
-    margin: 0 auto;
-    text-align: center;
-    cursor: default;
-    height: auto;
-    width: 70%; }
-    @media only screen and (max-width: 768px) {
-      main .carousel {
-        height: auto;
-        width: 100%; } }
-    main .carousel .carousel--img {
-      margin-bottom: 2rem;
-      height: 100%;
-      width: 50%; }
-    main .carousel .bg__modal {
-      background-color: #fff;
-      padding: 0;
-      padding-top: 10px; }
-    main .carousel .carousel__oferta {
-      color: grey;
-      text-decoration: line-through;
-      font-size: 0.8rem; }
+      main section .carousel .carousel--img {
+        margin-bottom: 2rem;
+        height: 100%;
+        width: 50%; }
+      main section .carousel .bg__modal {
+        background-color: #fff;
+        padding: 0;
+        padding-top: 10px; }
+      main section .carousel .carousel__oferta {
+        color: grey;
+        text-decoration: line-through;
+        font-size: 0.8rem; }
+    main section .shopping__info {
+      height: auto;
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0; }
+      main section .shopping__info ul {
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px; }
+        @media only screen and (max-width: 414px) {
+          main section .shopping__info ul {
+            gap: 0; } }
+        main section .shopping__info ul li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; }
+          main section .shopping__info ul li h4 {
+            background-color: #94EAFF;
+            padding: 1rem 2rem;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            margin: 0; }
+            @media only screen and (max-width: 414px) {
+              main section .shopping__info ul li h4 {
+                padding: 1rem 1.2rem; } }
+          main section .shopping__info ul li p {
+            background-color: #1C89E8;
+            padding: 1rem;
+            border-radius: 18px;
+            margin: 0;
+            cursor: default;
+            height: 6rem;
+            width: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            font-weight: bold; }
+            @media only screen and (max-width: 414px) {
+              main section .shopping__info ul li p {
+                height: 6rem;
+                width: 7rem;
+                font-size: 0.9rem; } }
+            @media only screen and (max-width: 320px) {
+              main section .shopping__info ul li p {
+                height: 7.5em;
+                width: 5.5rem; } }
   main .catalogo {
     height: auto;
-    width: 100%; }
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0; }
     main .catalogo .container__post {
-      display: flex; }
+      display: flex;
+      margin: 0;
+      padding: 0; }
       @media only screen and (max-width: 414px) {
         main .catalogo .container__post {
           flex-direction: column; } }
@@ -564,22 +664,23 @@ main {
         display: none; }
       main .catalogo .container__post .container__category {
         display: flex;
+        justify-content: start;
+        align-items: center;
         flex-direction: column;
-        margin-top: 1rem;
+        margin: 1rem 0;
+        padding: 0;
         height: auto;
-        width: 25vw; }
+        width: 30%; }
         @media only screen and (max-width: 414px) {
           main .catalogo .container__post .container__category {
             height: auto;
-            width: 100%;
-            margin-left: 3rem; } }
+            width: 100%; } }
         main .catalogo .container__post .container__category label {
           cursor: pointer;
-          font-size: 1.3rem; }
-          @media only screen and (max-width: 414px) {
-            main .catalogo .container__post .container__category label {
-              height: auto;
-              width: 80vw; } }
+          transition: all 0.4s;
+          font-size: 1.3rem;
+          height: auto;
+          width: 100%; }
           @media only screen and (max-width: 1024px) {
             main .catalogo .container__post .container__category label {
               font-size: 1.1rem; } }
@@ -588,11 +689,13 @@ main {
             text-transform: uppercase;
             margin-left: 0.8rem; }
       main .catalogo .container__post .posts {
+        margin: 0;
+        padding: 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
         height: auto;
-        width: 75vw; }
+        width: 70%; }
         @media only screen and (max-width: 414px) {
           main .catalogo .container__post .posts {
             grid-template-columns: 1fr;
@@ -611,6 +714,7 @@ main {
             height: auto;
             width: 100%; } }
         main .catalogo .container__post .posts .post {
+          margin: 0;
           padding: 1rem;
           cursor: default; }
           @media only screen and (max-width: 414px) {
@@ -624,6 +728,8 @@ main {
               display: flex;
               height: auto;
               width: 100%; } }
+          main .catalogo .container__post .posts .post:hover .post__img, main .catalogo .container__post .posts .post:hover .post__description {
+            box-shadow: 0px 2px 5px 0px grey; }
           main .catalogo .container__post .posts .post .post__img {
             margin: 0;
             display: flex;
@@ -653,9 +759,9 @@ main {
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: auto;
             width: 100%; }
             @media only screen and (max-width: 414px) {
@@ -673,7 +779,9 @@ main {
               align-items: center;
               justify-content: center;
               text-align: center;
-              font-weight: 700; }
+              font-weight: 700;
+              height: 3rem;
+              width: 100%; }
               @media only screen and (max-width: 320px) {
                 main .catalogo .container__post .posts .post .post__description h4 {
                   font-size: 0.8rem; } }
@@ -710,7 +818,7 @@ main {
     cursor: default;
     height: 100vh;
     width: 80%; }
-    @media only screen and (max-height: 667px) {
+    @media only screen and (max-height: 320px) {
       main .carrito {
         margin-top: 2rem;
         padding: 0.2rem; } }
@@ -729,6 +837,11 @@ main {
       @media only screen and (max-width: 414px) {
         main .carrito .carrito__text {
           font-size: 0.9rem; } }
+      main .carrito .carrito__text a {
+        text-decoration: none;
+        color: #7878EB; }
+        main .carrito .carrito__text a:hover {
+          text-decoration: underline; }
   main .user {
     margin: 0 auto;
     display: flex;
@@ -737,17 +850,11 @@ main {
     flex-direction: column;
     cursor: default;
     height: 100vh;
-    width: 80%; }
-    @media only screen and (max-width: 768px) {
-      main .user {
-        margin-top: 50px; } }
-    @media only screen and (max-width: 414px) {
-      main .user {
-        margin-top: 40px; } }
+    width: 100%; }
     main .user .form {
       border-radius: 18px;
       height: auto;
-      width: 60%; }
+      width: 50%; }
       @media only screen and (max-width: 1024px) {
         main .user .form {
           height: auto;
@@ -780,22 +887,26 @@ main {
       main .user .form .form__user {
         text-align: center;
         border: solid 2px #1C89E8;
-        padding: 2rem;
+        padding: 1rem;
         border-bottom-left-radius: 18px;
         border-bottom-right-radius: 18px;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; }
+        flex-direction: column;
+        height: auto;
+        width: 100%; }
         @media only screen and (max-height: 736px) {
           main .user .form .form__user {
             flex-direction: row;
-            flex-wrap: wrap;
-            padding: 1rem; } }
+            flex-wrap: wrap; } }
         @media only screen and (max-width: 414px) {
           main .user .form .form__user {
-            padding: 1.5rem;
+            padding: 1rem;
             flex-direction: column; } }
+        @media only screen and (max-width: 320px) {
+          main .user .form .form__user {
+            padding: 0; } }
         main .user .form .form__user p {
           height: auto;
           width: 100%;
@@ -805,8 +916,8 @@ main {
             main .user .form .form__user p {
               margin: 0.5rem 0; } }
           main .user .form .form__user p a {
-            color: #7878EB;
-            text-decoration: none; }
+            text-decoration: none;
+            color: #7878EB; }
             main .user .form .form__user p a:hover {
               text-decoration: underline; }
         main .user .form .form__user .login__with {
@@ -834,7 +945,7 @@ main {
             box-shadow: 1px 2px 3px grey; }
             main .user .form .form__user .login__with .login__fb:hover {
               opacity: 0.7; }
-            @media only screen and (max-height: 667px) {
+            @media only screen and (max-height: 320px) {
               main .user .form .form__user .login__with .login__fb {
                 height: 50px;
                 width: 100px; } }
@@ -851,7 +962,7 @@ main {
             box-shadow: 1px 2px 3px grey; }
             main .user .form .form__user .login__with .login__g:hover {
               opacity: 0.7; }
-            @media only screen and (max-height: 667px) {
+            @media only screen and (max-height: 320px) {
               main .user .form .form__user .login__with .login__g {
                 height: 50px;
                 width: 100px; } }
@@ -904,7 +1015,6 @@ main {
 
 footer {
   background-color: #EBEBEB;
-  margin-top: 5rem;
   cursor: default;
   padding: 1rem;
   height: auto;
@@ -947,3 +1057,11 @@ footer {
 
 html {
   scroll-behavior: smooth; }
+
+body::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F0F7F9; }
+
+body::-webkit-scrollbar-thumb {
+  background-color: #7878EB;
+  border-radius: 6px; }

@@ -15,7 +15,7 @@
 
 
 @mixin box__shadow {
-    box-shadow: 5px 5px 10px grey;
+    box-shadow: 0px 2px 5px 0px grey;
     
 }
 
@@ -57,6 +57,23 @@
 
 }
 
+@mixin boton--modal {
+    border: none;
+    background: none;
+    color: #000;
+
+}
+
+@mixin link {
+    text-decoration: none;
+    color: $color4;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+}
+
 @mixin link__active{
     text-decoration: underline;
     text-transform: uppercase;
@@ -93,7 +110,7 @@
 // Medias
 
 @mixin small-mobile-rotate {
-    @media  only screen and (max-height:667px) {
+    @media  only screen and (max-height:320px) {
         @content;
     }
 }

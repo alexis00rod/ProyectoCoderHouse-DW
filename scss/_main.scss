@@ -11,7 +11,6 @@ main {
     .hero {
         padding-top: 50px;
         @include flex(center, center);
-        text-align: center;
         @include box__size(100vh, 100%);
         @include desktop {
             flex-direction: column;
@@ -31,30 +30,31 @@ main {
         }
     
         .hero__left {
-            @include flex(center, center);
-            padding: $p__box * 2;
-            @include box__size(auto, 50%);
+            @include flex(space-evenly, center);
+            flex-direction: column;
+            padding: $p__box;
+            @include box__size(40%, 50%);
             @include desktop{
                 @include box__size(auto, 80%);
-                text-align: center;
                 
             }
-            @include tablet {
-                padding: $p__box - 1;
-                
-            }
+
             @include tablet-rotate {
                 @include box__size(auto, 50%);
                 
             }
             @include mobile {
-                @include box__size(auto, 90%);
+                @include box__size(auto, 100%);
+            }
+            @include mobile-rotate {
+                @include box__size(100%, 100%);
             }
             
             .hero__logo {
                 text-decoration: none;
                 color: #000;
-                padding: $p__content;
+                padding: 0;
+                margin: 0;
                 font-size: $f__size * 5;
                 font-weight: $f__weight;
                 @include box__size(auto, 100%);
@@ -105,7 +105,7 @@ main {
             }
     
             .hero__text {
-                padding: $p__content;
+                padding: $p__content $p__box * 2;
                 font-size: $f__size + 0.30;
                 font-weight: $f__weight - 200;
                 cursor: default;
@@ -130,12 +130,31 @@ main {
                 }
 
             }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                @include box__size(auto, 80%);
+                @include flex(start, center);
+                @include desktop {
+                    justify-content: center;
+                }
+                @include tablet {
+                    @include box__size(auto, 100%);
+
+                }
+                .hero__link {
+                    margin-left: 1rem;
+                    @include boton--primary;
+                    @include desktop {
+                        margin: 1rem;
+                    }
     
-            .hero__link {
-                margin: 0.5rem;
-                @include boton--primary;
+                }
 
             }
+    
 
         }
     
@@ -160,6 +179,9 @@ main {
             }
             @include mobile {
                 @include box__size(auto, 100%);
+            }
+            @include small-mobile-rotate {
+                display: none;
             }
     
             .hero__img {
@@ -236,6 +258,7 @@ main {
             }
 
             .article__title {
+                margin: 0;
                 padding: $p__content;
                 font-weight: $f__weight;
                 text-align: center;
@@ -283,10 +306,11 @@ main {
             @include mobile {
                 @include box__size(auto, 95%);
                 flex-wrap: wrap;
+                padding: $p__content 0;
                 
             }
             @include small-mobile {
-                padding: 0.1rem;
+                padding: 0;
                 
             }
             
@@ -353,7 +377,6 @@ main {
                     }
 
                     .card__text {
-                        margin: 0.5rem;
                         padding: $p__content;
                         font-size: $f__size - 0.10;
                         text-align: start;
@@ -375,7 +398,7 @@ main {
 
             .article__team {
                 @include box__size(auto, 50%);
-                padding: $p__box - 0.70;
+                padding: $p__content;
                 @include flex(center, center);
                 flex-direction: column;
 
@@ -439,112 +462,201 @@ main {
 
     // Tienda
 
-    // Barra de busqueda
-
-    .search__section {
-        margin-top: 80px;
-        padding: $p__box;
-        @include box__size(auto, 100%);
-        @include flex(center, center);
+    
+    section {
+        @include box__size(100vh, 100%);
+        @include flex(space-evenly, center);
+        flex-direction: column;
+        @include desktop{
+            @include box__size(100%,100%);
+        }
         @include tablet {
-            margin-top: 50px;
-        }
-        @include mobile {
-            margin-top: 40px;
+            @include box__size(100vh,100%);
         }
 
-        form {
-            margin: 0 auto;
-            @include box__size(auto, 40%);
+        // Barra de busqueda
+        
+        .search__section {
+            margin: 0;
+            margin-top: 80px;
+            padding: $p__box;
+            @include box__size(auto, 100%);
+            @include flex(center, center);
             @include tablet {
-                @include box__size(auto, 50%);
-
+                margin-top: 50px;
             }
             @include mobile {
-                @include box__size(auto, 100%);
-
+                margin-top: 40px;
             }
-
-            fieldset {
-                border: 3px solid $color4;
-                border-radius: 6px;
-                padding: 6px;
-                @include flex(space-between, center);
-
-                &:hover {
-                    border: 3px solid $color2;
-
-                    button {
-                        background-color: $color2;
-
-                    }
-
+    
+            form {
+                margin: 0 auto;
+                @include box__size(auto, 40%);
+                @include tablet {
+                    @include box__size(auto, 50%);
+    
                 }
-
-
-                input {
-                    outline: none;
-                    border-radius: 6px;
-                    border: none;
+                @include mobile {
                     @include box__size(auto, 100%);
-
+    
                 }
-
-                button {
-                    border: none;
-                    background-color: $color4;
-                    color: #fff;
-                    padding: 5px;
+    
+                fieldset {
+                    border: 3px solid $color4;
                     border-radius: 6px;
-
+                    padding: 6px;
+                    @include flex(space-between, center);
+    
+                    &:hover {
+                        border: 3px solid $color2;
+                        @include box__shadow;
+    
+                        button {
+                            background-color: $color2;
+    
+                        }
+    
+                    }
+    
+                    input {
+                        outline: none;
+                        border-radius: 6px;
+                        border: none;
+                        @include box__size(auto, 100%);
+    
+                    }
+    
+                    button {
+                        border: none;
+                        background-color: $color4;
+                        color: #fff;
+                        padding: 5px;
+                        border-radius: 6px;
+    
+                        &:hover {
+                            opacity: 0.7;
+    
+                        }
+    
+                    }
+    
                 }
-
+    
             }
-
+    
         }
-
-    }
-
-    // Productos destacados
-
-    .carousel {
-        margin: 0 auto;
-        text-align: center;
-        cursor: default;
-        @include box__size(auto, 70%);
-        @include tablet {
-            @include box__size(auto, 100%);
-        }
-
-        .carousel--img {
-            margin-bottom: 2rem;
-            @include box__size(100%, 50%);
-
-        }
-
-        .bg__modal {
-            background-color: #fff;
+    
+        // Productos destacados
+    
+        .carousel {
+            margin: 0 auto;
             padding: 0;
-            padding-top: 10px;
+            text-align: center;
+            cursor: default;
+            @include box__size(auto, 70%);
+            @include tablet {
+                @include box__size(auto, 100%);
+            }
+    
+            .carousel--img {
+                margin-bottom: 2rem;
+                @include box__size(100%, 50%);
+    
+            }
+    
+            .bg__modal {
+                background-color: #fff;
+                padding: 0;
+                padding-top: 10px;
+            }
+    
+            .carousel__oferta {
+                color: grey;
+                text-decoration: line-through;
+                font-size: $f__size - 0.20;
+            }
+    
         }
-
-        .carousel__oferta {
-            color: grey;
-            text-decoration: line-through;
-            font-size: $f__size - 0.20;
+    
+        // Info compra
+    
+        .shopping__info {
+            @include box__size(auto, 100%);
+            margin: 1rem 0;
+            padding: 0;
+    
+            ul {
+                margin: 0 auto;
+                padding: 0;
+                list-style: none;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 5px;
+                @include mobile {
+                    gap: 0;
+                }
+    
+                li {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    
+                    h4 {
+                        background-color: $color1;
+                        padding: $p__content $p__content * 2;
+                        border-top-left-radius: $p__border__r;
+                        border-top-right-radius: $p__border__r;
+                        margin: 0;
+                        @include mobile {
+                            padding: $p__content $p__content * 1.2;
+    
+                        }
+    
+                    }
+    
+                    p {
+                        background-color: $color2;
+                        padding: $p__content;
+                        border-radius: $p__border__r;
+                        margin: 0;
+                        cursor: default;
+                        @include box__size(6rem, 12rem);
+                        @include flex(center, center);
+                        text-align: center;
+                        color: #fff;
+                        font-weight: bold;
+                        @include mobile {
+                            @include box__size(6rem, 7rem);
+                            font-size: $f__text - 0.20;
+    
+                        }
+                        @include small-mobile {
+                            @include box__size(7.5em, 5.5rem);
+                        }
+    
+                    }
+    
+                }
+    
+            }
+    
         }
-
+        
     }
 
     // Catalogo
 
     .catalogo {
         @include box__size(auto, 100%);
+        margin: 1rem 0;
+        padding: 0;
 
         .container__post {
             display: flex;
+            margin: 0;
+            padding: 0;
             @include mobile {
                 flex-direction: column;
+
             }
 
             input[type="radio"]{
@@ -570,23 +682,21 @@ main {
             // Categorias
 
             .container__category {
-                display: flex;
+                @include flex(start, center);
                 flex-direction: column;
-                margin-top: 1rem;
-                @include box__size(auto, 25vw);
+                margin: 1rem 0;
+                padding: 0;
+                @include box__size(auto, 30%);
                 @include mobile {
                     @include box__size(auto, 100%);
-                    margin-left: 3rem;
 
                 }
 
                 label {
                     cursor: pointer;
+                    transition: all 0.4s;
                     font-size: $f__size + 0.30;
-                    @include mobile {
-                        @include box__size(auto, 80vw);
-
-                    }
+                    @include box__size(auto, 100%);
                     @include desktop {
                         font-size: $f__size + 0.10;
                     }
@@ -603,10 +713,12 @@ main {
             // Productos
 
             .posts {
+                margin: 0;
+                padding: 0;
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 1rem;
-                @include box__size(auto, 75vw);
+                @include box__size(auto, 70%);
                 @include mobile {
                     grid-template-columns: 1fr;
                     @include box__size(auto, 100%);
@@ -623,6 +735,7 @@ main {
                 }
 
                 .post {
+                    margin: 0;
                     padding: $p__content;
                     cursor: default;
                     @include mobile {
@@ -633,6 +746,13 @@ main {
                     @include tablet {
                         display: flex;
                         @include box__size(auto, 100%);
+                    }
+
+                    &:hover {
+                        .post__img, .post__description {
+                            @include box__shadow;
+                        }
+
                     }
 
                     .post__img {
@@ -666,10 +786,8 @@ main {
                         border: 3px solid $color2;
                         border-bottom-left-radius: 10px;
                         border-bottom-right-radius: 10px;
-                        display: flex;
+                        @include flex(center, center);
                         flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
                         @include box__size(auto, 100%);
                         @include mobile {
                             border-bottom-left-radius: 0;
@@ -688,6 +806,7 @@ main {
                             justify-content: center;
                             text-align: center;
                             font-weight: 700;
+                            @include box__size(3rem, 100%);
                             @include small-mobile {
                                 font-size: $f__size - 0.20;
 
@@ -757,6 +876,11 @@ main {
             @include mobile {
                 font-size: $f__size - 0.10;
             }
+
+            a {
+                @include link;
+            }
+
         }
 
     }
@@ -768,17 +892,11 @@ main {
         @include flex(center, center);
         flex-direction: column;
         cursor: default;
-        @include box__size(100vh, 80%);
-        @include tablet {
-            margin-top: 50px;
-        }
-        @include mobile {
-            margin-top: 40px;
-        }
+        @include box__size(100vh, 100%);
 
         .form {
             border-radius: $p__border__r;
-            @include box__size(auto, 60%);
+            @include box__size(auto, 50%);
             @include desktop {
                 @include box__size(auto, 70%);
 
@@ -816,20 +934,23 @@ main {
             .form__user {
                 text-align: center;
                 border: solid 2px $color2;
-                padding: $p__box;
+                padding: $p__content;
                 border-bottom-left-radius: $p__border__r;
                 border-bottom-right-radius: $p__border__r;
                 @include flex(center, center);
                 flex-direction: column;
+                @include box__size(auto, 100%);
                 @include mobile-rotate {
                     flex-direction: row;
                     flex-wrap: wrap;
-                    padding: $p__content;
 
                 }
                 @include mobile {
-                    padding: $p__box - 0.50;
+                    padding: $p__content;
                     flex-direction: column;
+                }
+                @include small-mobile{
+                    padding: 0;
                 }
 
                 p {
@@ -842,13 +963,7 @@ main {
                     }
 
                     a {
-                        color: $color4;
-                        text-decoration: none;
-
-                        &:hover {
-                            text-decoration: underline;
-
-                        }
+                        @include link;
 
                     }
 
