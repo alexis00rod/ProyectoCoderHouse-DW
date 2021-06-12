@@ -464,7 +464,11 @@ main {
         main article .article__right .article__team .img__thumbnail {
           height: auto;
           width: 100%;
-          border-radius: 50%; }
+          border-radius: 50%;
+          padding: 5px;
+          transition: all 0.3s; }
+          main article .article__right .article__team .img__thumbnail:hover {
+            padding: 0; }
         main article .article__right .article__team .team__description {
           background-color: #fff;
           padding: 1rem;
@@ -749,9 +753,83 @@ main {
               main .catalogo .container__post .posts .post .post__img {
                 border-top-right-radius: 0;
                 border-bottom-left-radius: 10px; } }
-            main .catalogo .container__post .posts .post .post__img img {
-              height: auto;
-              width: 100%; }
+            main .catalogo .container__post .posts .post .post__img .post__modal {
+              border: none;
+              background: none; }
+              main .catalogo .container__post .posts .post .post__img .post__modal img {
+                height: auto;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0.5rem;
+                transition: all 0.3s; }
+                main .catalogo .container__post .posts .post .post__img .post__modal img:hover {
+                  padding: 0; }
+            main .catalogo .container__post .posts .post .post__img .modal-body .modal__description {
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              @media only screen and (max-width: 320px) {
+                main .catalogo .container__post .posts .post .post__img .modal-body .modal__description {
+                  flex-direction: column; } }
+              main .catalogo .container__post .posts .post .post__img .modal-body .modal__description img {
+                height: auto;
+                width: 50%; }
+              main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date {
+                padding: 1rem;
+                height: auto;
+                width: 50%; }
+                @media only screen and (max-width: 320px) {
+                  main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date {
+                    height: auto;
+                    width: 100%; } }
+                main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date .star-rating {
+                  color: #EBEA17;
+                  padding: 0;
+                  margin: 0.5rem 0; }
+                main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date .price {
+                  font-size: 2rem;
+                  font-weight: 700;
+                  padding: 0;
+                  margin: 0; }
+                main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date select {
+                  border: 2px solid #7878EB;
+                  border-radius: 4px;
+                  outline: none;
+                  font-size: 1rem; }
+                  @media only screen and (max-width: 414px) {
+                    main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date select {
+                      font-size: 0.8rem; } }
+                main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 1rem 0; }
+                  main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date ul li {
+                    color: #22D658; }
+                    main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date ul li i {
+                      margin: 3px; }
+                    main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date ul li span {
+                      font-size: 0.8rem; }
+                      @media only screen and (max-width: 414px) {
+                        main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date ul li span {
+                          font-size: 0.6rem; } }
+                main .catalogo .container__post .posts .post .post__img .modal-body .modal__description .modal__date .description {
+                  font-size: 0.9rem;
+                  height: auto;
+                  width: 100%; }
+            main .catalogo .container__post .posts .post .post__img .modal__btn {
+              text-decoration: none;
+              border: none;
+              color: white;
+              background: #CFBDFF;
+              border-bottom: 3px solid #7878EB;
+              padding: 0.6rem;
+              border-radius: 6px;
+              font-size: 1.1rem;
+              font-weight: 700;
+              text-align: center;
+              box-shadow: 1px 2px 5px grey; }
+              main .catalogo .container__post .posts .post .post__img .modal__btn:hover {
+                opacity: 0.7; }
           main .catalogo .container__post .posts .post .post__description {
             margin: 0;
             padding: 1rem;
@@ -791,7 +869,7 @@ main {
               @media only screen and (max-width: 320px) {
                 main .catalogo .container__post .posts .post .post__description span {
                   font-size: 1.5rem; } }
-            main .catalogo .container__post .posts .post .post__description button {
+            main .catalogo .container__post .posts .post .post__description .post__btn {
               margin-top: 1rem;
               text-decoration: none;
               border: none;
@@ -804,10 +882,10 @@ main {
               font-weight: 700;
               text-align: center;
               box-shadow: 1px 2px 5px grey; }
-              main .catalogo .container__post .posts .post .post__description button:hover {
+              main .catalogo .container__post .posts .post .post__description .post__btn:hover {
                 opacity: 0.7; }
               @media only screen and (max-width: 320px) {
-                main .catalogo .container__post .posts .post .post__description button {
+                main .catalogo .container__post .posts .post .post__description .post__btn {
                   font-size: 0.8rem; } }
   main .carrito {
     margin: 0 auto;
