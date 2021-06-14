@@ -1,27 +1,21 @@
 header {
-    max-width: 1280px;
-    margin: 0 auto;
 
     // Footer
 
     nav {
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
-        background-color: $color7;
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         z-index: 999;
-        @include box__size(80px, 100%);
+        background-color: $color7;
+        @include box__size(10vh, 100%);
         @include flex(space-evenly, center);
         @include tablet {
-            @include box__size(60px, 100%);
             justify-content: space-between;
             padding: 1rem 2rem;
-        }
-        @include mobile {
-            @include box__size(40px, 100%);
         }
 
 
@@ -60,13 +54,13 @@ header {
                 position: fixed;
                 z-index: 999;
                 background-color: $color7;
-                top: 60px;
+                top: 10vh;
                 left: -100%;
                 transition: all 0.5s;
                 @include box__size(30vh, 50%);
             }
             @include mobile {
-                top: 40px;
+                top: 10vh;
             }
 
             li {
@@ -85,6 +79,8 @@ header {
                     font-weight: $f__weight;
                     text-decoration: none;
                     color: #000;
+                    transition: all .2s;
+
 
                     &:hover {
                         color: $color4;
@@ -92,6 +88,7 @@ header {
                     }
     
                 }
+
     
             }
 

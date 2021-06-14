@@ -5,11 +5,13 @@ main {
     @include desktop {
         padding: 0 1rem;
     }
+    @include small-mobile {
+        padding: 0;
+    }
     
     // Hero
 
     .hero {
-        padding-top: 50px;
         @include flex(center, center);
         @include box__size(100vh, 100%);
         @include desktop {
@@ -30,13 +32,16 @@ main {
         }
     
         .hero__left {
-            @include flex(space-evenly, center);
+            @include flex(center, center);
             flex-direction: column;
-            padding: $p__box;
+            padding: $p__box * 2 $p__content;
             @include box__size(40%, 50%);
             @include desktop{
                 @include box__size(auto, 80%);
                 
+            }
+            @include tablet {
+                @include box__size(auto, 100%);
             }
 
             @include tablet-rotate {
@@ -47,7 +52,7 @@ main {
                 @include box__size(auto, 100%);
             }
             @include mobile-rotate {
-                @include box__size(100%, 100%);
+                @include box__size(auto, 100%);
             }
             
             .hero__logo {
@@ -55,18 +60,20 @@ main {
                 color: #000;
                 padding: 0;
                 margin: 0;
-                font-size: $f__size * 5;
-                font-weight: $f__weight;
+                font-size: $f__size * 4.5;
+                font-weight: bold;
                 @include box__size(auto, 100%);
                 @include small-mobile {
                     font-size: f$f__size * 2;
+
                 }   
                 @include tablet {
-                    padding: 0;
                     font-size: $f__size * 3.8;
+
                 }
                 @include mobile-rotate {
                     font-size: $f__size * 2.8;
+
                 }
                 @include small-mobile-rotate {
                     font-size: $f__size * 2.8;
@@ -80,7 +87,8 @@ main {
                 .logo__animation {
                     text-transform: uppercase;
                     color: $color1;
-                    font-size: $f__size * 5.5;
+                    font-size: $f__size * 5.2;
+                    font-weight: bolder;
                     animation-name: logo;
                     animation-duration: 5s;
                     animation-iteration-count: infinite;
@@ -134,22 +142,13 @@ main {
             ul {
                 list-style: none;
                 padding: 0;
-                margin: 0;
-                @include box__size(auto, 80%);
-                @include flex(start, center);
-                @include desktop {
-                    justify-content: center;
-                }
-                @include tablet {
-                    @include box__size(auto, 100%);
-
-                }
+                margin: 0 auto;
+                @include box__size(auto, 100%);
+                @include flex(center, center);
+    
                 .hero__link {
-                    margin-left: 1rem;
+                    margin: 1rem;
                     @include boton--primary;
-                    @include desktop {
-                        margin: 1rem;
-                    }
     
                 }
 
@@ -226,10 +225,11 @@ main {
             flex-direction: column;
             margin: 0 auto;
             padding: 1rem;
+
         }
         @include mobile {
             padding: 1rem;
-            @include box__size(100%, 100%);
+
         }
 
 
@@ -487,19 +487,14 @@ main {
         
         .search__section {
             margin: 0;
-            margin-top: 80px;
-            padding: $p__box;
+            padding-top: $p__box * 1.5;
+            background-color: #fff;
             @include box__size(auto, 100%);
             @include flex(center, center);
-            @include tablet {
-                margin-top: 50px;
-            }
-            @include mobile {
-                margin-top: 40px;
-            }
-    
             form {
                 margin: 0 auto;
+                padding: 10px;
+                background-color: #fff;
                 @include box__size(auto, 40%);
                 @include tablet {
                     @include box__size(auto, 50%);
@@ -663,7 +658,7 @@ main {
             display: flex;
             margin: 0;
             padding: 0;
-            @include mobile {
+            @include tablet {
                 flex-direction: column;
 
             }
@@ -691,15 +686,28 @@ main {
             // Categorias
 
             .container__category {
-                @include flex(start, center);
+                @include flex(center, center);
+                background-color: #fff;
                 flex-direction: column;
                 margin: 1rem 0;
                 padding: 0;
                 @include box__size(auto, 30%);
-                @include mobile {
+                @include tablet {
                     @include box__size(auto, 100%);
+                    position: sticky;
+                    left: 0;
+                    right: 0;
+                    top: 10vh;
+                    z-index: 998;
 
                 }
+
+                summary {
+                    text-transform: uppercase;
+                    font-size: $f__size * 1.5;
+                    padding: 10px 20px;
+
+                } 
 
                 label {
                     cursor: pointer;
@@ -728,19 +736,19 @@ main {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 1rem;
                 @include box__size(auto, 70%);
-                @include mobile {
-                    grid-template-columns: 1fr;
-                    @include box__size(auto, 100%);
-                    gap: 0;
-                }
                 @include desktop {
                     grid-template-columns: repeat(3, 1fr);
                     @include box__size(auto, 70%);
                 }
                 @include tablet {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr 1fr;
                     gap: 0;
                     @include box__size(auto, 100%);
+                }
+                @include mobile {
+                    grid-template-columns: 1fr;
+                    @include box__size(auto, 100%);
+                    gap: 0;
                 }
 
                 .post {
@@ -968,11 +976,6 @@ main {
         flex-direction: column;
         cursor: default;
         @include box__size(100vh, 80%);
-        @include small-mobile-rotate {
-            margin-top: 2rem;
-            padding: 0.2rem;
-
-        }    
         @include mobile {
             @include box__size(100vh, 90%);
 

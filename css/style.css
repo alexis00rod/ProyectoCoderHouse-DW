@@ -1,81 +1,73 @@
-header {
-  max-width: 1280px;
-  margin: 0 auto; }
-  header nav {
-    margin: 0;
+header nav {
+  margin: 0 auto;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #E8FFFF;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  @media only screen and (max-width: 768px) {
+    header nav {
+      justify-content: space-between;
+      padding: 1rem 2rem; } }
+  header nav #check {
+    display: none; }
+    header nav #check:checked ~ ul {
+      left: 0; }
+  header nav .checkbtn {
+    display: none; }
+    @media only screen and (max-width: 768px) {
+      header nav .checkbtn {
+        display: block; } }
+  header nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold; }
+  header nav ul {
     padding: 0;
-    background-color: #E8FFFF;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    height: 80px;
-    width: 100%;
+    margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center; }
     @media only screen and (max-width: 768px) {
-      header nav {
-        height: 60px;
-        width: 100%;
-        justify-content: space-between;
-        padding: 1rem 2rem; } }
+      header nav ul {
+        justify-content: space-evenly;
+        flex-direction: column;
+        position: fixed;
+        z-index: 999;
+        background-color: #E8FFFF;
+        top: 10vh;
+        left: -100%;
+        transition: all 0.5s;
+        height: 30vh;
+        width: 50%; } }
     @media only screen and (max-width: 414px) {
-      header nav {
-        height: 40px;
-        width: 100%; } }
-    header nav #check {
-      display: none; }
-      header nav #check:checked ~ ul {
-        left: 0; }
-    header nav .checkbtn {
-      display: none; }
-      @media only screen and (max-width: 768px) {
-        header nav .checkbtn {
-          display: block; } }
-    header nav .logo {
-      font-size: 1.8rem;
-      font-weight: bold; }
-    header nav ul {
-      padding: 0;
-      margin: 0;
+      header nav ul {
+        top: 10vh; } }
+    header nav ul li {
+      display: inline-block;
+      padding: 2rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center; }
       @media only screen and (max-width: 768px) {
-        header nav ul {
-          justify-content: space-evenly;
-          flex-direction: column;
-          position: fixed;
-          z-index: 999;
-          background-color: #E8FFFF;
-          top: 60px;
-          left: -100%;
-          transition: all 0.5s;
-          height: 30vh;
-          width: 50%; } }
-      @media only screen and (max-width: 414px) {
-        header nav ul {
-          top: 40px; } }
-      header nav ul li {
-        display: inline-block;
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-        @media only screen and (max-width: 768px) {
-          header nav ul li {
-            display: block;
-            margin: 0;
-            padding: 0; } }
-        header nav ul li a {
-          font-size: 1.2rem;
-          font-weight: 700;
-          text-decoration: none;
-          color: #000; }
-          header nav ul li a:hover {
-            color: #7878EB; }
+        header nav ul li {
+          display: block;
+          margin: 0;
+          padding: 0; } }
+      header nav ul li a {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: #000;
+        transition: all .2s; }
+        header nav ul li a:hover {
+          color: #7878EB; }
 
 main {
   max-width: 1280px;
@@ -85,8 +77,10 @@ main {
   @media only screen and (max-width: 1024px) {
     main {
       padding: 0 1rem; } }
+  @media only screen and (max-width: 320px) {
+    main {
+      padding: 0; } }
   main .hero {
-    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,16 +100,20 @@ main {
         flex-direction: column; } }
     main .hero .hero__left {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 2rem;
+      padding: 4rem 1rem;
       height: 40%;
       width: 50%; }
       @media only screen and (max-width: 1024px) {
         main .hero .hero__left {
           height: auto;
           width: 80%; } }
+      @media only screen and (max-width: 768px) {
+        main .hero .hero__left {
+          height: auto;
+          width: 100%; } }
       @media only screen and (max-height: 768px) {
         main .hero .hero__left {
           height: auto;
@@ -126,15 +124,15 @@ main {
           width: 100%; } }
       @media only screen and (max-height: 736px) {
         main .hero .hero__left {
-          height: 100%;
+          height: auto;
           width: 100%; } }
       main .hero .hero__left .hero__logo {
         text-decoration: none;
         color: #000;
         padding: 0;
         margin: 0;
-        font-size: 5rem;
-        font-weight: 700;
+        font-size: 4.5rem;
+        font-weight: bold;
         height: auto;
         width: 100%; }
         @media only screen and (max-width: 320px) {
@@ -142,7 +140,6 @@ main {
             font-size: f 2rem; } }
         @media only screen and (max-width: 768px) {
           main .hero .hero__left .hero__logo {
-            padding: 0;
             font-size: 3.8rem; } }
         @media only screen and (max-height: 736px) {
           main .hero .hero__left .hero__logo {
@@ -156,7 +153,8 @@ main {
         main .hero .hero__left .hero__logo .logo__animation {
           text-transform: uppercase;
           color: #94EAFF;
-          font-size: 5.5rem;
+          font-size: 5.2rem;
+          font-weight: bolder;
           animation-name: logo;
           animation-duration: 5s;
           animation-iteration-count: infinite; }
@@ -199,21 +197,14 @@ main {
       main .hero .hero__left ul {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
         height: auto;
-        width: 80%;
+        width: 100%;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center; }
-        @media only screen and (max-width: 1024px) {
-          main .hero .hero__left ul {
-            justify-content: center; } }
-        @media only screen and (max-width: 768px) {
-          main .hero .hero__left ul {
-            height: auto;
-            width: 100%; } }
         main .hero .hero__left ul .hero__link {
-          margin-left: 1rem;
+          margin: 1rem;
           text-decoration: none;
           border: none;
           color: white;
@@ -227,9 +218,6 @@ main {
           box-shadow: 1px 2px 5px grey; }
           main .hero .hero__left ul .hero__link:hover {
             opacity: 0.7; }
-          @media only screen and (max-width: 1024px) {
-            main .hero .hero__left ul .hero__link {
-              margin: 1rem; } }
     main .hero .hero__right {
       display: flex;
       align-items: center;
@@ -287,9 +275,7 @@ main {
         padding: 1rem; } }
     @media only screen and (max-width: 414px) {
       main article {
-        padding: 1rem;
-        height: 100%;
-        width: 100%; } }
+        padding: 1rem; } }
     main article .article__left {
       height: auto;
       width: 30%;
@@ -516,21 +502,17 @@ main {
         width: 100%; } }
     main section .search__section {
       margin: 0;
-      margin-top: 80px;
-      padding: 2rem;
+      padding-top: 3rem;
+      background-color: #fff;
       height: auto;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center; }
-      @media only screen and (max-width: 768px) {
-        main section .search__section {
-          margin-top: 50px; } }
-      @media only screen and (max-width: 414px) {
-        main section .search__section {
-          margin-top: 40px; } }
       main section .search__section form {
         margin: 0 auto;
+        padding: 10px;
+        background-color: #fff;
         height: auto;
         width: 40%; }
         @media only screen and (max-width: 768px) {
@@ -651,7 +633,7 @@ main {
       display: flex;
       margin: 0;
       padding: 0; }
-      @media only screen and (max-width: 414px) {
+      @media only screen and (max-width: 768px) {
         main .catalogo .container__post {
           flex-direction: column; } }
       main .catalogo .container__post input[type="radio"] {
@@ -668,17 +650,27 @@ main {
         display: none; }
       main .catalogo .container__post .container__category {
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
+        background-color: #fff;
         flex-direction: column;
         margin: 1rem 0;
         padding: 0;
         height: auto;
         width: 30%; }
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 768px) {
           main .catalogo .container__post .container__category {
             height: auto;
-            width: 100%; } }
+            width: 100%;
+            position: sticky;
+            left: 0;
+            right: 0;
+            top: 10vh;
+            z-index: 998; } }
+        main .catalogo .container__post .container__category summary {
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          padding: 10px 20px; }
         main .catalogo .container__post .container__category label {
           cursor: pointer;
           transition: all 0.4s;
@@ -700,12 +692,6 @@ main {
         gap: 1rem;
         height: auto;
         width: 70%; }
-        @media only screen and (max-width: 414px) {
-          main .catalogo .container__post .posts {
-            grid-template-columns: 1fr;
-            height: auto;
-            width: 100%;
-            gap: 0; } }
         @media only screen and (max-width: 1024px) {
           main .catalogo .container__post .posts {
             grid-template-columns: repeat(3, 1fr);
@@ -713,10 +699,16 @@ main {
             width: 70%; } }
         @media only screen and (max-width: 768px) {
           main .catalogo .container__post .posts {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 0;
             height: auto;
             width: 100%; } }
+        @media only screen and (max-width: 414px) {
+          main .catalogo .container__post .posts {
+            grid-template-columns: 1fr;
+            height: auto;
+            width: 100%;
+            gap: 0; } }
         main .catalogo .container__post .posts .post {
           margin: 0;
           padding: 1rem;
@@ -896,10 +888,6 @@ main {
     cursor: default;
     height: 100vh;
     width: 80%; }
-    @media only screen and (max-height: 320px) {
-      main .carrito {
-        margin-top: 2rem;
-        padding: 0.2rem; } }
     @media only screen and (max-width: 414px) {
       main .carrito {
         height: 100vh;
