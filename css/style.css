@@ -76,9 +76,6 @@ main {
   width: 100%; }
   @media only screen and (max-width: 1024px) {
     main {
-      padding: 0 1rem; } }
-  @media only screen and (max-width: 320px) {
-    main {
       padding: 0; } }
   main .hero {
     display: flex;
@@ -261,6 +258,7 @@ main {
   80% {
     color: #CFBDFF; } }
   main article {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,10 +271,8 @@ main {
         flex-direction: column;
         margin: 0 auto;
         padding: 1rem; } }
-    @media only screen and (max-width: 414px) {
-      main article {
-        padding: 1rem; } }
     main article .article__left {
+      margin: 0 auto;
       height: auto;
       width: 30%;
       display: flex;
@@ -326,6 +322,7 @@ main {
           main article .article__left .article__text {
             padding: 0; } }
     main article .article__right {
+      margin: 0 auto;
       height: auto;
       width: 70%;
       padding: 2rem;
@@ -343,14 +340,13 @@ main {
         main article .article__right {
           height: auto;
           width: 90%;
-          padding: 1rem;
-          transform: translateX(-5px); } }
+          padding: 1rem; } }
       @media only screen and (max-width: 414px) {
         main article .article__right {
           height: auto;
-          width: 95%;
+          width: 100%;
           flex-wrap: wrap;
-          padding: 1rem 0; } }
+          padding: 0; } }
       @media only screen and (max-width: 320px) {
         main article .article__right {
           padding: 0; } }
@@ -439,52 +435,103 @@ main {
             @media only screen and (max-width: 768px) {
               main article .article__right .article__card .card__body .card__button {
                 padding: 0.5rem; } }
-      main article .article__right .article__team {
-        height: auto;
-        width: 50%;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; }
-        main article .article__right .article__team .img__thumbnail {
-          height: auto;
-          width: 100%;
-          border-radius: 50%;
-          padding: 5px;
-          transition: all 0.3s; }
-          main article .article__right .article__team .img__thumbnail:hover {
-            padding: 0; }
-        main article .article__right .article__team .team__description {
-          background-color: #fff;
-          padding: 1rem;
-          border-radius: 17.25px;
-          transform: translateY(-20px);
-          cursor: default;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column; }
+      main article .article__right .card__profile {
+        margin: 0 auto;
+        height: 20rem;
+        width: 30%;
+        border-radius: 10px;
+        background: url(/multimedia/img-4.jpg) no-repeat;
+        background-size: 20rem;
+        transition: .8s;
+        padding: 10px; }
+        @media only screen and (max-width: 768px) {
+          main article .article__right .card__profile {
+            height: 15rem;
+            width: 30%;
+            background-size: 15rem; } }
+        @media only screen and (max-width: 414px) {
+          main article .article__right .card__profile {
+            height: 20rem;
+            width: 100%;
+            background-size: 25rem;
+            margin: 1rem 2rem; } }
+        @media only screen and (max-width: 320px) {
+          main article .article__right .card__profile {
+            background-size: 20rem; } }
+        main article .article__right .card__profile:hover {
+          background: url(/multimedia/img-4.jpg) no-repeat;
+          background-size: 25rem; }
+          @media only screen and (max-width: 768px) {
+            main article .article__right .card__profile:hover {
+              background-size: 20rem; } }
+          @media only screen and (max-width: 414px) {
+            main article .article__right .card__profile:hover {
+              background-size: 30rem; } }
           @media only screen and (max-width: 320px) {
-            main article .article__right .article__team .team__description {
-              padding: 0.2rem 0.5rem; } }
-          main article .article__right .article__team .team__description .team__name {
-            font-size: 0.9rem;
+            main article .article__right .card__profile:hover {
+              background-size: 25rem; } }
+        main article .article__right .card__profile .card__border {
+          height: 100%;
+          width: 100%;
+          border: solid 2px white;
+          border-radius: 10px;
+          opacity: 0;
+          transition: .8s;
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          flex-direction: column; }
+          main article .article__right .card__profile .card__border:hover {
+            opacity: 1; }
+          main article .article__right .card__profile .card__border h5 {
+            height: 4rem;
+            width: 50%;
+            padding: 2px 8px;
             font-weight: 700;
-            text-align: center; }
-            @media only screen and (max-width: 320px) {
-              main article .article__right .article__team .team__description .team__name {
-                margin: 0; } }
-          main article .article__right .article__team .team__description .team__work {
-            font-size: 0.8rem; }
-            @media only screen and (max-width: 320px) {
-              main article .article__right .article__team .team__description .team__work {
-                margin: 0; } }
-          main article .article__right .article__team .team__description .team__contact a {
-            color: #000;
-            text-decoration: none; }
-            main article .article__right .article__team .team__description .team__contact a:hover {
-              color: #CFBDFF; }
+            font-size: 1.5rem;
+            color: white;
+            cursor: default; }
+            @media only screen and (max-width: 768px) {
+              main article .article__right .card__profile .card__border h5 {
+                height: 3rem;
+                width: 50%;
+                font-size: 1.2rem; } }
+            @media only screen and (max-width: 414px) {
+              main article .article__right .card__profile .card__border h5 {
+                height: 4rem;
+                width: 50%;
+                font-size: 1.5rem; } }
+          main article .article__right .card__profile .card__border p {
+            padding: 0 8px;
+            font-weight: 600;
+            color: white;
+            cursor: default;
+            font-size: 1rem; }
+            @media only screen and (max-width: 768px) {
+              main article .article__right .card__profile .card__border p {
+                font-size: 0.8rem; } }
+            @media only screen and (max-width: 414px) {
+              main article .article__right .card__profile .card__border p {
+                font-size: 1rem; } }
+        main article .article__right .card__profile .icons {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: start;
+          flex-direction: column; }
+          main article .article__right .card__profile .icons a {
+            padding: 0 8px;
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: .5s; }
+            main article .article__right .card__profile .icons a:hover:nth-child(1) {
+              color: #3b5998; }
+            main article .article__right .card__profile .icons a:hover:nth-child(2) {
+              color: #0e76a8; }
+            main article .article__right .card__profile .icons a:hover:nth-child(3) {
+              color: #C13584; }
+            main article .article__right .card__profile .icons a:hover:nth-child(4) {
+              color: #00acee; }
   main section {
     height: 100vh;
     width: 100%;
@@ -1105,7 +1152,8 @@ footer {
       color: #000;
       display: flex;
       justify-content: start;
-      align-items: center; }
+      align-items: center;
+      transition: .4s; }
       footer ul li a:hover {
         color: #7878EB; }
       footer ul li a i {
@@ -1125,7 +1173,7 @@ html {
   scroll-behavior: smooth; }
 
 body::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
   background-color: #F0F7F9; }
 
 body::-webkit-scrollbar-thumb {

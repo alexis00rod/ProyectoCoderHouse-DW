@@ -3,9 +3,6 @@ main {
     margin: 0 auto; 
     @include box__size(auto, 100%);
     @include desktop {
-        padding: 0 1rem;
-    }
-    @include small-mobile {
         padding: 0;
     }
     
@@ -218,6 +215,7 @@ main {
     // Articles
 
     article {
+        margin: 0 auto;
         @include flex (center, center);
         @include box__size(100vh, 100%);
         @include desktop {
@@ -227,13 +225,10 @@ main {
             padding: 1rem;
 
         }
-        @include mobile {
-            padding: 1rem;
-
-        }
 
 
         .article__left {
+            margin: 0 auto;
             @include box__size(auto, 30%);
             @include flex(center, center);
             flex-direction: column;
@@ -287,6 +282,7 @@ main {
         }
 
         .article__right {
+            margin: 0 auto;
             @include box__size(auto, 70%);
             padding: $p__box;
             background: $color2;
@@ -300,13 +296,12 @@ main {
             @include desktop{
                 @include box__size(auto, 90%);
                 padding: $p__content;
-                transform: translateX(-5px);
                 
             }
             @include mobile {
-                @include box__size(auto, 95%);
+                @include box__size(auto, 100%);
                 flex-wrap: wrap;
-                padding: $p__content 0;
+                padding: 0;
                 
             }
             @include small-mobile {
@@ -397,72 +392,129 @@ main {
                 }
             }
 
-            .article__team {
-                @include box__size(auto, 50%);
-                padding: $p__content;
-                @include flex(center, center);
-                flex-direction: column;
+            .card__profile {
+                margin: 0 auto;
+                @include box__size(20rem, 30%);
+                border-radius: 10px;
+                background: url(/multimedia/img-4.jpg) no-repeat;
+                background-size: 20rem;
+                transition: .8s;
+                padding: 10px;
+                @include tablet {
+                    @include box__size(15rem, 30%);
+                    background-size: 15rem;
 
-                .img__thumbnail {
-                    @include box__size(auto, 100%);
-                    @include circle;
-                    padding: 5px;
-                    transition: all 0.3s;
+                }
+                @include mobile {
+                    @include box__size(20rem, 100%);
+                    background-size: 25rem;
+                    margin: 1rem 2rem;
+                }
+                @include small-mobile {
+                    background-size: 20rem;
+                }
+                
+
+                &:hover {
+                    background: url(/multimedia/img-4.jpg) no-repeat;
+                    background-size: 25rem;
+                    @include tablet {
+                        background-size: 20rem;
+
+                    }
+                    @include mobile {
+                        background-size: 30rem;
+
+                    }
+                    @include small-mobile {
+                        background-size: 25rem;
+
+                    }
+
+                }
+
+                .card__border {
+                    @include box__size(100%, 100%);
+                    border: solid 2px white;
+                    border-radius: 10px;
+                    opacity: 0;
+                    transition: .8s;
+                    @include flex(start, start);
+                    flex-direction: column;
 
                     &:hover {
-                        padding: 0;
+                        opacity: 1;
+
+                    }
+
+                    h5 {
+                        @include box__size(4rem, 50%);
+                        padding:  2px 8px;
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        color: white;
+                        cursor: default;
+                        @include tablet {
+                            @include box__size(3rem, 50%);
+                            font-size: 1.2rem;
+                        }
+                        @include mobile {
+                            @include box__size(4rem, 50%);
+                            font-size: 1.5rem;
+
+                        }
+
+                    }
+
+                    p {
+                        padding: 0 8px;
+                        font-weight: 600;
+                        color: white;
+                        cursor: default;
+                        font-size: 1rem;
+                        @include tablet {
+                            font-size: 0.8rem;
+                        }
+                        @include mobile {
+                            font-size: 1rem;
+                        }
 
                     }
 
                 }
 
-                .team__description {
-                    background-color: #fff;
-                    padding: $p__content;
-                    border-radius: $p__border__r - 0.75;
-                    transform: translateY(-20px);
-                    cursor: default;
-                    @include flex(center, center);
+                .icons {
+                    @include flex(space-evenly, start);
                     flex-direction: column;
-                    @include small-mobile {
-                        padding: 0.2rem 0.5rem;
-                    }
 
-                    .team__name {
-                        font-size: $f__size - 0.10;
-                        font-weight: $f__weight;
-                        text-align: center;
-                        @include small-mobile {
-                            margin: 0;
-                        }
+                    a {
+                        padding: 0 8px;
+                        color: #fff;
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                        transition: .5s;
 
-                    }
-
-                    .team__work {
-                        font-size: $f__size - 0.20;
-                        @include small-mobile {
-                            margin: 0;
-                        }
-
-                    }
-                    .team__contact {
-
-                        a {
-                            color: #000;
-                            text-decoration: none;
-
-                            &:hover{ 
-                                color: $color5;
-
+                        &:hover {
+                            &:nth-child(1){
+                                color: #3b5998;
                             }
-
+                            &:nth-child(2){
+                                color: #0e76a8;
+                            }
+                            &:nth-child(3){
+                                color: #C13584;
+                            }
+                            &:nth-child(4){
+                                color: #00acee;
+                            }
+    
                         }
+                        
 
                     }
-
 
                 }
-
+                
             }
 
         }

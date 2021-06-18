@@ -26,11 +26,12 @@ footer {
         list-style: none;
 
         li {
-            
+
             a {
                 text-decoration: none;
                 color: #000;
                 @include flex(start,center);
+                transition: .4s;
 
                 &:hover {
                     color: $color4;
