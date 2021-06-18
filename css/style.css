@@ -440,7 +440,7 @@ main {
         height: 20rem;
         width: 30%;
         border-radius: 10px;
-        background: url(/multimedia/img-4.jpg) no-repeat;
+        background: url(multimedia/img-4.jpg) no-repeat;
         background-size: 20rem;
         transition: .8s;
         padding: 10px; }
@@ -459,7 +459,7 @@ main {
           main article .article__right .card__profile {
             background-size: 20rem; } }
         main article .article__right .card__profile:hover {
-          background: url(/multimedia/img-4.jpg) no-repeat;
+          background: url(multimedia/img-4.jpg) no-repeat;
           background-size: 25rem; }
           @media only screen and (max-width: 768px) {
             main article .article__right .card__profile:hover {
@@ -1125,6 +1125,25 @@ main {
             width: 12rem; }
             main .user .form .form__user .login__user .form__boton:hover {
               opacity: 0.7; }
+  main .boton__ws {
+    position: fixed;
+    z-index: 999;
+    bottom: 4rem;
+    right: 4rem; }
+    @media only screen and (max-width: 414px) {
+      main .boton__ws {
+        bottom: 2rem;
+        right: 2rem; } }
+    main .boton__ws button {
+      border: none;
+      background-color: #4FCE5D;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      color: #fff; }
+      main .boton__ws button:hover {
+        background-color: #435A64; }
 
 footer {
   background-color: #EBEBEB;
