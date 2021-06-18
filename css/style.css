@@ -440,7 +440,7 @@ main {
         height: 20rem;
         width: 30%;
         border-radius: 10px;
-        background: url(multimedia/img-4.jpg) no-repeat;
+        background: url("multimedia/img-4.jpg") no-repeat;
         background-size: 20rem;
         transition: .8s;
         padding: 10px; }
@@ -459,7 +459,7 @@ main {
           main article .article__right .card__profile {
             background-size: 20rem; } }
         main article .article__right .card__profile:hover {
-          background: url(multimedia/img-4.jpg) no-repeat;
+          background: url("multimedia/img-4.jpg") no-repeat;
           background-size: 25rem; }
           @media only screen and (max-width: 768px) {
             main article .article__right .card__profile:hover {
