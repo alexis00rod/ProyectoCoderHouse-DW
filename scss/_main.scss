@@ -396,7 +396,7 @@ main {
                 margin: 0 auto;
                 @include box__size(20rem, 30%);
                 border-radius: 10px;
-                background: url("multimedia/img-4.jpg") no-repeat;
+                background: url("/multimedia/img-4.jpg") no-repeat;
                 background-size: 20rem;
                 transition: .8s;
                 padding: 10px;
@@ -416,7 +416,7 @@ main {
                 
 
                 &:hover {
-                    background: url("multimedia/img-4.jpg") no-repeat;
+                    background: url("/multimedia/img-4.jpg") no-repeat;
                     background-size: 25rem;
                     @include tablet {
                         background-size: 20rem;
