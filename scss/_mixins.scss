@@ -74,7 +74,6 @@
 }
 
 @mixin link__active{
-    text-decoration: underline;
     text-transform: uppercase;
     margin-left: 0.8rem;
 
@@ -104,6 +103,68 @@
 @mixin circle {
     border-radius: 50%;
     
+}
+
+// Animaciones 
+
+@mixin transition-left-to-right-low {
+    animation: transition1 1s;
+
+    @keyframes transition1 {
+        0% {
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+
+    }
+
+}
+
+@mixin transition-left-to-right-fast {
+    animation: transition2 .7s;
+
+    @keyframes transition2 {
+        0% {
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+
+    }
+
+}
+
+@mixin transition-right-to-left-low {
+    animation: transition3 1.2s;
+    
+    @keyframes transition3{
+        0% {
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+
+    }
+
+}
+
+@mixin transition-right-to-left-fast {
+    animation: transition3 .8s;
+
+    @keyframes transition3{
+        0% {
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+
+    }
+
 }
 
 // Medias

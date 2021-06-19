@@ -2,6 +2,22 @@ header #menu {
   display: none; }
   header #menu:checked ~ nav {
     right: 0; }
+    header #menu:checked ~ nav .menu__user {
+      animation: transition3 .8s; }
+
+@keyframes transition3 {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0); } }
+    header #menu:checked ~ nav .menu__nav {
+      animation: transition3 1.2s; }
+
+@keyframes transition3 {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0); } }
 
 header label {
   height: 4rem;
@@ -16,7 +32,7 @@ header label {
   right: 2rem;
   z-index: 999;
   cursor: pointer; }
-  @media only screen and (max-width: 414px) {
+  @media only screen and (max-width: 768px) {
     header label {
       top: 1rem;
       right: 1rem; } }
@@ -37,16 +53,30 @@ header nav {
   position: fixed;
   z-index: 998;
   right: -100%;
-  transition: all .7s;
+  transition: all .5s;
   height: 100vh;
-  width: 99vw;
+  width: calc(100vw - 10px);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #E8FFFF, #CFBDFF); }
+  background: linear-gradient(-45deg, #7878EB, #CFBDFF, #E8FFFF, #A2BDFF, #5684FF);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite; }
+  @media only screen and (max-width: 1024px) {
+    header nav {
+      height: 100vh;
+      width: 100vw; } }
   @media only screen and (max-width: 414px) {
     header nav {
       flex-direction: column; } }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
   header nav .menu__user {
     padding: 0;
     margin: 0;
@@ -55,12 +85,14 @@ header nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all .5s;
     height: 100%;
     width: 50%; }
     @media only screen and (max-width: 414px) {
       header nav .menu__user {
-        height: 50%;
-        width: 100%; } }
+        height: 40%;
+        width: 100%;
+        justify-content: center; } }
     header nav .menu__user li a {
       text-decoration: none;
       color: #000;
@@ -89,12 +121,14 @@ header nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all .5s;
     height: auto;
     width: 50%; }
     @media only screen and (max-width: 414px) {
       header nav .menu__nav {
-        height: 50%;
-        width: 100%; } }
+        height: 60%;
+        width: 100%;
+        justify-content: end; } }
     header nav .menu__nav li a {
       display: block;
       text-decoration: none;
@@ -105,7 +139,7 @@ header nav {
       padding: 3rem; }
       @media only screen and (max-width: 414px) {
         header nav .menu__nav li a {
-          padding: 1rem; } }
+          padding: .7rem; } }
       @media only screen and (max-width: 320px) {
         header nav .menu__nav li a {
           padding: 0.5rem; } }
@@ -115,6 +149,7 @@ header nav {
 main {
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
   height: auto;
   width: 100%; }
   @media only screen and (max-width: 1024px) {
@@ -141,36 +176,33 @@ main {
     main .hero .hero__left {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: start;
       flex-direction: column;
-      padding: 4rem 1rem;
-      height: 40%;
-      width: 50%; }
+      padding: 2rem;
+      height: 30%;
+      width: 50%;
+      animation: transition1 1s; }
+
+@keyframes transition1 {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
       @media only screen and (max-width: 1024px) {
         main .hero .hero__left {
-          height: auto;
+          height: 30%;
           width: 80%; } }
       @media only screen and (max-width: 768px) {
         main .hero .hero__left {
-          height: auto;
+          height: 30%;
           width: 100%; } }
-      @media only screen and (max-height: 768px) {
-        main .hero .hero__left {
-          height: auto;
-          width: 50%; } }
       @media only screen and (max-width: 414px) {
         main .hero .hero__left {
-          height: auto;
-          width: 100%; } }
-      @media only screen and (max-height: 736px) {
-        main .hero .hero__left {
-          height: auto;
+          height: 40%;
           width: 100%; } }
       main .hero .hero__left .hero__logo {
         text-decoration: none;
         color: #000;
-        padding: 0;
-        margin: 0;
         font-size: 4.5rem;
         font-weight: bold;
         height: auto;
@@ -214,7 +246,6 @@ main {
             main .hero .hero__left .hero__logo .logo__animation {
               font-size: 3.2rem; } }
       main .hero .hero__left .hero__text {
-        padding: 1rem 4rem;
         font-size: 1.3rem;
         font-weight: 500;
         cursor: default;
@@ -224,9 +255,6 @@ main {
         @media only screen and (max-width: 768px) {
           main .hero .hero__left .hero__text {
             font-size: 1.1rem; } }
-        @media only screen and (max-height: 736px) {
-          main .hero .hero__left .hero__text {
-            font-size: 1rem; } }
         @media only screen and (max-width: 414px) {
           main .hero .hero__left .hero__text {
             font-size: 0.8rem;
@@ -237,14 +265,13 @@ main {
       main .hero .hero__left ul {
         list-style: none;
         padding: 0;
-        margin: 0 auto;
+        margin-right: 1rem;
         height: auto;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center; }
         main .hero .hero__left ul .hero__link {
-          margin: 1rem;
           text-decoration: none;
           border: none;
           color: white;
@@ -255,36 +282,35 @@ main {
           font-size: 1.1rem;
           font-weight: 700;
           text-align: center;
-          box-shadow: 1px 2px 5px grey; }
+          box-shadow: 1px 2px 5px grey;
+          margin-right: 1rem; }
           main .hero .hero__left ul .hero__link:hover {
             opacity: 0.7; }
     main .hero .hero__right {
       display: flex;
       align-items: center;
-      padding: 2rem;
-      height: auto;
-      width: 50%; }
+      margin: 0;
+      height: 70%;
+      width: 50%;
+      animation: transition2 .7s; }
+
+@keyframes transition2 {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
       @media only screen and (max-width: 1024px) {
         main .hero .hero__right {
-          height: auto;
+          height: 70%;
           width: 100%; } }
       @media only screen and (max-width: 768px) {
         main .hero .hero__right {
-          padding: 0;
-          margin-top: 1rem;
-          height: auto;
+          height: 70%;
           width: 100%; } }
-      @media only screen and (max-height: 768px) {
-        main .hero .hero__right {
-          height: auto;
-          width: 50%; } }
       @media only screen and (max-width: 414px) {
         main .hero .hero__right {
-          height: auto;
+          height: 60%;
           width: 100%; } }
-      @media only screen and (max-height: 320px) {
-        main .hero .hero__right {
-          display: none; } }
       main .hero .hero__right .hero__img {
         height: auto;
         width: 100%; }
@@ -483,7 +509,7 @@ main {
         height: 20rem;
         width: 30%;
         border-radius: 10px;
-        background: url("/multimedia/img-4.jpg") no-repeat;
+        background: url("/multimedia/img-4.jpg") center no-repeat;
         background-size: 22rem;
         transition: .8s;
         padding: 10px; }
@@ -590,7 +616,8 @@ main {
     @media only screen and (max-width: 768px) {
       main section {
         height: 100vh;
-        width: 100%; } }
+        width: 100%;
+        justify-content: center; } }
     main section .search__section {
       margin: 0;
       padding-top: 3rem;
@@ -668,6 +695,9 @@ main {
       width: 100%;
       margin: 1rem 0;
       padding: 0; }
+      @media only screen and (max-width: 414px) {
+        main section .shopping__info {
+          margin: 0; } }
       main section .shopping__info ul {
         margin: 0 auto;
         padding: 0;
@@ -759,9 +789,21 @@ main {
             top: 0;
             z-index: 997; } }
         main .catalogo .container__post .container__category summary {
+          margin: 0;
+          margin-left: 12px;
           text-transform: uppercase;
           font-size: 1.5rem;
-          padding: 10px 20px; }
+          height: 6rem;
+          width: 100%;
+          display: flex;
+          justify-content: start;
+          align-items: center; }
+          @media only screen and (max-width: 320px) {
+            main .catalogo .container__post .container__category summary {
+              height: 4.5rem;
+              width: 100%; } }
+          main .catalogo .container__post .container__category summary:hover {
+            color: #7878EB; }
         main .catalogo .container__post .container__category label {
           cursor: pointer;
           transition: all 0.4s;
@@ -772,7 +814,6 @@ main {
             main .catalogo .container__post .container__category label {
               font-size: 1.1rem; } }
           main .catalogo .container__post .container__category label:hover {
-            text-decoration: underline;
             text-transform: uppercase;
             margin-left: 0.8rem; }
       main .catalogo .container__post .posts {

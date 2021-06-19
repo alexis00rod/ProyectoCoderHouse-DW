@@ -1,6 +1,7 @@
 main {
     max-width: 1280px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    position: relative;
     @include box__size(auto, 100%);
     @include desktop {
         padding: 0;
@@ -29,34 +30,27 @@ main {
         }
     
         .hero__left {
-            @include flex(center, center);
+            @include flex(center, start);
             flex-direction: column;
-            padding: $p__box * 2 $p__content;
-            @include box__size(40%, 50%);
+            padding: $p__box;
+            @include box__size(30%, 50%);
+            @include transition-left-to-right-low;
             @include desktop{
-                @include box__size(auto, 80%);
+                @include box__size(30%, 80%);
                 
             }
             @include tablet {
-                @include box__size(auto, 100%);
-            }
+                @include box__size(30%, 100%);
 
-            @include tablet-rotate {
-                @include box__size(auto, 50%);
-                
             }
             @include mobile {
-                @include box__size(auto, 100%);
+                @include box__size(40%, 100%);
+
             }
-            @include mobile-rotate {
-                @include box__size(auto, 100%);
-            }
-            
+
             .hero__logo {
                 text-decoration: none;
                 color: #000;
-                padding: 0;
-                margin: 0;
                 font-size: $f__size * 4.5;
                 font-weight: bold;
                 @include box__size(auto, 100%);
@@ -110,7 +104,6 @@ main {
             }
     
             .hero__text {
-                padding: $p__content $p__box * 2;
                 font-size: $f__size + 0.30;
                 font-weight: $f__weight - 200;
                 cursor: default;
@@ -118,10 +111,6 @@ main {
                 @include box__size(auto, 100%);
                 @include tablet {
                     font-size: $f__size + 0.10;
-
-                }
-                @include mobile-rotate {
-                    font-size: $f__size;
 
                 }
                 @include mobile {
@@ -139,13 +128,13 @@ main {
             ul {
                 list-style: none;
                 padding: 0;
-                margin: 0 auto;
+                margin-right: 1rem;
                 @include box__size(auto, 100%);
-                @include flex(center, center);
+                @include flex(start, center);
     
                 .hero__link {
-                    margin: 1rem;
                     @include boton--primary;
+                    margin-right: 1rem;
     
                 }
 
@@ -157,27 +146,19 @@ main {
         .hero__right {
             display: flex;
             align-items: center;
-            padding: $p__box;
-            @include box__size(auto, 50%);
+            margin: 0;
+            @include box__size(70%, 50%);
+            @include transition-left-to-right-fast;
             @include desktop{
-                @include box__size(auto, 100%);
+                @include box__size(70%, 100%);
 
             }
             @include tablet {
-                padding: 0;
-                margin-top: 1rem;
-                @include box__size (auto, 100%)
+                @include box__size (70%, 100%)
                 
             }
-            @include tablet-rotate {
-                @include box__size(auto, 50%);
-
-            }
             @include mobile {
-                @include box__size(auto, 100%);
-            }
-            @include small-mobile-rotate {
-                display: none;
+                @include box__size(60%, 100%);
             }
     
             .hero__img {
@@ -396,7 +377,7 @@ main {
                 margin: 0 auto;
                 @include box__size(20rem, 30%);
                 border-radius: 10px;
-                background: url("/multimedia/img-4.jpg") no-repeat;
+                background: url("/multimedia/img-4.jpg") center no-repeat;
                 background-size: 22rem;
                 transition: .8s;
                 padding: 10px;
@@ -535,6 +516,8 @@ main {
         }
         @include tablet {
             @include box__size(100vh,100%);
+            justify-content: center;
+
         }
 
         // Barra de busqueda
@@ -642,6 +625,9 @@ main {
             @include box__size(auto, 100%);
             margin: 1rem 0;
             padding: 0;
+            @include mobile {
+                margin: 0;
+            }
     
             ul {
                 margin: 0 auto;
@@ -757,9 +743,21 @@ main {
                 }
 
                 summary {
+                    margin: 0;
+                    margin-left: 12px;
                     text-transform: uppercase;
-                    font-size: $f__size * 1.5;
-                    padding: 10px 20px;
+                    font-size: $f__size * 1.5;                  
+                    @include box__size(6rem, 100%);
+                    @include flex(start, center);
+                    @include small-mobile {
+                        @include box__size(4.5rem, 100%);
+
+                    }
+
+                    &:hover {
+                        color: $color4;
+
+                    }
 
                 } 
 
