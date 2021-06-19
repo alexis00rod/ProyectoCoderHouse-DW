@@ -1,73 +1,116 @@
+header #menu {
+  display: none; }
+  header #menu:checked ~ nav {
+    right: 0; }
+
+header label {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5684FF;
+  border-radius: 50%;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 999;
+  cursor: pointer; }
+  @media only screen and (max-width: 414px) {
+    header label {
+      top: 1rem;
+      right: 1rem; } }
+  @media only screen and (max-width: 320px) {
+    header label {
+      height: 2.5rem;
+      width: 2.5rem; } }
+  header label i {
+    font-size: 1.5rem;
+    color: white; }
+    @media only screen and (max-width: 320px) {
+      header label i {
+        font-size: 1rem; } }
+
 header nav {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 999;
-  background-color: #E8FFFF;
-  height: 10vh;
-  width: 100%;
+  z-index: 998;
+  right: -100%;
+  transition: all .7s;
+  height: 100vh;
+  width: 99vw;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center; }
-  @media only screen and (max-width: 768px) {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #E8FFFF, #CFBDFF); }
+  @media only screen and (max-width: 414px) {
     header nav {
-      justify-content: space-between;
-      padding: 1rem 2rem; } }
-  header nav #check {
-    display: none; }
-    header nav #check:checked ~ ul {
-      left: 0; }
-  header nav .checkbtn {
-    display: none; }
-    @media only screen and (max-width: 768px) {
-      header nav .checkbtn {
-        display: block; } }
-  header nav .logo {
-    font-size: 1.8rem;
-    font-weight: bold; }
-  header nav ul {
+      flex-direction: column; } }
+  header nav .menu__user {
     padding: 0;
     margin: 0;
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    @media only screen and (max-width: 768px) {
-      header nav ul {
-        justify-content: space-evenly;
-        flex-direction: column;
-        position: fixed;
-        z-index: 999;
-        background-color: #E8FFFF;
-        top: 10vh;
-        left: -100%;
-        transition: all 0.5s;
-        height: 30vh;
-        width: 50%; } }
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%; }
     @media only screen and (max-width: 414px) {
-      header nav ul {
-        top: 10vh; } }
-    header nav ul li {
-      display: inline-block;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      @media only screen and (max-width: 768px) {
-        header nav ul li {
-          display: block;
-          margin: 0;
-          padding: 0; } }
-      header nav ul li a {
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-decoration: none;
-        color: #000;
-        transition: all .2s; }
-        header nav ul li a:hover {
-          color: #7878EB; }
+      header nav .menu__user {
+        height: 50%;
+        width: 100%; } }
+    header nav .menu__user li a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1rem;
+      padding: 0.8rem;
+      display: block; }
+      @media only screen and (max-width: 414px) {
+        header nav .menu__user li a {
+          padding: 1rem; } }
+      @media only screen and (max-width: 320px) {
+        header nav .menu__user li a {
+          padding: 0.5rem; } }
+      header nav .menu__user li a:hover {
+        color: #5684FF; }
+      header nav .menu__user li a img {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        border: 3px solid #5684FF;
+        text-align: center; }
+  header nav .menu__nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 50%; }
+    @media only screen and (max-width: 414px) {
+      header nav .menu__nav {
+        height: 50%;
+        width: 100%; } }
+    header nav .menu__nav li a {
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      font-size: 3rem;
+      font-weight: 900;
+      padding: 3rem; }
+      @media only screen and (max-width: 414px) {
+        header nav .menu__nav li a {
+          padding: 1rem; } }
+      @media only screen and (max-width: 320px) {
+        header nav .menu__nav li a {
+          padding: 0.5rem; } }
+      header nav .menu__nav li a:hover {
+        color: #5684FF; }
 
 main {
   max-width: 1280px;
@@ -457,6 +500,8 @@ main {
             margin: 1rem 2rem; } }
         @media only screen and (max-width: 320px) {
           main article .article__right .card__profile {
+            height: 15rem;
+            width: 100%;
             background-size: 20rem; } }
         main article .article__right .card__profile:hover {
           background-size: 25rem; }
@@ -711,8 +756,8 @@ main {
             position: sticky;
             left: 0;
             right: 0;
-            top: 10vh;
-            z-index: 998; } }
+            top: 0;
+            z-index: 997; } }
         main .catalogo .container__post .container__category summary {
           text-transform: uppercase;
           font-size: 1.5rem;
@@ -1176,13 +1221,13 @@ main {
               opacity: 0.7; }
   main .boton__ws {
     position: fixed;
-    z-index: 999;
-    bottom: 4rem;
-    right: 4rem; }
+    z-index: 997;
+    bottom: 2rem;
+    right: 2.5rem; }
     @media only screen and (max-width: 414px) {
       main .boton__ws {
-        bottom: 2rem;
-        right: 2rem; } }
+        bottom: 1rem;
+        right: 1.5rem; } }
     main .boton__ws button {
       border: none;
       background-color: #4FCE5D;

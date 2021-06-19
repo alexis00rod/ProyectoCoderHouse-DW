@@ -412,6 +412,7 @@ main {
 
                 }
                 @include small-mobile {
+                    @include box__size(15rem, 100%);
                     background-size: 20rem;
 
                 }
@@ -750,8 +751,8 @@ main {
                     position: sticky;
                     left: 0;
                     right: 0;
-                    top: 10vh;
-                    z-index: 998;
+                    top: 0;
+                    z-index: 997;
 
                 }
 
@@ -1271,12 +1272,13 @@ main {
 
     .boton__ws {
         position: fixed;
-        z-index: 999;
-        bottom: 4rem;
-        right: 4rem;
+        z-index: 997;
+        bottom: 2rem;
+        right: 2.5rem;
         @include mobile {
-            bottom: 2rem;
-            right: 2rem;
+            bottom: 1rem;
+            right: 1.5rem;
+
         }
 
         button {

@@ -1,102 +1,154 @@
 header {
+    
+    #menu {
+        display: none;
+        
+        &:checked ~ nav {
+            right: 0;
+            
+        }
+        
+    }
+    
+    label {
+        @include box__size(4rem, 4rem);
+        @include flex(center, center);
+        background-color: $color3;
+        border-radius: 50%;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 999;
+        cursor: pointer;
+        @include mobile {
+            top: 1rem;
+            right: 1rem;
 
-    // Footer
+        }
+        @include small-mobile {
+            @include box__size(2.5rem, 2.5rem);
 
+        }
+        
+        i {
+            font-size: 1.5rem;
+            color: white;
+            @include small-mobile {
+                font-size: 1rem;
+
+            }
+            
+        }
+        
+    }
+    
     nav {
-        margin: 0 auto;
+        margin: 0;
         padding: 0;
         position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 999;
-        background-color: $color7;
-        @include box__size(10vh, 100%);
-        @include flex(space-evenly, center);
-        @include tablet {
-            justify-content: space-between;
-            padding: 1rem 2rem;
+        z-index: 998;
+        right: -100%;
+        transition: all .7s;
+        @include box__size(100vh, 99vw);
+        @include flex(center, center);
+        @include mobile {
+            flex-direction: column;
         }
+        background: linear-gradient(to right, $color7, $color5);
 
 
-        #check {
-            display: none;
-            
-            &:checked ~ ul{
-                left: 0;
-
-            }
-
-        }
-
-        .checkbtn {
-            display: none;
-            @include tablet {
-                display: block;
-
-            }
-
-        }
-
-        .logo {
-            font-size: $f__title;
-            font-weight: bold;
-
-        }
-
-        ul {
+        .menu__user {
             padding: 0;
             margin: 0;
-            @include flex(space-between, center);
-            @include tablet {
-                justify-content: space-evenly;
-                flex-direction: column;
-                position: fixed;
-                z-index: 999;
-                background-color: $color7;
-                top: 10vh;
-                left: -100%;
-                transition: all 0.5s;
-                @include box__size(30vh, 50%);
-            }
+            list-style: none;
+            @include flex(center, center);
+            flex-direction: column;
+            @include box__size(100%, 50%);
             @include mobile {
-                top: 10vh;
+                @include box__size(50%, 100%);
+
             }
 
             li {
-                display: inline-block;
-                padding: $p__box;
-                @include flex(center, center);
-                @include tablet {
-                    display: block;
-                    margin: 0;
-                    padding: 0;
-
-                }
 
                 a {
-                    font-size: $f__size + 0.20;
-                    font-weight: $f__weight;
                     text-decoration: none;
                     color: #000;
-                    transition: all .2s;
-
-
-                    &:hover {
-                        color: $color4;
+                    font-size: $f__size;
+                    padding: 0.8rem;
+                    display: block;
+                    @include mobile {
+                        padding: 1rem;
+                        
+                    }
+                    @include small-mobile {
+                        padding: 0.5rem;
 
                     }
-    
+
+                    &:hover {
+                        color: $color3;
+
+                    }
+
+                    img {
+                        @include box__size(3rem, 3rem);
+                        border-radius: 50%;
+                        border: 3px solid $color3;
+                        text-align: center;
+        
+                    }
+
                 }
 
-    
             }
 
+        }
 
-        }      
+        .menu__nav {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            @include flex(center, center);
+            flex-direction: column;
+            @include box__size(auto, 50%);
+            @include mobile {
+                @include box__size(50%, 100%);
 
+            }
+
+            li {
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: #000;
+                    font-size: 3rem;
+                    font-weight: 900;
+                    padding: 3rem;
+                    @include mobile {
+                        padding: 1rem;
+
+                    }
+                    @include small-mobile {
+                        padding: 0.5rem;
+
+                    }
+
+                    &:hover {
+                        color: $color3;
+
+                    }
+
+                }
+
+            }
+
+        }
+        
     }
-    
+        
 }
 
 
