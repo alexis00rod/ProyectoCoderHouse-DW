@@ -28,14 +28,10 @@ header label {
   background-color: #5684FF;
   border-radius: 50%;
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   z-index: 999;
   cursor: pointer; }
-  @media only screen and (max-width: 768px) {
-    header label {
-      top: 1rem;
-      right: 1rem; } }
   @media only screen and (max-width: 320px) {
     header label {
       height: 2.5rem;
@@ -88,6 +84,10 @@ header nav {
     transition: all .5s;
     height: 100%;
     width: 50%; }
+    @media only screen and (max-width: 768px) {
+      header nav .menu__user {
+        height: 100%;
+        width: 30%; } }
     @media only screen and (max-width: 414px) {
       header nav .menu__user {
         height: 40%;
@@ -101,10 +101,10 @@ header nav {
       display: block; }
       @media only screen and (max-width: 414px) {
         header nav .menu__user li a {
-          padding: 1rem; } }
+          padding: 0.5rem; } }
       @media only screen and (max-width: 320px) {
         header nav .menu__user li a {
-          padding: 0.5rem; } }
+          padding: 0.2rem; } }
       header nav .menu__user li a:hover {
         color: #5684FF; }
       header nav .menu__user li a img {
@@ -122,8 +122,12 @@ header nav {
     align-items: center;
     flex-direction: column;
     transition: all .5s;
-    height: auto;
+    height: 100%;
     width: 50%; }
+    @media only screen and (max-width: 768px) {
+      header nav .menu__nav {
+        height: 100%;
+        width: 70%; } }
     @media only screen and (max-width: 414px) {
       header nav .menu__nav {
         height: 60%;
@@ -136,25 +140,26 @@ header nav {
       color: #000;
       font-size: 3rem;
       font-weight: 900;
-      padding: 3rem; }
+      padding: 2.5rem; }
+      @media only screen and (max-width: 768px) {
+        header nav .menu__nav li a {
+          font-size: 2.5rem;
+          padding: 2rem 0; } }
       @media only screen and (max-width: 414px) {
         header nav .menu__nav li a {
-          padding: .7rem; } }
+          padding: 1rem; } }
       @media only screen and (max-width: 320px) {
         header nav .menu__nav li a {
+          font-size: 2rem;
           padding: 0.5rem; } }
       header nav .menu__nav li a:hover {
         color: #5684FF; }
 
 main {
-  max-width: 1280px;
   margin: 0 auto;
-  position: relative;
   height: auto;
-  width: 100%; }
-  @media only screen and (max-width: 1024px) {
-    main {
-      padding: 0; } }
+  width: 100vw;
+  max-width: 1280px; }
   main .hero {
     display: flex;
     justify-content: center;
@@ -420,7 +425,7 @@ main {
         main article .article__right {
           padding: 0; } }
       main article .article__right video {
-        height: auto;
+        height: 100%;
         width: 100%;
         padding: 2rem; }
         @media only screen and (max-width: 414px) {
@@ -603,10 +608,10 @@ main {
             main article .article__right .card__profile .icons a:hover:nth-child(4) {
               color: #00acee; }
   main section {
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: column; }
     @media only screen and (max-width: 1024px) {
@@ -618,55 +623,6 @@ main {
         height: 100vh;
         width: 100%;
         justify-content: center; } }
-    main section .search__section {
-      margin: 0;
-      padding-top: 3rem;
-      background-color: #fff;
-      height: auto;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      main section .search__section form {
-        margin: 0 auto;
-        padding: 10px;
-        background-color: #fff;
-        height: auto;
-        width: 40%; }
-        @media only screen and (max-width: 768px) {
-          main section .search__section form {
-            height: auto;
-            width: 50%; } }
-        @media only screen and (max-width: 414px) {
-          main section .search__section form {
-            height: auto;
-            width: 100%; } }
-        main section .search__section form fieldset {
-          border: 3px solid #7878EB;
-          border-radius: 6px;
-          padding: 6px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center; }
-          main section .search__section form fieldset:hover {
-            border: 3px solid #1C89E8;
-            box-shadow: 0px 2px 5px 0px grey; }
-            main section .search__section form fieldset:hover button {
-              background-color: #1C89E8; }
-          main section .search__section form fieldset input {
-            outline: none;
-            border-radius: 6px;
-            border: none;
-            height: auto;
-            width: 100%; }
-          main section .search__section form fieldset button {
-            border: none;
-            background-color: #7878EB;
-            color: #fff;
-            padding: 5px;
-            border-radius: 6px; }
-            main section .search__section form fieldset button:hover {
-              opacity: 0.7; }
     main section .carousel {
       margin: 0 auto;
       padding: 0;
@@ -747,16 +703,12 @@ main {
                 width: 5.5rem; } }
   main .catalogo {
     height: auto;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0; }
+    width: 100%; }
     main .catalogo .container__post {
       display: flex;
-      margin: 0;
-      padding: 0; }
-      @media only screen and (max-width: 768px) {
-        main .catalogo .container__post {
-          flex-direction: column; } }
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; }
       main .catalogo .container__post input[type="radio"] {
         display: none; }
       main .catalogo .container__post [value="procesador"]:checked ~ .posts .post:not([data-category~="procesador"]) {
@@ -769,61 +721,139 @@ main {
         display: none; }
       main .catalogo .container__post [value="placa-base"]:checked ~ .posts .post:not([data-category~="placa-base"]) {
         display: none; }
-      main .catalogo .container__post .container__category {
+      main .catalogo .container__post nav {
+        height: 6rem;
+        width: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-evenly;
+        align-items: start;
         background-color: #fff;
-        flex-direction: column;
-        margin: 1rem 0;
-        padding: 0;
-        height: auto;
-        width: 30%; }
-        @media only screen and (max-width: 768px) {
-          main .catalogo .container__post .container__category {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 997; }
+        @media only screen and (max-width: 414px) {
+          main .catalogo .container__post nav {
+            flex-direction: column; } }
+        main .catalogo .container__post nav .search__section {
+          height: 6rem;
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          @media only screen and (max-width: 414px) {
+            main .catalogo .container__post nav .search__section {
+              height: 6rem;
+              width: 100%; } }
+          main .catalogo .container__post nav .search__section form {
             height: auto;
             width: 100%;
-            position: sticky;
-            left: 0;
-            right: 0;
-            top: 0;
-            z-index: 997; } }
-        main .catalogo .container__post .container__category summary {
-          margin: 0;
-          margin-left: 12px;
-          text-transform: uppercase;
-          font-size: 1.5rem;
-          height: 6rem;
-          width: 100%;
-          display: flex;
-          justify-content: start;
-          align-items: center; }
-          @media only screen and (max-width: 320px) {
-            main .catalogo .container__post .container__category summary {
-              height: 4.5rem;
-              width: 100%; } }
-          main .catalogo .container__post .container__category summary:hover {
-            color: #7878EB; }
-        main .catalogo .container__post .container__category label {
-          cursor: pointer;
-          transition: all 0.4s;
-          font-size: 1.3rem;
+            background-color: #fff; }
+            main .catalogo .container__post nav .search__section form fieldset {
+              height: auto;
+              width: 25rem;
+              padding: 5px;
+              margin: 0 auto;
+              border: 3px solid #7878EB;
+              border-radius: 6px;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              @media only screen and (max-width: 768px) {
+                main .catalogo .container__post nav .search__section form fieldset {
+                  height: auto;
+                  width: 20rem; } }
+              @media only screen and (max-width: 414px) {
+                main .catalogo .container__post nav .search__section form fieldset {
+                  margin: 0;
+                  margin-left: 10px;
+                  margin-top: 1rem;
+                  height: 3rem;
+                  width: calc(100% - 7rem); } }
+              @media only screen and (max-width: 320px) {
+                main .catalogo .container__post nav .search__section form fieldset {
+                  height: 3rem;
+                  width: calc(100% - 5rem); } }
+              main .catalogo .container__post nav .search__section form fieldset input {
+                height: auto;
+                width: calc(100% - 2rem);
+                outline: none;
+                border: none;
+                font-size: 0.9rem; }
+              main .catalogo .container__post nav .search__section form fieldset button {
+                height: 2rem;
+                width: 2rem;
+                margin: 0;
+                border: none;
+                background-color: #7878EB;
+                border-radius: 6px;
+                padding: 5px;
+                margin-left: 5px; }
+                main .catalogo .container__post nav .search__section form fieldset button:hover {
+                  opacity: 0.7; }
+                main .catalogo .container__post nav .search__section form fieldset button i {
+                  color: #fff; }
+        main .catalogo .container__post nav .container__category {
           height: auto;
-          width: 100%; }
-          @media only screen and (max-width: 1024px) {
-            main .catalogo .container__post .container__category label {
-              font-size: 1.1rem; } }
-          main .catalogo .container__post .container__category label:hover {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          flex-direction: column;
+          padding: 0 10px;
+          margin: 0; }
+          @media only screen and (max-width: 414px) {
+            main .catalogo .container__post nav .container__category {
+              height: auto;
+              width: 100%; } }
+          main .catalogo .container__post nav .container__category summary {
+            margin: 0;
+            padding: 0;
             text-transform: uppercase;
-            margin-left: 0.8rem; }
+            font-size: 1.5rem;
+            background-color: #fff;
+            height: 6rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            @media only screen and (max-width: 414px) {
+              main .catalogo .container__post nav .container__category summary {
+                margin: 0;
+                margin-left: 10px;
+                height: 3rem;
+                width: calc(100% - 7rem); } }
+            @media only screen and (max-width: 320px) {
+              main .catalogo .container__post nav .container__category summary {
+                height: 3rem;
+                width: calc(100% - 5rem);
+                font-size: 1rem; } }
+            main .catalogo .container__post nav .container__category summary::-webkit-details-marker {
+              display: none; }
+          main .catalogo .container__post nav .container__category label {
+            cursor: pointer;
+            transition: all 0.4s;
+            font-size: 1.3rem;
+            height: auto;
+            width: 100%; }
+            @media only screen and (max-width: 1024px) {
+              main .catalogo .container__post nav .container__category label {
+                font-size: 1.1rem; } }
+            main .catalogo .container__post nav .container__category label:hover {
+              text-transform: uppercase;
+              margin-left: 0.8rem; }
+        main .catalogo .container__post nav details[open] > summary {
+          color: #7878EB; }
       main .catalogo .container__post .posts {
         margin: 0;
         padding: 0;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
         height: auto;
-        width: 70%; }
+        width: 100%; }
         @media only screen and (max-width: 1024px) {
           main .catalogo .container__post .posts {
             grid-template-columns: repeat(3, 1fr);
@@ -842,7 +872,7 @@ main {
             width: 100%;
             gap: 0; } }
         main .catalogo .container__post .posts .filter__section {
-          grid-column: 1/5;
+          grid-column: 1/6;
           padding: 1rem;
           display: flex;
           justify-content: space-evenly;

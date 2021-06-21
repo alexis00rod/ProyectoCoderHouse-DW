@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <meta name="keywords" content="reparación de pc, armado de pc, venta de hardware, procesador, memoria ram, tarjeta gráfica, placa base, fuente de alimentación">
     <meta name="description" content="Mi tienda. Página dedicada a la reparación y al armado de computadoras. También brindamos venta de excelentes componentes y periféricos de calidad.">
     <title>Mi tienda | Reparación y armado de PC</title>
-    
+
         <!-- Estilo -->
         <link rel="stylesheet" href="../css/style.css">
         <!-- Fuente -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;900&display=swap" rel="stylesheet">
         <!-- Iconos -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <!-- Boostrap -->
@@ -31,16 +31,19 @@
     <nav>
         <ul class="menu__user">
             <li>
-                <a href="#"><img src="../multimedia/user.jpg" alt=""></a>
+                <a href="#"><img src="../multimedia/user.jpg" alt="">Mi cuenta</a>    
             </li>
             <li>
-                <a href="#">Nombre de usuario</a>
+                <a href="usuario.html">Ingresar</a>
             </li>
             <li>
-                <a href="#">Historial de compras</a>
+                <a href="register.html">Registrarme</a>
             </li>
             <li>
-                <a href="#">Mis direcciones</a>
+                <a href="#">Estado de compra</a>
+            </li>
+            <li>
+                <a href="#">Facturas</a>
             </li>
         </ul>
         <ul class="menu__nav">
@@ -48,10 +51,13 @@
                 <a href="../index.html">Inicio</a>
             </li>
             <li>
-                <a href="tienda.html">Tienda</a>
+                <a href="about-us.html">Sobre nosotros</a>
             </li>
             <li>
-                <a href="carrito.html">Carrito</a>
+                <a href="service.html">Servicios</a>
+            </li>
+            <li>
+                <a href="shopping-cart.html">Carrito</a>
             </li>
         </ul>
     </nav>
@@ -62,16 +68,20 @@
     <div class="user">
         <form method="POST" class="form">
             <fieldset>
-                <legend class="form__title">Registro</legend>
-                    <div class="form__user">
-                        <div class="login__user">
-                            <input type="name" placeholder="Nombre" class="form__inputs">
-                            <input type="mail" placeholder="Email" class="form__inputs">
-                            <input type="password" placeholder="Contraseña" class="form__inputs">
-                            <input type="password" placeholder="Repetir contraseña" class="form__inputs">
-                            <input type="submit" value="Registrarse" class="form__boton">
-                        </div>
+                <legend class="form__title">Iniciar sesión</legend>
+                <div class="form__user">
+                    <div class="login__with">
+                        <button class="login__fb">Iniciar con <br>Facebook</button>
+                        <button class="login__g">Iniciar con <br>Google</button>
                     </div>
+                    <div class="login__user">
+                        <input type="email" placeholder="Email" class="form__inputs">
+                        <input type="password" placeholder="Contraseña" class="form__inputs">
+                        <p><a href="" class="form__link">¿Olvidaste tu contraseña?</a></p>
+                        <input type="submit" value="Iniciar sesión" class="form__boton">
+                        <p>¿No tienes una cuenta? <a href="registro.html" class="form__link">Regístrate aquí</a></p>
+                    </div>
+                </div>
             </fieldset>
         </form>
     </div>

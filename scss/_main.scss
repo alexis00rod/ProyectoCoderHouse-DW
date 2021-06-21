@@ -1,11 +1,7 @@
 main {
-    max-width: 1280px;
     margin: 0 auto;
-    position: relative;
-    @include box__size(auto, 100%);
-    @include desktop {
-        padding: 0;
-    }
+    @include box__size(auto, 100vw);
+    max-width: 1280px;
     
     // Hero
 
@@ -292,7 +288,7 @@ main {
             
             
             video {
-                @include box__size(auto, 100%);
+                @include box__size(100%, 100%);
                 padding: $p__box;
                 @include mobile {
                     padding: $p__content;
@@ -508,8 +504,8 @@ main {
 
     
     section {
-        @include box__size(100vh, 100%);
-        @include flex(space-evenly, center);
+        @include box__size(auto, 100%);
+        @include flex(center, center);
         flex-direction: column;
         @include desktop{
             @include box__size(100%,100%);
@@ -518,73 +514,6 @@ main {
             @include box__size(100vh,100%);
             justify-content: center;
 
-        }
-
-        // Barra de busqueda
-        
-        .search__section {
-            margin: 0;
-            padding-top: $p__box * 1.5;
-            background-color: #fff;
-            @include box__size(auto, 100%);
-            @include flex(center, center);
-            form {
-                margin: 0 auto;
-                padding: 10px;
-                background-color: #fff;
-                @include box__size(auto, 40%);
-                @include tablet {
-                    @include box__size(auto, 50%);
-    
-                }
-                @include mobile {
-                    @include box__size(auto, 100%);
-    
-                }
-    
-                fieldset {
-                    border: 3px solid $color4;
-                    border-radius: 6px;
-                    padding: 6px;
-                    @include flex(space-between, center);
-    
-                    &:hover {
-                        border: 3px solid $color2;
-                        @include box__shadow;
-    
-                        button {
-                            background-color: $color2;
-    
-                        }
-    
-                    }
-    
-                    input {
-                        outline: none;
-                        border-radius: 6px;
-                        border: none;
-                        @include box__size(auto, 100%);
-    
-                    }
-    
-                    button {
-                        border: none;
-                        background-color: $color4;
-                        color: #fff;
-                        padding: 5px;
-                        border-radius: 6px;
-    
-                        &:hover {
-                            opacity: 0.7;
-    
-                        }
-    
-                    }
-    
-                }
-    
-            }
-    
         }
     
         // Productos destacados
@@ -691,17 +620,11 @@ main {
 
     .catalogo {
         @include box__size(auto, 100%);
-        margin: 1rem 0;
-        padding: 0;
 
         .container__post {
-            display: flex;
-            margin: 0;
-            padding: 0;
-            @include tablet {
-                flex-direction: column;
+            @include flex(center, center);
+            flex-wrap: wrap;
 
-            }
 
             input[type="radio"]{
                 display: none;
@@ -723,61 +646,159 @@ main {
                 display: none;
             }
 
-            // Categorias
-
-            .container__category {
-                @include flex(center, center);
+            nav {
+                @include box__size(6rem, 100%);
+                @include flex(space-evenly, start);
                 background-color: #fff;
-                flex-direction: column;
-                margin: 1rem 0;
-                padding: 0;
-                @include box__size(auto, 30%);
-                @include tablet {
-                    @include box__size(auto, 100%);
-                    position: sticky;
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    z-index: 997;
+                position: sticky;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 997;
+                @include mobile {
+                    flex-direction: column;
 
                 }
 
-                summary {
+                // Barra de busqueda
+            
+                .search__section {
+                    @include box__size(6rem, 50%);
+                    @include flex(center, center);
+                    @include mobile {
+                        @include box__size(6rem, 100%);
+
+                    }
+
+                    form {
+                        @include box__size(auto, 100%);
+                        background-color: #fff;
+                        
+                        fieldset {
+                            @include box__size(auto, 25rem);
+                            padding: 5px;
+                            margin: 0 auto;
+                            border: 3px solid $color4;
+                            border-radius: 6px;
+                            @include flex(center, center);
+                            @include tablet {
+                                @include box__size(auto, 20rem);
+
+                            }
+                            @include mobile {
+                                margin: 0;
+                                margin-left: 10px;
+                                margin-top: 1rem;
+                                @include box__size(3rem, calc(100% - 7rem));
+        
+                            }
+                            @include small-mobile{
+                                @include box__size(3rem, calc(100% - 5rem));
+    
+                            }
+
+                            
+                            input {
+                                @include box__size (auto, calc(100% - 2rem));
+                                outline: none;
+                                border: none;
+                                font-size: $f__size - 0.1;
+
+                            }
+                            
+                            button {
+                                @include box__size(2rem, 2rem);
+                                margin: 0;
+                                border: none;
+                                background-color: $color4;
+                                border-radius: 6px;
+                                padding: 5px;
+                                margin-left: 5px;
+
+                                &:hover {
+                                    opacity: 0.7;
+
+                                }
+
+                                i {
+                                    color: #fff;
+
+                                }
+
+                            }
+                            
+                        }
+
+                    }
+    
+                }
+    
+                // Categorias
+    
+                .container__category {
+                    @include box__size(auto, 50%);
+                    @include flex(center, center);
+                    background-color: #fff;
+                    flex-direction: column;
+                    padding: 0 10px;
                     margin: 0;
-                    margin-left: 12px;
-                    text-transform: uppercase;
-                    font-size: $f__size * 1.5;                  
-                    @include box__size(6rem, 100%);
-                    @include flex(start, center);
-                    @include small-mobile {
-                        @include box__size(4.5rem, 100%);
+                    @include mobile {
+                        @include box__size(auto, 100%);
 
                     }
+    
+                    summary {
+                        margin: 0;
+                        padding: 0;
+                        text-transform: uppercase;
+                        font-size: $f__size * 1.5;
+                        background-color: #fff;
+                        @include box__size(6rem, 100%);
+                        @include flex(center, center);
+                        @include mobile {
+                            margin: 0;
+                            margin-left: 10px;
+                            @include box__size(3rem, calc(100% - 7rem));
+    
+                        }
+                        @include small-mobile{
+                            @include box__size(3rem, calc(100% - 5rem));
+                            font-size: $f__size;
 
-                    &:hover {
-                        color: $color4;
+                        }
+    
+                        &::-webkit-details-marker {
+                            display: none;
 
+                        }
+    
+                    } 
+    
+                    label {
+                        cursor: pointer;
+                        transition: all 0.4s;
+                        font-size: $f__size + 0.30;
+                        @include box__size(auto, 100%);
+                        @include desktop {
+                            font-size: $f__size + 0.10;
+                        }
+    
+                        &:hover {
+                            @include link__active;
+    
+                        }
+    
                     }
-
-                } 
-
-                label {
-                    cursor: pointer;
-                    transition: all 0.4s;
-                    font-size: $f__size + 0.30;
-                    @include box__size(auto, 100%);
-                    @include desktop {
-                        font-size: $f__size + 0.10;
-                    }
-
-                    &:hover {
-                        @include link__active;
-
-                    }
-
+    
+                }
+    
+                details[open] > summary {
+                    color: $color4;
+    
                 }
 
             }
+
 
             // Productos
 
@@ -785,9 +806,9 @@ main {
                 margin: 0;
                 padding: 0;
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(5, 1fr);
                 gap: 1rem;
-                @include box__size(auto, 70%);
+                @include box__size(auto, 100%);
                 @include desktop {
                     grid-template-columns: repeat(3, 1fr);
                     @include box__size(auto, 70%);
@@ -804,7 +825,7 @@ main {
                 }
 
                 .filter__section {
-                    grid-column: 1/5;
+                    grid-column: 1/6;
                     padding: $p__content;
                     @include flex(space-evenly, center);
                     @include desktop {
