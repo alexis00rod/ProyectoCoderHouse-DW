@@ -22,8 +22,8 @@ header {
     label {
         @include box__size(4rem, 4rem);
         @include flex(center, center);
+        @include circle;
         background-color: $color3;
-        border-radius: 50%;
         position: fixed;
         top: 1rem;
         right: 1rem;
@@ -33,7 +33,7 @@ header {
             @include box__size(2.5rem, 2.5rem);
 
         }
-        
+
         i {
             font-size: 1.5rem;
             color: white;
@@ -139,6 +139,7 @@ header {
             li {
 
                 a {
+                    color: #2e2e2e;
                     display: block;
                     text-decoration: none;
                     text-transform: uppercase;

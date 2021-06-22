@@ -27,7 +27,9 @@
         <!-- Barra de navegacion -->
         
         <input type="checkbox" id="menu">
-        <label for="menu"><i class="fas fa-bars"></i></label>
+        <label for="menu">
+            <i class="fas fa-bars"></i>
+        </label>
         <nav>
             <ul class="menu__user">
                 <li>
@@ -48,13 +50,13 @@
             </ul>
             <ul class="menu__nav">
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a href="index.html">Inicio<span></span></a>
                 </li>
                 <li>
-                    <a href="nav/about-us.html">Sobre nosotros</a>
+                    <a href="nav/about-us.html"><span>Nosotros</span></a>
                 </li>
                 <li>
-                    <a href="nav/service.html">Servicios</a>
+                    <a href="nav/service.html"><span>Servicios</span></a>
                 </li>
                 <li>
                     <a href="nav/shopping-cart.html">Carrito</a>
@@ -70,11 +72,11 @@
 
         <div class="hero">
             <div class="hero__left">
-                <h1><a href="#inicio" class="hero__logo">Mi <span class="logo__animation">tienda</span></span></a></h1>
+                <h1><a href="nav/about-us.html" class="hero__logo">Mi <span class="logo__animation">tienda</span></span></a></h1>
                 <p class="hero__text">Nos dedicamos a la reparación y al armado de computadoras. También brindamos venta de excelentes componentes y periféricos de calidad.</p>
                 <ul>
-                    <li><a href="nav/tienda.html#service" class="hero__link">Servicios</a></li>
-                    <li><a href="#catalogo" class="hero__link">Productos</a></li>
+                    <li><button><a href="nav/service.html">Servicios <i class="fas fa-chevron-right"></i></a></button></li>
+                    <li><button><a href="#catalogo">Productos <i class="fas fa-chevron-right"></i></a></button></li>
                 </ul>
             </div>
             <div class="hero__right">
@@ -161,6 +163,9 @@
                     <input type="radio" id="memoria-ram" name="categories" value="memoria-ram">
                     <input type="radio" id="fuente-alimentacion" name="categories" value="fuente-alimentacion">
                     <input type="radio" id="placa-base" name="categories" value="placa-base">
+                    <input type="radio" id="teclado" name="categories" value="teclado">
+                    <input type="radio" id="mouse" name="categories" value="mouse">
+                    <input type="radio" id="auricular" name="categories" value="auricular">
         
                     <nav>
                         
@@ -176,15 +181,26 @@
                         </div>
 
                         <!-- Categorias -->
+                        <input type="checkbox" id="category">
+                        <label for="category" class="category__menu"><i class="fas fa-ellipsis-v"></i>Ver categorias</label>
     
-                        <details class="container__category">
-                            <summary>Productos</summary>
-                            <label for="procesador">Procesador</label>
-                            <label for="memoria-ram">Memoria RAM</label>
-                            <label for="tarjeta-grafica">Tarjeta gráfica</label>
-                            <label for="fuente-alimentacion">Fuente de alimentación</label>
-                            <label for="placa-base">Placa base</label>
-                        </details>
+                        <div class="container__category">
+                            <details open>
+                                <summary>Componentes</summary>
+                                <label for="procesador">-Procesador</label>
+                                <label for="memoria-ram">-Memoria RAM</label>
+                                <label for="tarjeta-grafica">-Tarjeta gráfica</label>
+                                <label for="fuente-alimentacion">-Fuente de alimentación</label>
+                                <label for="placa-base">-Placa base</label>
+                            </details>
+                            <details open>
+                                <summary>Periféricos</summary>
+                                <label for="teclado">-Teclado</label>
+                                <label for="mouse">-Mouse</label>
+                                <label for="auricular">-Auricular</label>
+
+                            </details>
+                        </div>
 
                     </nav>
 
@@ -1333,6 +1349,228 @@
                                 <button class="post__btn">Agregar al carrito</button>
                             </div>
                         </div>
+                        <!-- Teclado 1 -->
+                        <div class="post" data-category="teclado">
+                            <div class="post__img">
+                                <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#teclado-1"><img src="../multimedia/teclado-1.png" alt=""></button>
+                                <div class="modal face" id="teclado-1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Teclado 1</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="../multimedia/teclado-1.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Tipo de swich</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de teclado</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de mecanismo</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post__description">
+                                <h4>Teclado 1</h4>
+                                <span>$00,00</span>
+                                <button class="post__btn">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <!-- Mouse 1 -->
+                        <div class="post" data-category="mouse">
+                            <div class="post__img">
+                                <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#mouse-1"><img src="../multimedia/mouse-1.png" alt=""></button>
+                                <div class="modal face" id="mouse-1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Mouse 1</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="../multimedia/mouse-1.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Cantidad de botones</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de sensor</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Peso</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post__description">
+                                <h4>Mouse 1</h4>
+                                <span>$00,00</span>
+                                <button class="post__btn">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <!-- Auricular 1 -->
+                        <div class="post" data-category="auricular">
+                            <div class="post__img">
+                                <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#auricular-1"><img src="../multimedia/auricular-1.png" alt=""></button>
+                                <div class="modal face" id="auricular-1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Auricular 1</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="../multimedia/auricular-1.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Audio</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Conexión</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Con micrófono</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post__description">
+                                <h4>Auricular 1</h4>
+                                <span>$00,00</span>
+                                <button class="post__btn">Agregar al carrito</button>
+                            </div>
+                        </div>
                     </div>
                 
                 </div>
@@ -1340,10 +1578,13 @@
         
             </div>
 
-        <div class="boton__ws">
-            <button class="fab fa-whatsapp"></button>
-        </div>
-        
+        <nav class="btn__float">
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a></li>
+                <li><a href="" class="fab fa-whatsapp"></a></li>
+            </ul>
+        </nav>  
 
 </main>
 
