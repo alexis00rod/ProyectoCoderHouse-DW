@@ -2,6 +2,17 @@ header {
     
     #menu {
         display: none;
+
+        &:checked ~ label {
+            background-color: #fff;
+
+            i:before {
+                content: "\f00d";
+                color: $color4;
+            }
+
+
+        }
         
         &:checked ~ nav {
             right: 0;
@@ -29,6 +40,7 @@ header {
         right: 1rem;
         z-index: 999;
         cursor: pointer;
+        transition: all .5s ease;
         @include small-mobile {
             @include box__size(2.5rem, 2.5rem);
 
@@ -61,7 +73,9 @@ header {
         @include mobile {
             flex-direction: column;
         }
-        @include gradient;
+        // @include gradient;
+        // background: linear-gradient(-135deg, $color4, $color2);
+        background-color: $color3;
 
 
         .menu__user {
@@ -86,7 +100,7 @@ header {
                 
                 a {
                     text-decoration: none;
-                    color: #000;
+                    color: #fff;
                     font-size: $f__size;
                     padding: 0.8rem;
                     display: block;
@@ -100,7 +114,7 @@ header {
                     }
 
                     &:hover {
-                        color: $color3;
+                        text-decoration: underline;
 
                     }
 
@@ -139,14 +153,17 @@ header {
             li {
 
                 a {
-                    color: #2e2e2e;
-                    display: block;
                     text-decoration: none;
                     text-transform: uppercase;
-                    color: #000;
-                    font-size: 3rem;
-                    font-weight: 900;
-                    padding: 2.5rem;
+                    color: #fff;
+                    font-size: 2rem;
+                    font-weight: bolder;
+                    padding: 2rem .5rem;
+                    margin: 0;
+                    position: relative;
+                    transition: all .4s ease;
+                    line-height: 50px;
+                    @include flex(center, center);
                     @include tablet {
                         font-size: 2.5rem;
                         padding: 2rem 0;
@@ -161,13 +178,31 @@ header {
                         padding: 0.5rem;
 
                     }
-
+                    
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        z-index: -1;
+                        @include box__size(4rem, 100%);
+                        background-color: #fff;
+                        border-radius: 50px;
+                        transform: scaleY(0);
+                        transition: transform .4s ease;
+                        
+                    }
+                    
                     &:hover {
-                        color: $color3;
+                        color: $color4;
 
                     }
 
-                }
+                    &:hover:after {
+                        transform: scaleY(1);
+                        
+                    }
+                    
+                }                  
 
             }
 
