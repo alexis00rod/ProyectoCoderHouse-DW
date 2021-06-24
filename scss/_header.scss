@@ -65,6 +65,7 @@ header {
         z-index: 998;
         right: -100%;
         transition: all .5s;
+        background: linear-gradient(-135deg, $color2, $color4);
         @include box__size(100vh, calc(100vw - 10px));
         @include flex(center, center);
         @include desktop {
@@ -73,10 +74,6 @@ header {
         @include mobile {
             flex-direction: column;
         }
-        // @include gradient;
-        // background: linear-gradient(-135deg, $color4, $color2);
-        background-color: $color3;
-
 
         .menu__user {
             padding: 0;

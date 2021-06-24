@@ -56,12 +56,12 @@ header nav {
   z-index: 998;
   right: -100%;
   transition: all .5s;
+  background: linear-gradient(-135deg, #1C89E8, #7878EB);
   height: 100vh;
   width: calc(100vw - 10px);
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #5684FF; }
+  align-items: center; }
   @media only screen and (max-width: 1024px) {
     header nav {
       height: 100vh;
@@ -315,11 +315,6 @@ main {
             display: flex;
             justify-content: center;
             align-items: center; }
-            main .hero .hero__left ul li button a i {
-              display: none;
-              margin: 0 5px; }
-          main .hero .hero__left ul li button:hover a i {
-            display: block; }
     main .hero .hero__right {
       display: flex;
       align-items: center;
@@ -652,27 +647,96 @@ main {
         justify-content: center; } }
     main section .carousel {
       margin: 0 auto;
+      margin-bottom: 1rem;
       padding: 0;
       text-align: center;
       cursor: default;
-      height: auto;
+      height: 100%;
       width: 70%; }
       @media only screen and (max-width: 768px) {
         main section .carousel {
-          height: auto;
+          height: 100%;
           width: 100%; } }
-      main section .carousel .carousel--img {
-        margin-bottom: 2rem;
-        height: 100%;
-        width: 50%; }
-      main section .carousel .bg__modal {
-        background-color: #fff;
-        padding: 0;
-        padding-top: 10px; }
-      main section .carousel .carousel__oferta {
-        color: grey;
-        text-decoration: line-through;
-        font-size: 0.8rem; }
+      main section .carousel:hover h2 {
+        color: #7878EB; }
+      main section .carousel .carousel-item {
+        height: 20rem;
+        width: 100%; }
+        main section .carousel .carousel-item .post__modal {
+          border: none;
+          background: none;
+          height: auto;
+          width: 100%; }
+          main section .carousel .carousel-item .post__modal img {
+            max-width: 300px; }
+        main section .carousel .carousel-item .modal-body .modal__description {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          @media only screen and (max-width: 320px) {
+            main section .carousel .carousel-item .modal-body .modal__description {
+              flex-direction: column; } }
+          main section .carousel .carousel-item .modal-body .modal__description img {
+            height: 100%;
+            width: 50%; }
+          main section .carousel .carousel-item .modal-body .modal__description .modal__date {
+            padding: 1rem;
+            height: auto;
+            width: 50%; }
+            @media only screen and (max-width: 320px) {
+              main section .carousel .carousel-item .modal-body .modal__description .modal__date {
+                height: auto;
+                width: 100%; } }
+            main section .carousel .carousel-item .modal-body .modal__description .modal__date .star-rating {
+              color: #EBEA17;
+              padding: 0;
+              margin: 0.5rem 0; }
+            main section .carousel .carousel-item .modal-body .modal__description .modal__date .price {
+              font-size: 2rem;
+              font-weight: 700;
+              padding: 0;
+              margin: 0; }
+            main section .carousel .carousel-item .modal-body .modal__description .modal__date select {
+              border: 2px solid #7878EB;
+              border-radius: 4px;
+              outline: none;
+              font-size: 1rem; }
+              @media only screen and (max-width: 414px) {
+                main section .carousel .carousel-item .modal-body .modal__description .modal__date select {
+                  font-size: 0.8rem; } }
+            main section .carousel .carousel-item .modal-body .modal__description .modal__date ul {
+              list-style: none;
+              padding: 0;
+              margin: 1rem 0; }
+              main section .carousel .carousel-item .modal-body .modal__description .modal__date ul li {
+                color: #22D658; }
+                main section .carousel .carousel-item .modal-body .modal__description .modal__date ul li i {
+                  margin: 3px; }
+                main section .carousel .carousel-item .modal-body .modal__description .modal__date ul li span {
+                  font-size: 0.8rem; }
+                  @media only screen and (max-width: 414px) {
+                    main section .carousel .carousel-item .modal-body .modal__description .modal__date ul li span {
+                      font-size: 0.6rem; } }
+            main section .carousel .carousel-item .modal-body .modal__description .modal__date .description {
+              font-size: 0.9rem;
+              height: auto;
+              width: 100%; }
+        main section .carousel .carousel-item .modal__btn {
+          text-decoration: none;
+          border: none;
+          color: white;
+          background: #CFBDFF;
+          border-bottom: 3px solid #7878EB;
+          padding: 0.6rem;
+          border-radius: 6px;
+          font-size: 1.1rem;
+          font-weight: 700;
+          text-align: center;
+          box-shadow: 1px 2px 5px grey; }
+          main section .carousel .carousel-item .modal__btn:hover {
+            opacity: 0.7; }
+      main section .carousel img {
+        max-width: 300px; }
     main section .shopping__info {
       height: auto;
       width: 100%;
@@ -705,6 +769,10 @@ main {
             @media only screen and (max-width: 414px) {
               main section .shopping__info ul li h4 {
                 padding: 1rem 1.2rem; } }
+            main section .shopping__info ul li h4 i {
+              transition: all .5s ease; }
+              main section .shopping__info ul li h4 i:hover {
+                transform: rotateY(360deg); }
           main section .shopping__info ul li p {
             background-color: #1C89E8;
             padding: 1rem;
@@ -1150,11 +1218,6 @@ main {
       @media only screen and (max-width: 414px) {
         main .carrito .carrito__text {
           font-size: 0.9rem; } }
-      main .carrito .carrito__text a {
-        text-decoration: none;
-        color: #7878EB; }
-        main .carrito .carrito__text a:hover {
-          text-decoration: underline; }
   main .user {
     margin: 0 auto;
     display: flex;
@@ -1165,6 +1228,7 @@ main {
     height: 100vh;
     width: 100%; }
     main .user .form {
+      padding: 0 1rem;
       border-radius: 18px;
       height: auto;
       width: 50%; }
@@ -1172,14 +1236,13 @@ main {
         main .user .form {
           height: auto;
           width: 70%; } }
-      @media only screen and (max-height: 736px) {
-        main .user .form {
-          height: auto;
-          width: 100%; } }
       @media only screen and (max-width: 414px) {
         main .user .form {
           height: auto;
           width: 100%; } }
+      @media only screen and (max-width: 320px) {
+        main .user .form {
+          padding-top: 1rem; } }
       main .user .form .form__title {
         margin: 0;
         text-align: center;
@@ -1228,57 +1291,38 @@ main {
           @media only screen and (max-height: 736px) {
             main .user .form .form__user p {
               margin: 0.5rem 0; } }
-          main .user .form .form__user p a {
-            text-decoration: none;
-            color: #7878EB; }
-            main .user .form .form__user p a:hover {
-              text-decoration: underline; }
         main .user .form .form__user .login__with {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding-bottom: 1rem;
+          flex-direction: column;
           height: auto;
           width: 100%; }
-          @media only screen and (max-height: 736px) {
-            main .user .form .form__user .login__with {
-              height: auto;
-              width: 30%;
-              flex-direction: column; } }
-          main .user .form .form__user .login__with .login__fb {
-            background-color: #4267b2;
-            height: 50px;
-            width: 150px;
-            text-align: center;
-            color: #fff;
+          main .user .form .form__user .login__with button {
+            height: 3rem;
+            width: 17rem;
             border: none;
-            border-radius: 4px;
-            margin: 0.2rem;
-            padding: 0;
-            box-shadow: 1px 2px 3px grey; }
-            main .user .form .form__user .login__with .login__fb:hover {
-              opacity: 0.7; }
-            @media only screen and (max-height: 320px) {
-              main .user .form .form__user .login__with .login__fb {
-                height: 50px;
-                width: 100px; } }
-          main .user .form .form__user .login__with .login__g {
-            background-color: #dc3545;
-            height: 50px;
-            width: 150px;
-            text-align: center;
+            outline: none;
+            border-radius: 6px;
+            margin: 0 .5rem;
+            font-weight: bold;
             color: #fff;
-            border: none;
-            border-radius: 4px;
-            margin: 0.2rem;
-            padding: 0;
-            box-shadow: 1px 2px 3px grey; }
-            main .user .form .form__user .login__with .login__g:hover {
-              opacity: 0.7; }
-            @media only screen and (max-height: 320px) {
-              main .user .form .form__user .login__with .login__g {
-                height: 50px;
-                width: 100px; } }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            margin: .4rem auto;
+            text-align: center; }
+            main .user .form .form__user .login__with button:hover {
+              opacity: .7; }
+            @media only screen and (max-width: 414px) {
+              main .user .form .form__user .login__with button {
+                height: 3.5rem;
+                width: 12rem; } }
+          main .user .form .form__user .login__with button:nth-child(1) {
+            background-color: #4267b2; }
+          main .user .form .form__user .login__with button:nth-child(2) {
+            background-color: #DB4437; }
         main .user .form .form__user .login__user {
           display: flex;
           justify-content: center;
@@ -1302,8 +1346,7 @@ main {
             height: auto;
             width: 70%; }
             main .user .form .form__user .login__user .form__inputs:focus {
-              border-bottom: solid 2px #1C89E8;
-              font-weight: 800; }
+              border-bottom: solid 2px #1C89E8; }
             @media only screen and (max-height: 736px) {
               main .user .form .form__user .login__user .form__inputs {
                 height: auto;

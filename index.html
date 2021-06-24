@@ -73,62 +73,497 @@
         <div class="hero">
             <div class="hero__left">
                 <h1><a href="nav/about-us.html" class="hero__logo">Mi <span class="logo__animation">tienda</span></span></a></h1>
-                <p class="hero__text">Nos dedicamos a la reparación y al armado de computadoras. También brindamos venta de excelentes componentes y periféricos de calidad.</p>
+                <p class="hero__text">Nos dedicamos a la venta de componentes y periféricos para computadoras, tambien brindamos servicio de reparación y armado de computadoras.</p>
                 <ul>
-                    <li><button><a href="nav/service.html">Servicios <i class="fas fa-chevron-right"></i></a></button></li>
-                    <li><button><a href="#catalogo">Productos <i class="fas fa-chevron-right"></i></a></button></li>
+                    <li><button><a href="nav/service.html">Servicios</a></button></li>
+                    <li><button><a href="#catalogo">Productos</a></button></li>
                 </ul>
             </div>
             <div class="hero__right">
                 <img src="multimedia/img-1.png" alt="" class="hero__img">
             </div>
-        </div> -->
+        </div>
 
         <section>
 
-            <!-- Productos destacados -->
+            <!-- lo mas vendido-->
         
             <div class="carousel">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div id="carousel1" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <h2>Productos destacados</h2>
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="multimedia/memoria-ram.png" class="carousel--img" alt="...">
-                            <div class="carousel-caption bg__modal">
-                                <h5>Memoria RAM 1</h5>
-                                <p><span class="carousel__oferta">$00.00</span> $00.00</p>
+                        <h2>Lo más vendido</h2>
+                        <div class="carousel-item active">
+                            <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#outstanding1"><img src="multimedia/procesador.png" alt=""></button>
+                            <div class="modal face" id="outstanding1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Procesador 1</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/procesador.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Modelo</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Socket</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Nucleos</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Frecuencia</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h5>Procesador 1</h5>
+                                <p>$00.00</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#outstanding2"><img src="multimedia/procesador-3.png" alt=""></button>
+                                <div class="modal face" id="outstanding2" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Procesador 3</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/procesador-3.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Modelo</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Socket</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Nucleos</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Frecuencia</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="carousel-caption">  
+                                <h5>Procesador 3</h5>
+                                <p>$00.00</p>
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000"> 
-                            <img src="multimedia/tarjeta-grafica.png" class="carousel--img" alt="...">
-                            <div class="carousel-caption bg__modal">  
+                            <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#outstanding3"><img src="multimedia/tarjeta-grafica.png" alt=""></button>
+                                <div class="modal face" id="outstanding3" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Tarjeta grafica 1</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/tarjeta-grafica.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Tamaño de la memoria</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de memoria grafica</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Velocidad de la memoria</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="carousel-caption">  
                                 <h5>Tarjeta gráfica 1</h5>
-                                <p><span class="carousel__oferta">$00.00</span> $00.00</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="multimedia/procesador.png" class="carousel--img" alt="...">
-                            <div class="carousel-caption bg__modal">
-                                <h5>Procesador 1</h5>
-                                <p><span class="carousel__oferta">$00.00</span> $00.00</p>
+                                <p>$00.00</p>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+            </div>
+
+            <!-- Ofertas -->
+
+            <div class="carousel">
+                <div id="carousel2" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <h2>Ofertas especiales</h2>
+                        <div class="carousel-item active">
+                            <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#offer1"><img src="multimedia/procesador-2.png" alt=""></button>
+                            <div class="modal face" id="offer1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Procesador 2</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/procesador-2.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Modelo</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Socket</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Nucleos</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Frecuencia</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h5>Procesador 2</h5>
+                                <p>$00.00 <span>$00.00</span></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#offer1"><img src="multimedia/tarjeta-grafica-4.png" alt=""></button>
+                            <div class="modal face" id="offer1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Tarjeta grafica 4</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/tarjeta-grafica-4.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Tamaño de la memoria</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de memoria grafica</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Velocidad de la memoria</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="carousel-caption">  
+                                <h5>Tarjeta grafica 4</h5>
+                                <p>$00.00 <span>$00.00</span></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000"> 
+                            <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#offer3"><img src="multimedia/placa-base-2.png" alt=""></button>
+                            <div class="modal face" id="offer3" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Placa Base 2</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/placa-base-2.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envios a todo el pais</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Caracteristicas generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Plataforma</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Socket</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Chipset principal</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="carousel-caption">  
+                                <h5>Placa base 2</h5>
+                                <p>$00.00 <span>$00.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+            </div>
+
 
             <!-- Info compra -->
         

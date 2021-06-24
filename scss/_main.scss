@@ -141,23 +141,6 @@ main {
                             color: #fff;
                             @include flex(center, center);
 
-                            i {
-                                display: none;
-                                margin: 0 5px;
-
-                            }
-
-                            
-                        }
-                        
-                        &:hover {
-                            a {
-                                i {
-                                    display: block;
-                                } 
-                                
-                            }
-
                         }
 
                     }
@@ -549,33 +532,137 @@ main {
     
         .carousel {
             margin: 0 auto;
+            margin-bottom: 1rem;
             padding: 0;
             text-align: center;
             cursor: default;
-            @include box__size(auto, 70%);
-            @include tablet {
-                @include box__size(auto, 100%);
+            @include box__size(100%, 70%);
+            @include tablet{
+                @include box__size(100%, 100%);
             }
-    
-            .carousel--img {
-                margin-bottom: 2rem;
-                @include box__size(100%, 50%);
-    
+
+            &:hover {
+                h2 {
+                    color: $color4;
+                }
+
             }
-    
-            .bg__modal {
-                background-color: #fff;
-                padding: 0;
-                padding-top: 10px;
+
+            .carousel-item {
+                @include box__size(20rem, 100%);
+
+                
+                .post__modal {
+                    @include boton--modal;
+                    @include box__size(auto, 100%);
+
+                    img {
+                        max-width: 300px;
+
+                    }
+
+                }
+                .modal-body {
+                    
+                    .modal__description {
+                        @include flex(center, center);
+                        @include small-mobile {
+                            flex-direction: column;
+
+                        }
+
+                        img {
+                            @include box__size(100%, 50%);
+                            
+                        }
+
+                        .modal__date {
+                            padding: $p__content;
+                            @include box__size(auto, 50%);
+                            @include small-mobile {
+                                @include box__size(auto, 100%);
+
+                            }
+
+                            .star-rating {
+                                color: #EBEA17;
+                                padding: 0;
+                                margin: 0.5rem 0;
+                            }
+
+                            .price {
+                                font-size: $f__size * 2;
+                                font-weight: 700;
+                                padding: 0;
+                                margin: 0;
+                            }
+
+                            select {
+                                border: 2px solid $color4;
+                                border-radius: 4px;
+                                outline: none;
+                                font-size: $f__size;
+                                @include mobile {
+                                    font-size: $f__size - 0.20;
+
+                                }
+
+                            }
+
+                            ul {
+                                list-style: none;
+                                padding: 0;
+                                margin: 1rem 0;
+                                
+                                li {
+                                    color: #22D658;
+
+                                    i {
+                                        margin: 3px;
+
+                                    }
+
+                                    span {
+                                        font-size: $f__size - 0.20;
+                                        @include mobile {
+                                            font-size: $f__size - 0.40;
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            .description {
+                                font-size: $f__size - 0.10;
+                                @include box__size(auto, 100%);
+
+                            }
+
+
+                        }
+
+                    }
+
+                }
+
+                .modal__btn {
+                    @include boton--primary;
+
+                }
+
             }
-    
-            .carousel__oferta {
-                color: grey;
-                text-decoration: line-through;
-                font-size: $f__size - 0.20;
+
+            img {
+                max-width: 300px;
+
             }
+
     
         }
+
     
         // Info compra
     
@@ -611,6 +698,16 @@ main {
                         @include mobile {
                             padding: $p__content $p__content * 1.2;
     
+                        }
+
+                        i {
+                            transition: all .5s ease;
+
+                            &:hover {
+                                transform: rotateY(360deg);
+
+                            }
+
                         }
     
                     }
@@ -1014,7 +1111,7 @@ main {
                                 }
 
                                 img {
-                                    @include box__size(100%, 50%);                            
+                                    @include box__size(100%, 50%);
                                     
                                 }
 
@@ -1190,10 +1287,6 @@ main {
                 font-size: $f__size - 0.10;
             }
 
-            a {
-                @include link;
-            }
-
         }
 
     }
@@ -1208,19 +1301,19 @@ main {
         @include box__size(100vh, 100%);
 
         .form {
+            padding: 0 1rem;
             border-radius: $p__border__r;
             @include box__size(auto, 50%);
             @include desktop {
                 @include box__size(auto, 70%);
 
             }
-            @include mobile-rotate {
-                @include box__size(auto, 100%);
-
-            }
             @include mobile {
                 @include box__size(auto, 100%);
 
+            }
+            @include small-mobile {
+                padding-top: 1rem;
             }
 
             .form__title {
@@ -1275,41 +1368,35 @@ main {
 
                     }
 
-                    a {
-                        @include link;
-
-                    }
-
                 }
 
                 .login__with {
                     @include flex(center, center);
-                    padding-bottom: 1rem;
+                    flex-direction: column;
                     @include box__size(auto, 100%);
-                    @include mobile-rotate {
-                        @include box__size(auto, 30%);
-                        flex-direction: column;
+                    
+                    button {
+                        @include box__size(3rem, 17rem);
+                        @include boton--secondary;
+                        @include flex(space-between, center);
+                        padding: 0 1rem;
+                        margin: .4rem auto;
+                        text-align: center;
+                        @include mobile {
+                            @include box__size(3.5rem, 12rem);
+
+                        }
                         
                     }
-                    
-                    .login__fb {
+
+                    button:nth-child(1) {
                         background-color: #4267b2;
-                        @include boton--secondary;
-                        @include small-mobile-rotate {
-                            @include box__size(50px, 100px);
-                        }
-
-                    }
-    
-                    .login__g {
-                        background-color: #dc3545;
-                        @include boton--secondary;
-                        @include small-mobile-rotate {
-                            @include box__size(50px, 100px);
-                        }
-
                     }
 
+                    button:nth-child(2) {
+                        background-color: #DB4437;
+                    }
+                    
                 }
 
                 .login__user {
