@@ -22,7 +22,7 @@
 
 </head>
 <body>
-    <header>
+<header>
 
         <!-- Barra de navegacion -->
         
@@ -33,20 +33,21 @@
         <nav>
             <ul class="menu__user">
                 <li>
-                    <a href="#"><img src="multimedia/user.jpg" alt="">Mi cuenta</a>    
+                    <details>
+                        <summary><img src="multimedia/user.jpg" alt=""><span>Mi cuenta</span></summary>
+                        <a href="nav/user.html">Ingresar</a>
+                        <a href="#">Mis compras</a>
+                        <a href="#">Notificaciones</a>
+                        <a href="#">Salir</a>
+                    </details>
                 </li>
-                <li>
-                    <a href="nav/user.html">Ingresar</a>
-                </li>
-                <li>
-                    <a href="nav/register.html">Registrarme</a>
-                </li>
-                <li>
-                    <a href="#">Estado de compra</a>
-                </li>
-                <li>
-                    <a href="#">Facturas</a>
-                </li>
+               <li>
+                    <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f" id="link"></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram" id="link"></a>
+                    <a href="" class="fab fa-whatsapp" id="link"></a>
+               </li>
+
+
             </ul>
             <ul class="menu__nav">
                 <li>
@@ -64,13 +65,13 @@
             </ul>
         </nav>
 
-    </header>
+</header>
 
-    <main>
+<main>
 
-        <!-- Hero section -->
+    <!-- Hero section -->
 
-        <div class="hero">
+    <div class="hero">
             <div class="hero__left">
                 <h1><a href="nav/about-us.html" class="hero__logo">Mi <span class="logo__animation">tienda</span></span></a></h1>
                 <p class="hero__text">Nos dedicamos a la venta de componentes y periféricos para computadoras, tambien brindamos servicio de reparación y armado de computadoras.</p>
@@ -82,9 +83,11 @@
             <div class="hero__right">
                 <img src="multimedia/img-1.png" alt="" class="hero__img">
             </div>
-        </div>
+    </div>
 
-        <section>
+    <!-- Catalogo -->
+
+    <section>
 
             <!-- lo mas vendido-->
         
@@ -564,10 +567,9 @@
                 </div>
             </div>
 
-
             <!-- Info compra -->
         
-                <div class="shopping__info">
+            <div class="shopping__info">
                     <ul>
                         <li>
                             <h4><i class="fas fa-shipping-fast"></i></h4>
@@ -582,12 +584,11 @@
                             <p>Seguridad al comprar</p>
                         </li>
                     </ul>
-                </div>
+            </div>
             
-        </section>
+    </section>
         
-            <!-- Catalogo -->
-            <div class="catalogo" id="catalogo">
+    <div class="catalogo" id="catalogo">
         
                 <div class="container__post">
         
@@ -2009,15 +2010,7 @@
                 </div>
         
         
-            </div>
-
-        <nav class="btn__float">
-            <ul>
-                <li><a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a></li>
-                <li><a href="" class="fab fa-whatsapp"></a></li>
-            </ul>
-        </nav>  
+    </div>
 
 </main>
 

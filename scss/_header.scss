@@ -93,35 +93,89 @@ header {
 
             }
 
-            li {
+            // li {
                 
-                a {
-                    text-decoration: none;
-                    color: #fff;
-                    font-size: $f__size;
-                    padding: 0.8rem;
-                    display: block;
-                    @include mobile {
-                        padding: 0.5rem;
+            //     a {
+            //         text-decoration: none;
+            //         color: #fff;
+            //         font-size: $f__size;
+            //         padding: 0.8rem;
+            //         display: block;
+            //         @include mobile {
+            //             padding: 0.5rem;
                         
-                    }
-                    @include small-mobile {
-                        padding: 0.2rem;
+            //         }
+            //         @include small-mobile {
+            //             padding: 0.2rem;
 
-                    }
+            //         }
 
-                    &:hover {
-                        text-decoration: underline;
+            //         &:hover {
+            //             text-decoration: underline;
 
-                    }
+            //         }
 
-                    img {
-                        @include box__size(3rem, 3rem);
-                        border-radius: 50%;
-                        border: 3px solid $color3;
-                        text-align: center;
+            //         img {
+            //             @include box__size(3rem, 3rem);
+            //             border-radius: 50%;
+            //             border: 3px solid $color3;
+            //             text-align: center;
         
+            //         }
+
+            //     }
+
+            // }
+
+            li {
+                @include flex(center, center);
+                margin: 1rem auto;
+
+                details {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    
+                    summary {
+                        color: #fff;
+                        font-size: 1.3rem;
+                        outline: none;
+                        font-weight: bold;
+                        
+                        img {
+                            margin: 0 5px;
+                            padding: 0;
+                            @include box__size(3rem, 3rem);
+                            @include circle;
+                            border: solid 2px #fff;
+    
+                        }
+
                     }
+    
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        margin: .5rem 0 .5rem 1rem;
+    
+                        &:hover {
+                            text-decoration: underline;
+    
+                        }
+    
+                    }
+    
+                }
+                
+                #link {
+                    margin: 0 10px;
+                    text-decoration: none;
+                    background-color: #fff;
+                    color: $color4;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    @include box__size(3rem, 3rem);
+                    @include flex(center, center);
+                    @include circle;
 
                 }
 

@@ -89,26 +89,47 @@ header nav {
         height: 40%;
         width: 100%;
         justify-content: center; } }
-    header nav .menu__user li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      padding: 0.8rem;
-      display: block; }
-      @media only screen and (max-width: 414px) {
-        header nav .menu__user li a {
-          padding: 0.5rem; } }
-      @media only screen and (max-width: 320px) {
-        header nav .menu__user li a {
-          padding: 0.2rem; } }
-      header nav .menu__user li a:hover {
-        text-decoration: underline; }
-      header nav .menu__user li a img {
+    header nav .menu__user li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem auto; }
+      header nav .menu__user li details {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        header nav .menu__user li details summary {
+          color: #fff;
+          font-size: 1.3rem;
+          outline: none;
+          font-weight: bold; }
+          header nav .menu__user li details summary img {
+            margin: 0 5px;
+            padding: 0;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            border: solid 2px #fff; }
+        header nav .menu__user li details a {
+          text-decoration: none;
+          color: #fff;
+          margin: .5rem 0 .5rem 1rem; }
+          header nav .menu__user li details a:hover {
+            text-decoration: underline; }
+      header nav .menu__user li #link {
+        margin: 0 10px;
+        text-decoration: none;
+        background-color: #fff;
+        color: #7878EB;
+        font-size: 1.5rem;
+        font-weight: bold;
         height: 3rem;
         width: 3rem;
-        border-radius: 50%;
-        border: 3px solid #5684FF;
-        text-align: center; }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; }
   header nav .menu__nav {
     padding: 0;
     margin: 0;
