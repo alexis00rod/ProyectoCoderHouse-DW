@@ -171,7 +171,7 @@
 // Medias
 
 @mixin small-mobile-rotate {
-    @media  only screen and (max-height:320px) {
+    @media  only screen and (max-height:568px) {
         @content;
     }
 }

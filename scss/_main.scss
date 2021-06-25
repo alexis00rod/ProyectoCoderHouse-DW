@@ -135,6 +135,10 @@ main {
                         @include box__size(3rem, 8rem);
                         margin-right: 1rem;
                         @include boton--primary;
+                        @include small-mobile {
+                            @include box__size(3rem, 7rem);
+
+                        }
 
                         a {
                             text-decoration: none;
@@ -246,10 +250,10 @@ main {
                 margin: 0;
                 padding: $p__content;
                 font-weight: $f__weight;
+                font-size: 2rem;
                 text-align: center;
                 @include desktop {
                     padding: $p__content - 0.50;
-                    font-size: $f__size + 0.30;
                 }
 
             }
@@ -350,6 +354,7 @@ main {
                     .card__title {
                         font-size: $f__title - 0.30;
                         font-weight: $f__weight;
+                        color: $color4;
                         text-align: center;
                         @include box__size(3rem, 100%);
                         @include flex(center, center);
@@ -367,16 +372,17 @@ main {
                         font-size: $f__size - 0.10;
                         text-align: start;
                         @include small-mobile {
+                            padding: 0 1rem;
                             font-size: $f__size - 0.20;
                         }
                     }
 
                     .card__button {
-                        margin: 0.5rem;
+                        margin-bottom: 1rem;
+                        @include flex(center, center);
                         @include boton--primary;
-                        @include tablet {
-                            padding: $p__content - 0.50;
-                        }
+                        @include box__size(4rem, 8rem);
+
                     }
 
                 }
@@ -507,6 +513,46 @@ main {
 
                 }
                 
+            }
+
+            .questions {
+                margin: 2rem;
+                padding: 2rem;
+                @include box__size(100%, 100%);
+                @include flex(center, center);
+                flex-direction: column;
+                background-color: #fff;
+                border-radius: 6px;
+                @include mobile {
+                    margin: 2rem 1rem;
+                    padding: 1.5rem 1rem;
+                }
+
+
+                details {
+                    @include box__size(auto, 100%);
+                    text-align: center;
+
+                    summary {
+                        color: $color4;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        @include mobile {
+                            font-size: 1rem;
+                        }
+
+                    }
+
+                    p {
+                        margin-top: 1rem;
+                        cursor: default;
+                        @include mobile {
+                            font-size: .8rem;
+                        }
+                    }
+
+                }
+
             }
 
         }
@@ -746,10 +792,14 @@ main {
 
     .catalogo {
         @include box__size(auto, 100%);
+        margin: 0;
+        padding: 0;
 
         .container__post {
             @include flex(center, center);
             flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
 
 
             input[type="radio"]{
@@ -834,6 +884,9 @@ main {
                                 @include box__size(3rem, calc(100% - 5rem));
     
                             }
+                            @include small-mobile-rotate {
+                                @include box__size(3rem, 15rem);
+                            }
 
                             
                             input {
@@ -882,6 +935,12 @@ main {
 
                     &:checked ~ .container__category {
                         display: block;
+                        @include small-mobile-rotate {
+                            display: flex;
+                            left: 0;
+                            @include box__size(auto, 100vw);
+
+                        }
 
 
                     }
@@ -929,10 +988,12 @@ main {
                     @include box__size(auto, 50%);
                     background-color: #fff;
                     @include mobile {
-                        @include box__size(auto, 100%);
                         top: 8rem;
+                        left: 0;
+                        @include box__size(auto, 100vw);
 
                     }
+                    
 
                     details {
                         @include flex(center, center);
@@ -942,12 +1003,18 @@ main {
                         summary {
                             font-size: 1.5rem;
                             font-weight: bold;
+                            @include small-mobile-rotate {
+                                font-size: 1.2rem;
+                            }
 
                         }
 
                         label {
                             cursor: pointer;
                             padding: .5rem;
+                            @include small-mobile-rotate {
+                                padding: 0;
+                            }
 
                             &:hover {
                                 color: $color4;
@@ -976,21 +1043,23 @@ main {
                 padding: 0;
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
-                gap: 1rem;
                 @include box__size(auto, 100%);
                 @include desktop {
                     grid-template-columns: repeat(3, 1fr);
-                    @include box__size(auto, 85%);
+                    @include box__size(auto, 100%);
+
                 }
                 @include tablet {
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 0;
-                    @include box__size(auto, 95%);
+                    grid-template-columns: repeat(2, 1fr);
+
                 }
                 @include mobile {
                     grid-template-columns: 1fr;
-                    @include box__size(auto, 100%);
-                    gap: 0;
+
+                }
+                @include small-mobile-rotate {
+                    grid-template-columns: 1fr;
+
                 }
 
                 .filter__section {
@@ -1002,12 +1071,15 @@ main {
 
                     }
                     @include tablet {
-                        grid-column: 1/4;
+                        grid-column: 1/3;
 
                     }
                     @include mobile {
                         grid-column: 1/2;
 
+                    }
+                    @include small-mobile-rotate {
+                        grid-column: 1/2;
                     }
 
                     p {
@@ -1059,13 +1131,9 @@ main {
                     padding: $p__content;
                     cursor: default;
                     @include tablet {
-                        @include box__size(auto, 85%);
-
-                    }
-                    @include mobile {
-                        display: flex;
-                        padding: $p__content;
                         @include box__size(auto, 100%);
+                        display: flex;
+
                     }
 
                     .post__img {
@@ -1078,7 +1146,7 @@ main {
                         border-top-left-radius: 10px;
                         border-top-right-radius: 10px;
                         @include box__size(auto, 100%);
-                        @include mobile {
+                        @include tablet {
                             border-top-right-radius: 0;
                             border-bottom-left-radius: 10px;
                         }
@@ -1204,14 +1272,9 @@ main {
                         @include flex(center, center);
                         flex-direction: column;
                         @include box__size(auto, 100%);
-                        @include mobile {
+                        @include tablet {
                             border-bottom-left-radius: 0;
                             border-top-right-radius: 10px;
-                        }
-                        @include tablet {
-                            // border-bottom-left-radius: 0;
-                            // border-top-right-radius: 10px;
-
                         }
 
                         h4 {
