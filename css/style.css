@@ -38,10 +38,18 @@ header label {
   z-index: 999;
   cursor: pointer;
   transition: all .5s ease; }
+  @media only screen and (max-width: 414px) {
+    header label {
+      height: 3.5rem;
+      width: 3.5rem;
+      top: .7rem;
+      right: .7rem; } }
   @media only screen and (max-width: 320px) {
     header label {
       height: 2.5rem;
-      width: 2.5rem; } }
+      width: 2.5rem;
+      top: .5rem;
+      right: .5rem; } }
   header label i {
     font-size: 1.5rem;
     color: white; }
@@ -1302,30 +1310,41 @@ main {
               @media only screen and (max-width: 320px) {
                 main .catalogo .container__post .posts .post .post__description .post__btn {
                   font-size: 0.8rem; } }
-  main .carrito {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: default;
+  main .shopping-cart {
     height: 100vh;
-    width: 80%; }
+    width: 100%;
+    padding: 2rem; }
+    @media only screen and (max-width: 768px) {
+      main .shopping-cart {
+        padding: 1.5rem 2rem; } }
     @media only screen and (max-width: 414px) {
-      main .carrito {
-        height: 100vh;
-        width: 90%; } }
-    main .carrito .carrito__contador {
-      font-size: 3rem;
-      font-weight: 700; }
-      @media only screen and (max-width: 414px) {
-        main .carrito .carrito__contador {
-          font-size: 2rem; } }
-    main .carrito .carrito__text {
-      font-size: 1.5rem; }
-      @media only screen and (max-width: 414px) {
-        main .carrito .carrito__text {
-          font-size: 0.9rem; } }
+      main .shopping-cart {
+        padding: 0 .5rem; } }
+    main .shopping-cart h2 {
+      color: #7878EB;
+      font-weight: bolder; }
+    main .shopping-cart table {
+      margin-top: 6rem;
+      height: auto;
+      width: 100%; }
+      main .shopping-cart table thead {
+        height: 3rem;
+        width: 100%; }
+        main .shopping-cart table thead tr th {
+          font-size: 1.5rem;
+          padding: 10px; }
+          @media only screen and (max-width: 414px) {
+            main .shopping-cart table thead tr th {
+              font-size: 1rem; } }
+        main .shopping-cart table thead tr th:nth-child(1) {
+          height: 100%;
+          width: 60%; }
+        main .shopping-cart table thead tr th:nth-child(2) {
+          height: 100%;
+          width: 20%; }
+        main .shopping-cart table thead tr th:nth-child(3) {
+          height: 100%;
+          width: 20%; }
   main .user {
     margin: 0 auto;
     display: flex;
@@ -1501,34 +1520,119 @@ main {
               margin: 0 5px; }
             main .user .form .form__user .login__user button:hover i {
               display: block; }
-  main .btn__float {
-    position: fixed;
-    bottom: 2rem;
-    right: 1rem; }
+  main .my-shopping {
+    height: 100vh;
+    width: 100%;
+    padding: 2rem; }
     @media only screen and (max-width: 768px) {
-      main .btn__float {
-        right: 0.3rem; } }
+      main .my-shopping {
+        padding: 1.5rem 2rem; } }
     @media only screen and (max-width: 414px) {
-      main .btn__float {
-        display: none; } }
-    main .btn__float ul {
-      list-style: none; }
-      main .btn__float ul li {
-        margin: 10px 0; }
-        main .btn__float ul li a {
-          height: 2.5rem;
-          width: 2.5rem;
+      main .my-shopping {
+        padding: 0 .5rem; } }
+    main .my-shopping h2 {
+      color: #7878EB;
+      font-weight: bolder; }
+    main .my-shopping table {
+      margin-top: 6rem;
+      height: auto;
+      width: 100%; }
+      main .my-shopping table thead {
+        height: 3rem;
+        width: 100%; }
+        main .my-shopping table thead tr th {
+          font-size: 1.5rem;
+          padding: 10px; }
+          @media only screen and (max-width: 414px) {
+            main .my-shopping table thead tr th {
+              font-size: 1rem; } }
+        main .my-shopping table thead tr th:nth-child(1) {
+          height: 100%;
+          width: 70%; }
+        main .my-shopping table thead tr th:nth-child(2) {
+          height: 100%;
+          width: 30%; }
+  main .notifications {
+    height: 100vh;
+    width: 100%;
+    padding: 2rem; }
+    @media only screen and (max-width: 768px) {
+      main .notifications {
+        padding: 1.5rem 2rem; } }
+    @media only screen and (max-width: 414px) {
+      main .notifications {
+        padding: 0 .5rem; } }
+    main .notifications .notification__top {
+      cursor: default;
+      background-color: #fff;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      height: 4rem;
+      width: 100%;
+      position: relative; }
+      main .notifications .notification__top h2 {
+        color: #7878EB;
+        font-weight: bolder; }
+      main .notifications .notification__top #notification__config {
+        display: none; }
+        main .notifications .notification__top #notification__config:checked ~ ul {
+          display: block; }
+      main .notifications .notification__top .notification__boton i {
+        font-size: 2rem;
+        color: #7878EB;
+        cursor: pointer;
+        margin: 0 10px; }
+      main .notifications .notification__top ul {
+        list-style: none;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        z-index: 999;
+        background-color: #fff;
+        padding: 1rem;
+        height: auto;
+        width: 30%;
+        display: none; }
+        @media only screen and (max-width: 414px) {
+          main .notifications .notification__top ul {
+            height: auto;
+            width: 70%;
+            padding: 0;
+            padding-left: .5rem;
+            padding-right: 1rem; } }
+        main .notifications .notification__top ul li {
+          background: #fff;
+          height: 3rem;
+          width: 100%;
           display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 50%;
-          background-color: #5684FF;
-          text-decoration: none;
-          color: #fff;
-          font-size: 1rem;
-          font-weight: 700; }
-          main .btn__float ul li a i {
-            color: #fff; }
+          justify-content: space-between;
+          align-items: center; }
+          main .notifications .notification__top ul li label {
+            cursor: pointer; }
+    main .notifications .notification__bottom {
+      height: 100%;
+      width: 100%; }
+      main .notifications .notification__bottom table {
+        height: auto;
+        width: 100%; }
+        main .notifications .notification__bottom table thead {
+          height: 2rem;
+          width: 100%; }
+          main .notifications .notification__bottom table thead tr th {
+            padding: 10px; }
+            @media only screen and (max-width: 414px) {
+              main .notifications .notification__bottom table thead tr th {
+                font-size: 1rem; } }
+          main .notifications .notification__bottom table thead tr th:nth-child(1) {
+            height: auto;
+            width: 70%; }
+          main .notifications .notification__bottom table thead tr th:nth-child(2) {
+            height: auto;
+            width: 15%; }
+          main .notifications .notification__bottom table thead tr th:nth-child(2) {
+            height: auto;
+            width: 15%; }
 
 footer {
   background-color: #EBEBEB;

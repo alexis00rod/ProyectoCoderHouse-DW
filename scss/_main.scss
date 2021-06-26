@@ -1325,29 +1325,51 @@ main {
 
     // Carrito
 
-    .carrito {
-        margin: 0 auto;
-        @include flex(center, center);
-        flex-direction: column;
-        cursor: default;
-        @include box__size(100vh, 80%);
+    .shopping-cart {
+        @include box__size(100vh, 100%);
+        padding: 2rem;
+        @include tablet {
+            padding: 1.5rem 2rem;
+        }
         @include mobile {
-            @include box__size(100vh, 90%);
+            padding:  0 .5rem;
 
         }
 
-        .carrito__contador {
-            font-size: $f__size * 3;
-            font-weight: $f__weight;
-            @include mobile {
-                font-size: $f__size * 2;
-            }
+        h2 {
+            color: $color4;
+            font-weight: bolder;
+
         }
 
-        .carrito__text {
-            font-size: $f__size * 1.5;
-            @include mobile {
-                font-size: $f__size - 0.10;
+        table {
+            margin-top: 6rem;
+            @include box__size(auto, 100%);
+
+            thead {
+                @include box__size(3rem, 100%);
+
+                tr {
+                    th {
+                        font-size: 1.5rem;
+                        padding: 10px;
+                        @include mobile {
+                            font-size: 1rem;
+                            
+                        }
+                    }
+                    th:nth-child(1) {
+                        @include box__size(100%, 60%);
+                    }
+                    th:nth-child(2) {
+                        @include box__size(100%, 20%);
+                    }
+                    th:nth-child(3) {
+                        @include box__size(100%, 20%);
+                    }
+
+                }
+
             }
 
         }
@@ -1518,40 +1540,45 @@ main {
 
     }
 
-    // Boton float
+    // Mis compras
 
-    .btn__float {
-        position: fixed;
-        bottom: 2rem;
-        right: 1rem;
+    .my-shopping {
+        @include box__size(100vh, 100%);
+        padding: 2rem;
         @include tablet {
-            right: 0.3rem;
-
+            padding: 1.5rem 2rem;
         }
         @include mobile {
-            display: none;
+            padding:  0 .5rem;
+        }
+
+        h2 {
+            color: $color4;
+            font-weight: bolder;
 
         }
 
-        ul {
-            list-style: none;
+        table {
+            margin-top: 6rem;
+            @include box__size(auto, 100%);
 
-            li {
-                margin: 10px 0;
+            thead {
+                @include box__size(3rem, 100%);
 
-                a {
-                    @include box__size(2.5rem, 2.5rem);
-                    @include flex(center, center);
-                    @include circle;
-                    background-color: $color3;
-                    text-decoration: none;
-                    color: #fff;
-                    font-size: 1rem;
-                    font-weight: 700;
-
-                    i {
-                        color: #fff;
-
+                tr {
+                    th {
+                        font-size: 1.5rem;
+                        padding: 10px;
+                        @include mobile {
+                            font-size: 1rem;
+                            
+                        }
+                    }
+                    th:nth-child(1) {
+                        @include box__size(100%, 70%);
+                    }
+                    th:nth-child(2) {
+                        @include box__size(100%, 30%);
                     }
 
                 }
@@ -1562,6 +1589,125 @@ main {
 
     }
 
+    // Notificaciones
 
+    .notifications {
+        @include box__size(100vh, 100%);
+        padding: 2rem;
+        @include tablet {
+            padding: 1.5rem 2rem;
+        }
+        @include mobile {
+            padding:  0 .5rem;
+        }
+
+        .notification__top {
+            cursor: default;
+            background-color: #fff;
+            @include flex(start, center);
+            @include box__size(4rem, 100%);
+            position: relative;
+
+            h2 {
+                color: $color4;
+                font-weight: bolder;
+
+            }
+
+            #notification__config {
+                display: none;
+
+                &:checked ~ ul {
+                    display: block;
+
+                }
+
+            }
+
+            .notification__boton {
+
+                i {
+                    font-size: 2rem;
+                    color: $color4;
+                    cursor: pointer;
+                    margin: 0 10px;
+
+                }
+
+            }
+
+            
+
+            ul {
+                list-style: none;
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                z-index: 999;
+                background-color: #fff;
+                padding: 1rem;
+                @include box__size(auto, 30%);
+                display: none;
+                @include mobile {
+                    @include box__size(auto, 70%);
+                    padding: 0;
+                    padding-left: .5rem;
+                    padding-right: 1rem;
+                }
+                
+                li {
+                    background: #fff;
+                    @include box__size(3rem, 100%);
+                    @include flex(space-between, center);
+
+                    label {
+                        cursor: pointer;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .notification__bottom {
+            @include box__size(100%, 100%);
+            
+            table {
+                @include box__size(auto, 100%);
+
+                thead {
+                    @include box__size(2rem, 100%);
+
+
+                    tr {
+
+                        th {
+                            padding: 10px;
+                            @include mobile {
+                                font-size: 1rem;
+                            }
+                        }
+
+                        th:nth-child(1){
+                            @include box__size(auto, 70%);
+                        }
+                        th:nth-child(2){
+                            @include box__size(auto, 15%);
+                        }
+                        th:nth-child(2){
+                            @include box__size(auto, 15%);
+                        }
+
+                    }
+
+                }
+                
+            }
+
+        }
+
+    }
 
 }

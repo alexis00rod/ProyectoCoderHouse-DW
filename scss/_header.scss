@@ -41,10 +41,19 @@ header {
         z-index: 999;
         cursor: pointer;
         transition: all .5s ease;
+        @include mobile {
+            @include box__size(3.5rem, 3.5rem);
+            top: .7rem;
+            right: .7rem;
+            
+        }
         @include small-mobile {
             @include box__size(2.5rem, 2.5rem);
+            top: .5rem;
+            right: .5rem;
 
         }
+
 
         i {
             font-size: 1.5rem;
