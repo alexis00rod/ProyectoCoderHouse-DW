@@ -47,63 +47,43 @@ main {
                 padding-left: .5rem;
             }
 
-            .banner__logo {
-                text-decoration: none;
-                color: #000;
-                font-size: 4.5rem;
-                font-weight: 700;
-                @include box(auto, 100%);
-                @include small-mobile {
-                    font-size: 2rem;
-
-                }   
-                @include tablet {
-                    font-size: 3.8rem;
-
-                }
-                @include mobile-rotate {
-                    font-size: 2.8rem;
-
-                }
-                @include small-mobile-rotate {
-                    font-size: 2.8rem;
-                    
-                }
-                @include mobile {
-                    font-size: 2rem;
-
-                }
-                @include small-mobile {
-                    font-size: 1.7rem;
-                }
+            h1{
                 
                 span {
-                    text-transform: uppercase;
-                    color: $color2;
-                    font-size: 5.2rem;
+                    position: relative;
+                    font-size: 5rem;
                     font-weight: 900;
+                    text-transform: uppercase;
+                    color: $color1;
+                    font-family: 'Roboto Mono', monospace;
+                    @include small-mobile-rotate {
+                        font-size: 2.5rem;
+                    }
+                    @include mobile{
+                        font-size: 3rem;
+
+                    }
                     @include small-mobile {
                         font-size: 2.5rem;
-                    }  
-                    @include tablet {
-                        font-size: 4.2rem;
                     }
-                    @include mobile-rotate {
-                        font-size: 3.5rem;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        background-color: #fff;
+                        border-left: 2px solid #000;
+                        height: 100%;
+                        @include typewriter;     
+
                     }
-                    @include mobile {
-                        font-size: 2.2rem;
-                    }
-                    @include small-mobile-rotate {
-                        font-size: 3.2rem;
-                    }
-                    @include small-mobile {
-                        font-size: 2rem;
-                    }
-    
+
                 }
-    
+
             }
+
     
             p {
                 font-size: 1.3rem;
@@ -1415,23 +1395,29 @@ main {
         cursor: default;
         @include box(100vh, 100%);
 
-        .form {
-            padding: 0 1rem;
+        form {
+            padding: 5rem 1rem;
             border-radius: $radius-box;
-            @include box(auto, 50%);
+            @include box(100%, 50%);
             @include desktop {
-                @include box(auto, 70%);
+                @include box(100%, 70%);
 
             }
             @include mobile {
-                @include box(auto, 100%);
+                @include box(100%, 100%);
+                padding-top: 5rem;
 
+            }
+            @include small-mobile-rotate {
+                padding-top: 1rem;
+                @include box(100%, 100%);
+                
             }
             @include small-mobile {
-                padding-top: 1rem;
+                padding-top: 5rem;
             }
 
-            .form__title {
+            legend {
                 margin: 0;
                 text-align: center;
                 font-size: 2rem;
@@ -1441,13 +1427,15 @@ main {
                 padding: 2rem;
                 font-weight: 800;
                 color: #fff;
-                @include mobile-rotate {
-                    padding: 1rem;
-
-                }
                 @include mobile {
                     font-size: 1.4rem;
                     padding: 1.5rem;
+                }
+                @include small-mobile-rotate {
+                    padding: .5rem;
+                }
+                @include small-mobile {
+                    padding: 1rem;
                 }
 
             }
@@ -1461,25 +1449,33 @@ main {
                 @include flex(center, center);
                 flex-direction: column;
                 @include box(auto, 100%);
-                @include mobile-rotate {
+                @include small-mobile-rotate {
                     flex-direction: row;
-                    flex-wrap: wrap;
+                    padding: .5rem;
 
                 }
                 @include mobile {
-                    padding: 1rem;
+                    padding: .5rem;
                     flex-direction: column;
-                }
-                @include small-mobile{
-                    padding: 0;
+
                 }
 
                 p {
                     @include box(auto, 100%);
                     margin: .8rem 0;
                     font-size: .9rem;
-                    @include mobile-rotate {
-                        margin: 0.5rem 0;
+                    @include small-mobile-rotate {
+                        margin: .4rem 0;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: $color1;
+
+                        &:hover {
+                            text-decoration: underline;
+
+                        }
 
                     }
 
@@ -1489,6 +1485,13 @@ main {
                     @include flex(center, center);
                     flex-direction: column;
                     @include box(auto, 100%);
+                    @include small-mobile-rotate {
+                        @include box(auto, 30%);
+                    }
+                    @include small-mobile {
+                        @include box(auto, 100%);
+
+                    }
                     
                     button {
                         @include box(3rem, 17rem);
@@ -1497,8 +1500,29 @@ main {
                         padding: 0 1rem;
                         margin: .4rem auto;
                         text-align: center;
+                        font-size: 1rem;
+                        @include small-mobile-rotate {
+                            @include box(4.5rem, 10rem);
+                            justify-content: center;
+                            flex-direction: column;
+                            font-size: .8rem;
+                            margin: 0;
+                            margin-bottom: .2rem;
+ 
+
+                        }
                         @include mobile {
                             @include box(3.5rem, 12rem);
+                            justify-content: space-between;
+                            padding: 0 .5rem;
+
+                        }
+                        @include small-mobile {
+                            flex-direction: row;
+                        }
+
+                        span {
+                            padding: 0 .8rem;
 
                         }
                         
@@ -1517,25 +1541,24 @@ main {
                 .login__user {
                     @include flex(center, center);
                     flex-direction: column;
-                    @include box(auto, 100%);
-                    @include mobile-rotate {
-                        @include box(auto, 70%);
+                    @include box(100%, 100%);
+                    padding: 0 .5rem;
+                    @include small-mobile {
+                        @include box(100%, 100%);
+                    }
+                    @include small-mobile-rotate {
+                        @include box(100%, 70%);
+                        padding: 0;
+
                     }
 
                     .form__inputs {
                         @include input--enter;
-                        @include box(auto, 70%);
-                        @include mobile-rotate {
-                            @include box(auto, 100%);
-                            
+                        @include box(100%, 70%);
+                        @include small-mobile {
+                            @include box(100%, 100%);
+
                         }
-    
-                    }
-    
-                    .form__boton {
-                        margin: .5rem;
-                        @include boton--primary;
-                        @include box(auto, 12rem);
     
                     }
 
@@ -1543,6 +1566,9 @@ main {
                         @include boton--primary;
                         @include flex(center, center);
                         @include box(3rem, 12rem);
+                        @include small-mobile-rotate {
+                            @include box(2.5rem, 10rem);
+                        }
 
                         i {
                             transition: all .5s;

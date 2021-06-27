@@ -137,6 +137,24 @@
 
 }
 
+@mixin typewriter {
+    animation: typewriter 3s infinite alternate steps(10);
+
+    @keyframes typewriter {
+        from {
+            width: 100%;
+    
+        }
+        to {
+            width: 0;
+        }
+    
+    }
+
+}
+
+
+
 // Medias
 
 
