@@ -23,6 +23,6 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
     background-color: $color4;
-    border-radius: 6px;
+    border-radius: $radius-boton;
 
 }

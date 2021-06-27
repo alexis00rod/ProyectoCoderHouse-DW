@@ -1,14 +1,14 @@
 main {
     margin: 0 auto;
-    @include box__size(auto, 100vw);
+    @include box(auto, 100vw);
     max-width: 1280px;
     
-    // Hero
+    // Banner
 
-    .hero {
+    .banner {
         @include flex(center, center);
         background-color: #fff;
-        @include box__size(100vh, 100%);
+        @include box(100vh, 100%);
         @include desktop {
             flex-direction: column;
 
@@ -26,97 +26,102 @@ main {
 
         }
     
-        .hero__left {
+        .banner__left {
             @include flex(center, start);
             flex-direction: column;
-            padding: $p__box;
-            @include box__size(100%, 50%);
+            padding: 4rem 2rem;
+            @include box(100%, 50%);
             @include transition-left-to-right-low;
             @include desktop{
-                @include box__size(30%, 80%);
+                @include box(40%, 100%);
+                padding: 0;
+                padding-left: 1rem;
                 
             }
-            @include tablet {
-                @include box__size(30%, 100%);
-
-            }
             @include mobile {
-                @include box__size(40%, 100%);
+                padding-top: 1rem;
 
             }
+            @include small-mobile {
+                @include box(50%, 100%);
+                padding-left: .5rem;
+            }
 
-            .hero__logo {
+            .banner__logo {
                 text-decoration: none;
                 color: #000;
-                font-size: $f__size * 4.5;
-                font-weight: bold;
-                @include box__size(auto, 100%);
+                font-size: 4.5rem;
+                font-weight: 700;
+                @include box(auto, 100%);
                 @include small-mobile {
-                    font-size: f$f__size * 2;
+                    font-size: 2rem;
 
                 }   
                 @include tablet {
-                    font-size: $f__size * 3.8;
+                    font-size: 3.8rem;
 
                 }
                 @include mobile-rotate {
-                    font-size: $f__size * 2.8;
+                    font-size: 2.8rem;
 
                 }
                 @include small-mobile-rotate {
-                    font-size: $f__size * 2.8;
+                    font-size: 2.8rem;
                     
                 }
                 @include mobile {
-                    font-size: $f__size * 2;
+                    font-size: 2rem;
 
                 }
+                @include small-mobile {
+                    font-size: 1.7rem;
+                }
                 
-                .logo__animation {
+                span {
                     text-transform: uppercase;
-                    color: $color1;
-                    font-size: $f__size * 5.2;
-                    font-weight: bolder;
-                    animation-name: logo;
-                    animation-duration: 5s;
-                    animation-iteration-count: infinite;
+                    color: $color2;
+                    font-size: 5.2rem;
+                    font-weight: 900;
                     @include small-mobile {
-                        font-size: f$f__size * 2.5;
+                        font-size: 2.5rem;
                     }  
                     @include tablet {
-                        font-size: $f__size * 4.2;
+                        font-size: 4.2rem;
                     }
                     @include mobile-rotate {
-                        font-size: $f__size * 3.5;
+                        font-size: 3.5rem;
                     }
                     @include mobile {
-                        font-size: $f__size * 2.2;
+                        font-size: 2.2rem;
                     }
                     @include small-mobile-rotate {
-                        font-size: $f__size * 3.2;
+                        font-size: 3.2rem;
+                    }
+                    @include small-mobile {
+                        font-size: 2rem;
                     }
     
                 }
     
             }
     
-            .hero__text {
-                font-size: $f__size + 0.30;
-                font-weight: $f__weight - 200;
+            p {
+                font-size: 1.3rem;
+                font-weight: 500;
                 cursor: default;
                 text-align: start;
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
                 @include tablet {
-                    font-size: $f__size + 0.10;
+                    font-size: 1.1rem;
 
                 }
                 @include mobile {
-                    font-size: $f__size - 0.20;
+                    font-size: 1.20rem;
                     padding: 0;
 
                 }
                 @include small-mobile {
-                    font-size: $f__size - 0.20;
+                    font-size: 1rem;
                     
                 }
 
@@ -126,27 +131,22 @@ main {
                 list-style: none;
                 padding: 0;
                 margin-right: 1rem;
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
                 @include flex(start, center);
     
                 li {
 
-                    button {
-                        @include box__size(3rem, 8rem);
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        @include box(3rem, 8rem);
                         margin-right: 1rem;
+                        @include flex(center, center);
                         @include boton--primary;
                         @include small-mobile {
-                            @include box__size(3rem, 7rem);
+                            @include box(2.7rem, 7rem);
 
                         }
-
-                        a {
-                            text-decoration: none;
-                            color: #fff;
-                            @include flex(center, center);
-
-                        }
-
                     }
 
                 }
@@ -156,53 +156,28 @@ main {
 
         }
     
-        .hero__right {
+        .banner__right {
             display: flex;
             align-items: center;
             margin: 0;
-            @include box__size(70%, 50%);
+            @include box(100%, 50%);
             @include transition-left-to-right-fast;
             @include desktop{
-                @include box__size(70%, 100%);
+                @include box(60%, 100%);
 
             }
-            @include tablet {
-                @include box__size (70%, 100%)
-                
-            }
-            @include mobile {
-                @include box__size(60%, 100%);
+            @include small-mobile {
+                @include box(50%, 100%);
             }
     
-            .hero__img {
-                @include box__size(auto, 100%);
+            .banner__img {
+                @include box(auto, 100%);
     
             }
     
         }
 
-        @keyframes logo {
-            0% {
-                color: $color1;
-            }
-        
-            20% {
-                color: $color2;
-            }
-            
-            40% {
-                color: $color3;
-            }
-        
-            60% {
-                color: $color4;
-            }
-            
-            80% {
-                color: $color5;
-            }
-            
-        }
+
     
     }
   
@@ -211,9 +186,9 @@ main {
     article {
         margin: 0 auto;
         @include flex (center, center);
-        @include box__size(100vh, 100%);
+        @include box(100vh, 100%);
         @include desktop {
-            @include box__size(100%, 100%);
+            @include box(100%, 100%);
             flex-direction: column;
             margin: 0 auto;
             padding: 1rem;
@@ -223,52 +198,64 @@ main {
 
         .article__left {
             margin: 0 auto;
-            @include box__size(auto, 30%);
+            @include box(auto, 30%);
             @include flex(center, center);
             flex-direction: column;
             background: $color1;
-            padding: $p__box;
-            border-top-left-radius: $p__border__r;
-            border-bottom-left-radius: $p__border__r;
+            padding: 2rem;
+            border-top-left-radius: $radius-box;
+            border-bottom-left-radius: $radius-box;
             cursor: default;
+            color: #fff;
             @include desktop {
-                @include box__size(auto, 70%);
-                border-top-right-radius: $p__border__r;
+                @include box(auto, 70%);
+                border-top-right-radius: $radius-box;
                 border-bottom-left-radius: 0;
-                padding: $p__box;
+                padding: 2rem;
                 
             }
             @include tablet {
-                @include box__size(auto, 60%);
+                @include box(auto, 60%);
             }
             @include mobile {
-                @include box__size(auto, 80%);
-                padding: $p__content;
+                @include box(auto, 80%);
+                padding: 1rem;
             }
 
             .article__title {
                 margin: 0;
-                padding: $p__content;
-                font-weight: $f__weight;
+                padding: 1rem;
+                font-weight: 700;
                 font-size: 2rem;
                 text-align: center;
                 @include desktop {
-                    padding: $p__content - 0.50;
+                    padding: 0.50rem;
+                }
+                @include mobile {
+                    font-size: 1.5rem;
+
+                }
+                @include small-mobile {
+                    font-size: 1.2rem;
+
                 }
 
             }
 
             .article__text {
-                padding: $p__content;
-                font-size: $f__size;
+                padding: 1rem;
+                font-size: 1rem;
                 text-align: center;
                 text-align: start;
                 @include desktop {
                     padding: 0;
-                    font-size: $f__size - 0.10;
+                    font-size: .9rem;
                 }
                 @include mobile {
                     padding: 0;
+                }
+                @include small-mobile {
+                    font-size: .9rem;
                 }
 
             }
@@ -277,23 +264,26 @@ main {
 
         .article__right {
             margin: 0 auto;
-            @include box__size(auto, 70%);
-            padding: $p__box;
+            @include box(auto, 70%);
+            padding: 2rem;
             background: $color2;
-            border-radius: $p__border__r;
+            border-radius: $radius-box;
             @include flex(center, center);
             @include tablet {
-                padding: $p__content;
-                @include box__size(auto, 90%);
+                padding: 1rem;
+                @include box(auto, 90%);
                 
             }
             @include desktop{
-                @include box__size(auto, 90%);
-                padding: $p__content;
+                @include box(auto, 90%);
+                padding: 1rem;
                 
             }
+            @include small-mobile-rotate {
+                flex-direction: column;
+            }
             @include mobile {
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
                 flex-wrap: wrap;
                 padding: 0;
                 
@@ -305,75 +295,84 @@ main {
             
             
             video {
-                @include box__size(100%, 100%);
-                padding: $p__box;
+                @include box(100%, 100%);
+                padding: 2rem;
                 @include mobile {
-                    padding: $p__content;
+                    padding: 1rem;
                 }
             }
 
             .article__card {
-                @include box__size(auto, 50%);
-                padding: $p__box;
+                @include box(auto, 50%);
+                padding: 2rem;
                 cursor: default;
                 @include tablet {
-                    padding: $p__content;
+                    padding: 1rem;
+
                 }
                 @include desktop {
-                    padding: $p__content;
+                    padding: 1rem;
+
+                }
+                @include small-mobile-rotate {
+                    @include box(auto, 90%);
+
                 }
                 @include mobile {
-                    @include box__size(auto, 100%);
+                    @include box(auto, 100%);
 
                 }
                 
                 img {
-                    @include box__size(auto, 100%);
-                    border-radius: $p__border__r - 0.75;
+                    @include box(auto, 100%);
+                    border-radius: $radius-box;
 
                 }
 
                 .card__body {
                     background:#fff;
-                    padding: $p__box;
+                    padding: 2rem;
                     margin: 0 1.5rem;
                     @include flex(center, center);
                     flex-direction: column;
-                    border-radius: $p__border__r - 0.75;
+                    border-radius: $radius-box;
                     transform: translateY(-20px);
                     @include tablet {
-                        padding: $p__content;
+                        padding: 1rem;
+
                     }
                     @include desktop {
-                        padding: $p__content;
+                        padding: 1rem;
+
                     }
                     @include small-mobile {
                         padding: 0.2rem 0.5rem;
+                        
                     }
 
                     .card__title {
-                        font-size: $f__title - 0.30;
-                        font-weight: $f__weight;
+                        font-size: 1.3rem;
+                        font-weight: 700;
                         color: $color4;
                         text-align: center;
-                        @include box__size(3rem, 100%);
+                        @include box(3rem, 100%);
                         @include flex(center, center);
                         @include tablet {
                             padding: 0;
                         }
                         @include small-mobile {
-                            font-size: $f__title - 0.60;
+                            font-size: 1rem;
                         }
 
                     }
 
                     .card__text {
-                        padding: $p__content;
-                        font-size: $f__size - 0.10;
+                        padding: 1rem;
+                        font-size: .9rem;
                         text-align: start;
                         @include small-mobile {
-                            padding: 0 1rem;
-                            font-size: $f__size - 0.20;
+                            padding: 0 2rem;
+                            font-size: .8rem;
                         }
                     }
 
@@ -381,7 +380,7 @@ main {
                         margin-bottom: 1rem;
                         @include flex(center, center);
                         @include boton--primary;
-                        @include box__size(4rem, 8rem);
+                        @include box(4rem, 8rem);
 
                     }
 
@@ -390,25 +389,25 @@ main {
 
             .card__profile {
                 margin: 0 auto;
-                @include box__size(20rem, 30%);
-                border-radius: 10px;
+                @include box(20rem, 30%);
+                border-radius: $radius-box;
                 background: url("../multimedia/img-4.jpg") center no-repeat;
                 background-size: 22rem;
                 transition: .8s;
                 padding: 10px;
                 @include tablet {
-                    @include box__size(15rem, 30%);
+                    @include box(15rem, 30%);
                     background-size: 15rem;
 
                 }
                 @include mobile {
-                    @include box__size(20rem, 100%);
+                    @include box(20rem, 100%);
                     background-size: 25rem;
                     margin: 1rem 2rem;
 
                 }
                 @include small-mobile {
-                    @include box__size(15rem, 100%);
+                    @include box(15rem, 100%);
                     background-size: 20rem;
 
                 }
@@ -432,9 +431,9 @@ main {
                 }
 
                 .card__border {
-                    @include box__size(100%, 100%);
+                    @include box(100%, 100%);
                     border: solid 2px white;
-                    border-radius: 10px;
+                    border-radius: $radius-box;
                     opacity: 0;
                     transition: .8s;
                     @include flex(start, start);
@@ -446,18 +445,18 @@ main {
                     }
 
                     h5 {
-                        @include box__size(4rem, 50%);
+                        @include box(4rem, 50%);
                         padding:  2px 8px;
                         font-weight: 700;
                         font-size: 1.5rem;
                         color: white;
                         cursor: default;
                         @include tablet {
-                            @include box__size(3rem, 50%);
+                            @include box(3rem, 50%);
                             font-size: 1.2rem;
                         }
                         @include mobile {
-                            @include box__size(4rem, 50%);
+                            @include box(4rem, 50%);
                             font-size: 1.5rem;
 
                         }
@@ -467,7 +466,7 @@ main {
                     p {
                         padding: 0 8px;
                         font-weight: 600;
-                        color: white;
+                        color: #fff;
                         cursor: default;
                         font-size: 1rem;
                         @include tablet {
@@ -518,25 +517,28 @@ main {
             .questions {
                 margin: 2rem;
                 padding: 2rem;
-                @include box__size(100%, 100%);
+                @include box(100%, auto);
                 @include flex(center, center);
                 flex-direction: column;
                 background-color: #fff;
-                border-radius: 6px;
+                border-radius: $radius-box;
                 @include mobile {
                     margin: 2rem 1rem;
                     padding: 1.5rem 1rem;
                 }
+                @include small-mobile {
+                    padding: 1rem;
+                }
 
 
                 details {
-                    @include box__size(auto, 100%);
+                    @include box(auto, 100%);
                     text-align: center;
 
                     summary {
                         color: $color4;
                         font-size: 1.5rem;
-                        font-weight: bold;
+                        font-weight: 700;
                         @include mobile {
                             font-size: 1rem;
                         }
@@ -563,11 +565,11 @@ main {
 
     
     section {
-        @include box__size(auto, 100%);
+        @include box(auto, 100%);
         @include flex(center, center);
         flex-direction: column;
         @include desktop{
-            @include box__size(100%,100%);
+            @include box(100%,100%);
         }
         @include tablet {
             justify-content: center;
@@ -582,9 +584,9 @@ main {
             padding: 0;
             text-align: center;
             cursor: default;
-            @include box__size(100%, 70%);
+            @include box(100%, 70%);
             @include tablet{
-                @include box__size(100%, 100%);
+                @include box(100%, 100%);
             }
 
             &:hover {
@@ -595,12 +597,12 @@ main {
             }
 
             .carousel-item {
-                @include box__size(20rem, 100%);
+                @include box(20rem, 100%);
 
                 
                 .post__modal {
                     @include boton--modal;
-                    @include box__size(auto, 100%);
+                    @include box(auto, 100%);
 
                     img {
                         max-width: 300px;
@@ -618,15 +620,15 @@ main {
                         }
 
                         img {
-                            @include box__size(100%, 50%);
+                            @include box(100%, 50%);
                             
                         }
 
                         .modal__date {
-                            padding: $p__content;
-                            @include box__size(auto, 50%);
+                            padding: 1rem;
+                            @include box(auto, 50%);
                             @include small-mobile {
-                                @include box__size(auto, 100%);
+                                @include box(auto, 100%);
 
                             }
 
@@ -637,7 +639,7 @@ main {
                             }
 
                             .price {
-                                font-size: $f__size * 2;
+                                font-size: 2rem;
                                 font-weight: 700;
                                 padding: 0;
                                 margin: 0;
@@ -645,11 +647,11 @@ main {
 
                             select {
                                 border: 2px solid $color4;
-                                border-radius: 4px;
+                                border-radius: $radius-boton;
                                 outline: none;
-                                font-size: $f__size;
+                                font-size: 1rem;
                                 @include mobile {
-                                    font-size: $f__size - 0.20;
+                                    font-size: .8rem;
 
                                 }
 
@@ -669,9 +671,9 @@ main {
                                     }
 
                                     span {
-                                        font-size: $f__size - 0.20;
+                                        font-size: .8rem;
                                         @include mobile {
-                                            font-size: $f__size - 0.40;
+                                            font-size: .6rem;
 
                                         }
 
@@ -682,8 +684,8 @@ main {
                             }
 
                             .description {
-                                font-size: $f__size - 0.10;
-                                @include box__size(auto, 100%);
+                                font-size: .9rem;
+                                @include box(auto, 100%);
 
                             }
 
@@ -713,23 +715,15 @@ main {
         // Info compra
     
         .shopping__info {
-            @include box__size(auto, 100%);
+            @include box(auto, 100%);
             margin: 1rem 0;
             padding: 0;
-            @include mobile {
-                margin: 0;
-            }
     
             ul {
                 margin: 0 auto;
                 padding: 0;
                 list-style: none;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 5px;
-                @include mobile {
-                    gap: 0;
-                }
+                @include flex(space-evenly, center);
     
                 li {
                     @include flex(center, center);
@@ -737,13 +731,19 @@ main {
                     
                     h4 {
                         background-color: $color1;
-                        padding: $p__content $p__content * 2;
-                        border-top-left-radius: $p__border__r;
-                        border-top-right-radius: $p__border__r;
                         margin: 0;
+                        @include box(4rem, 6rem);
+                        @include flex(center, center);
+                        border-top-left-radius: $radius-box;
+                        border-top-right-radius: $radius-box;
+                        @include small-mobile-rotate {
+                            @include box(3rem, 4rem);
+                        }
                         @include mobile {
-                            padding: $p__content $p__content * 1.2;
-    
+                            @include box(3rem, 4rem);
+                        }
+                        @include small-mobile {
+                            @include box(3rem, 3.5rem)
                         }
 
                         i {
@@ -759,23 +759,29 @@ main {
                     }
     
                     p {
+                        margin: 0 auto;
+                        padding: 10px;
                         background-color: $color2;
-                        padding: $p__content;
-                        border-radius: $p__border__r;
-                        margin: 0;
+                        border-radius: $radius-box;
                         cursor: default;
-                        @include box__size(6rem, 12rem);
+                        @include box(6rem, 12rem);
                         @include flex(center, center);
                         text-align: center;
                         color: #fff;
-                        font-weight: bold;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        @include small-mobile-rotate {
+                            @include box(6rem, 8rem);
+
+                        }
                         @include mobile {
-                            @include box__size(6rem, 7rem);
-                            font-size: $f__text - 0.20;
+                            @include box(7rem, 6.5rem);
     
                         }
                         @include small-mobile {
-                            @include box__size(7.5em, 5.5rem);
+                            @include box(6rem, 5.5rem);
+                            font-size: .8rem;
+
                         }
     
                     }
@@ -791,7 +797,7 @@ main {
     // Catalogo
 
     .catalogo {
-        @include box__size(auto, 100%);
+        @include box(auto, 100%);
         margin: 0;
         padding: 0;
 
@@ -832,7 +838,7 @@ main {
             }
 
             nav {
-                @include box__size(6rem, 100%);
+                @include box(6rem, 100%);
                 @include flex(space-evenly, start);
                 background-color: #fff;
                 position: sticky;
@@ -844,65 +850,65 @@ main {
                 }
                 @include mobile {
                     flex-direction: column;
-                    @include box__size(8rem, 100%);
+                    @include box(8rem, 100%);
 
                 }
 
                 // Barra de busqueda
             
                 .search__section {
-                    @include box__size(6rem, 50%);
+                    @include box(6rem, 50%);
                     @include flex(center, center);
                     @include mobile {
-                        @include box__size(5rem, 100%);
+                        @include box(5rem, 100%);
 
                     }
 
                     form {
-                        @include box__size(auto, 100%);
+                        @include box(auto, 100%);
                         background-color: #fff;
                         
                         fieldset {
-                            @include box__size(auto, 25rem);
+                            @include box(auto, 25rem);
                             padding: 5px;
                             margin: 0 auto;
                             border: 3px solid $color4;
-                            border-radius: 6px;
+                            border-radius: $radius-boton;
                             @include flex(center, center);
                             @include tablet {
-                                @include box__size(auto, 20rem);
+                                @include box(auto, 20rem);
 
                             }
                             @include mobile {
                                 margin: 0;
                                 margin-left: 10px;
                                 margin-top: 1rem;
-                                @include box__size(3rem, calc(100% - 7rem));
+                                @include box(3rem, calc(100% - 7rem));
         
                             }
                             @include small-mobile{
-                                @include box__size(3rem, calc(100% - 5rem));
+                                @include box(3rem, calc(100% - 5rem));
     
                             }
                             @include small-mobile-rotate {
-                                @include box__size(3rem, 15rem);
+                                @include box(3rem, 15rem);
                             }
 
                             
                             input {
-                                @include box__size (auto, calc(100% - 2rem));
+                                @include box (auto, calc(100% - 2rem));
                                 outline: none;
                                 border: none;
-                                font-size: $f__size - 0.1;
+                                font-size: 1rem - 0.1;
 
                             }
                             
                             button {
-                                @include box__size(2rem, 2rem);
+                                @include box(2rem, 2rem);
                                 margin: 0;
                                 border: none;
                                 background-color: $color4;
-                                border-radius: 6px;
+                                border-radius: $radius-boton;
                                 padding: 5px;
                                 margin-left: 5px;
 
@@ -938,7 +944,7 @@ main {
                         @include small-mobile-rotate {
                             display: flex;
                             left: 0;
-                            @include box__size(auto, 100vw);
+                            @include box(auto, 100vw);
 
                         }
 
@@ -949,20 +955,20 @@ main {
 
                 .category__menu {
                     @include flex(center, center);
-                    @include box__size(6rem, 50%);
-                    @include box__size(6rem, 15rem);
+                    @include box(6rem, 50%);
+                    @include box(6rem, 15rem);
                     margin: 0 auto;
                     cursor: pointer;
                     font-size: 1.5rem;
-                    font-weight: bold;
+                    font-weight: 700;
                     @include tablet {
-                        @include box__size(6rem, 40%);
+                        @include box(6rem, 40%);
                         justify-content: start;
                         margin: 0;
 
                     }
                     @include mobile {
-                        @include box__size(auto, 100%);
+                        @include box(auto, 100%);
                         margin-left: .5rem;
 
                     }
@@ -985,12 +991,12 @@ main {
                     top: 6rem;
                     right: 0;
                     z-index: 998;
-                    @include box__size(auto, 50%);
+                    @include box(auto, 50%);
                     background-color: #fff;
                     @include mobile {
                         top: 8rem;
                         left: 0;
-                        @include box__size(auto, 100vw);
+                        @include box(auto, 100vw);
 
                     }
                     
@@ -1041,12 +1047,13 @@ main {
             .posts {
                 margin: 0;
                 padding: 0;
+                max-width: 1280px;
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
                 @include desktop {
                     grid-template-columns: repeat(3, 1fr);
-                    @include box__size(auto, 100%);
+                    @include box(auto, 100%);
 
                 }
                 @include tablet {
@@ -1064,7 +1071,7 @@ main {
 
                 .filter__section {
                     grid-column: 1/6;
-                    padding: $p__content;
+                    padding: 1rem;
                     @include flex(space-evenly, center);
                     @include desktop {
                         grid-column: 1/4;
@@ -1086,13 +1093,13 @@ main {
                         margin: 0;
                         text-align: center;
                         @include flex(center, center);
-                        @include box__size(4rem, 50%);
+                        @include box(4rem, 50%);
 
                     }
 
                     .filter {
                         @include flex(center, center);
-                        @include box__size(4rem, 50%);
+                        @include box(4rem, 50%);
                         @include tablet {
                             flex-direction: column;
                         }
@@ -1117,7 +1124,7 @@ main {
 
                         select {
                             border: 2px solid $color4;
-                            border-radius: 4px;
+                            border-radius: $radius-boton;
                             outline: none;
     
                         }
@@ -1128,10 +1135,14 @@ main {
 
                 .post {
                     margin: 0 auto;
-                    padding: $p__content;
+                    padding: 1rem;
                     cursor: default;
+                    @include box(auto, 16rem);
+                    @include desktop {
+                        @include box(auto, 18rem);
+                    }
                     @include tablet {
-                        @include box__size(auto, 100%);
+                        @include box(auto, 100%);
                         display: flex;
 
                     }
@@ -1142,10 +1153,10 @@ main {
                         justify-content: center;
                         align-items: center;
                         background-color: $color2;
-                        padding: $p__content;
+                        padding: 1rem;
                         border-top-left-radius: 10px;
                         border-top-right-radius: 10px;
-                        @include box__size(auto, 100%);
+                        @include box(auto, 100%);
                         @include tablet {
                             border-top-right-radius: 0;
                             border-bottom-left-radius: 10px;
@@ -1156,10 +1167,14 @@ main {
                             @include boton--modal;
                             
                             img {
-                                @include box__size(auto, 100%);
+                                @include box(auto, 100%);
                                 margin: 0 auto;
                                 padding: 0.5rem;
                                 transition: all 0.3s;
+                                @include mobile {
+                                    padding: 0;
+
+                                }
 
                                 &:hover {
                                     padding: 0;
@@ -1179,15 +1194,15 @@ main {
                                 }
 
                                 img {
-                                    @include box__size(100%, 50%);
+                                    @include box(100%, 50%);
                                     
                                 }
 
                                 .modal__date {
-                                    padding: $p__content;
-                                    @include box__size(auto, 50%);
+                                    padding: 1rem;
+                                    @include box(auto, 50%);
                                     @include small-mobile {
-                                        @include box__size(auto, 100%);
+                                        @include box(auto, 100%);
 
                                     }
 
@@ -1198,7 +1213,7 @@ main {
                                     }
 
                                     .price {
-                                        font-size: $f__size * 2;
+                                        font-size: 1rem * 2;
                                         font-weight: 700;
                                         padding: 0;
                                         margin: 0;
@@ -1208,9 +1223,9 @@ main {
                                         border: 2px solid $color4;
                                         border-radius: 4px;
                                         outline: none;
-                                        font-size: $f__size;
+                                        font-size: 1rem;
                                         @include mobile {
-                                            font-size: $f__size - 0.20;
+                                            font-size: 1rem - 0.20;
 
                                         }
 
@@ -1230,9 +1245,9 @@ main {
                                             }
 
                                             span {
-                                                font-size: $f__size - 0.20;
+                                                font-size: 1rem - 0.20;
                                                 @include mobile {
-                                                    font-size: $f__size - 0.40;
+                                                    font-size: 1rem - 0.40;
 
                                                 }
 
@@ -1243,8 +1258,8 @@ main {
                                     }
 
                                     .description {
-                                        font-size: $f__size - 0.10;
-                                        @include box__size(auto, 100%);
+                                        font-size: 1rem - 0.10;
+                                        @include box(auto, 100%);
 
                                     }
 
@@ -1265,48 +1280,62 @@ main {
 
                     .post__description {
                         margin: 0;
-                        padding: $p__content;
+                        padding: 1rem;
                         border: 3px solid $color2;
-                        border-bottom-left-radius: 10px;
-                        border-bottom-right-radius: 10px;
+                        border-bottom-left-radius: $radius-item;
+                        border-bottom-right-radius: $radius-item;
                         @include flex(center, center);
                         flex-direction: column;
-                        @include box__size(auto, 100%);
+                        @include box(auto, 100%);
                         @include tablet {
                             border-bottom-left-radius: 0;
-                            border-top-right-radius: 10px;
+                            border-top-right-radius: $radius-item;
                         }
 
                         h4 {
-                            font-size: $f__size;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            margin: 0 auto;
+                            padding: 0 1rem;
+                            font-size: 1.2rem;
                             text-align: center;
-                            font-weight: 700;
-                            @include box__size(3rem, 100%);
+                            font-weight: 600;
+                            @include flex(center, center);
+                            @include box(3.2rem, 100%);
+                            @include tablet {
+                                font-size: 1rem;
+                                padding: 0;
+                            }
                             @include small-mobile {
-                                font-size: $f__size - 0.20;
+                                font-size: .8rem;
 
                             }
 
                         }
 
                         span {
-                            font-size: $f__size * 2;
+                            margin: .7rem 0;
+                            font-size: 2rem;
                             font-weight: 900;
+                            @include tablet {
+                                font-size: 1.7rem;
+                            }
                             @include small-mobile {
-                                font-size: $f__size + 0.50;
+                                font-size: 1.5rem;
                                 
                             }
                         }
 
                         .post__btn {
-                            margin-top: 1rem;
+                            @include box(4rem, 8rem);
+                            @include flex(center, center);
                             @include boton--primary;
+                            @include tablet {
+                                @include box(4rem, 7rem);
+                                
+                            }
                             @include small-mobile {
-                                font-size: $f__size - 0.20;
-                                // 
+                                @include box(3.5rem, 6.5rem);
+                                font-size: .8rem;
+                                 
                             }
 
                         }
@@ -1326,31 +1355,32 @@ main {
     // Carrito
 
     .shopping-cart {
-        @include box__size(100vh, 100%);
+        @include box(100vh, 100%);
         padding: 2rem;
         @include tablet {
             padding: 1.5rem 2rem;
         }
         @include mobile {
-            padding:  0 .5rem;
+            padding: .5rem;
 
         }
 
         h2 {
             color: $color4;
-            font-weight: bolder;
+            font-weight: 800;
 
         }
 
         table {
             margin-top: 6rem;
-            @include box__size(auto, 100%);
+            @include box(auto, 100%);
 
             thead {
-                @include box__size(3rem, 100%);
+                @include box(3rem, 100%);
 
                 tr {
                     th {
+                        text-align: center;
                         font-size: 1.5rem;
                         padding: 10px;
                         @include mobile {
@@ -1359,13 +1389,13 @@ main {
                         }
                     }
                     th:nth-child(1) {
-                        @include box__size(100%, 60%);
+                        @include box(100%, 60%);
                     }
                     th:nth-child(2) {
-                        @include box__size(100%, 20%);
+                        @include box(100%, 20%);
                     }
                     th:nth-child(3) {
-                        @include box__size(100%, 20%);
+                        @include box(100%, 20%);
                     }
 
                 }
@@ -1383,18 +1413,18 @@ main {
         @include flex(center, center);
         flex-direction: column;
         cursor: default;
-        @include box__size(100vh, 100%);
+        @include box(100vh, 100%);
 
         .form {
             padding: 0 1rem;
-            border-radius: $p__border__r;
-            @include box__size(auto, 50%);
+            border-radius: $radius-box;
+            @include box(auto, 50%);
             @include desktop {
-                @include box__size(auto, 70%);
+                @include box(auto, 70%);
 
             }
             @include mobile {
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
 
             }
             @include small-mobile {
@@ -1404,20 +1434,20 @@ main {
             .form__title {
                 margin: 0;
                 text-align: center;
-                font-size: $f__size * 2;
+                font-size: 2rem;
                 background-color: $color2;
-                border-top-left-radius: $p__border__r;
-                border-top-right-radius: $p__border__r;
-                padding: $p__box;
-                font-weight: $f__weight + 100;
+                border-top-left-radius: $radius-box;
+                border-top-right-radius: $radius-box;
+                padding: 2rem;
+                font-weight: 800;
                 color: #fff;
                 @include mobile-rotate {
-                    padding: $p__content;
+                    padding: 1rem;
 
                 }
                 @include mobile {
-                    font-size: $f__size + 0.40;
-                    padding: $p__box - 0.50;
+                    font-size: 1.4rem;
+                    padding: 1.5rem;
                 }
 
             }
@@ -1425,19 +1455,19 @@ main {
             .form__user {
                 text-align: center;
                 border: solid 2px $color2;
-                padding: $p__content;
-                border-bottom-left-radius: $p__border__r;
-                border-bottom-right-radius: $p__border__r;
+                padding: 1rem;
+                border-bottom-left-radius: $radius-box;
+                border-bottom-right-radius: $radius-box;
                 @include flex(center, center);
                 flex-direction: column;
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
                 @include mobile-rotate {
                     flex-direction: row;
                     flex-wrap: wrap;
 
                 }
                 @include mobile {
-                    padding: $p__content;
+                    padding: 1rem;
                     flex-direction: column;
                 }
                 @include small-mobile{
@@ -1445,9 +1475,9 @@ main {
                 }
 
                 p {
-                    @include box__size(auto, 100%);
-                    margin: 0.8rem 0;
-                    font-size: $f__size - 0.10;
+                    @include box(auto, 100%);
+                    margin: .8rem 0;
+                    font-size: .9rem;
                     @include mobile-rotate {
                         margin: 0.5rem 0;
 
@@ -1458,17 +1488,17 @@ main {
                 .login__with {
                     @include flex(center, center);
                     flex-direction: column;
-                    @include box__size(auto, 100%);
+                    @include box(auto, 100%);
                     
                     button {
-                        @include box__size(3rem, 17rem);
+                        @include box(3rem, 17rem);
                         @include boton--secondary;
                         @include flex(space-between, center);
                         padding: 0 1rem;
                         margin: .4rem auto;
                         text-align: center;
                         @include mobile {
-                            @include box__size(3.5rem, 12rem);
+                            @include box(3.5rem, 12rem);
 
                         }
                         
@@ -1487,32 +1517,32 @@ main {
                 .login__user {
                     @include flex(center, center);
                     flex-direction: column;
-                    @include box__size(auto, 100%);
+                    @include box(auto, 100%);
                     @include mobile-rotate {
-                        @include box__size(auto, 70%);
+                        @include box(auto, 70%);
                     }
 
                     .form__inputs {
                         @include input--enter;
-                        @include box__size(auto, 70%);
+                        @include box(auto, 70%);
                         @include mobile-rotate {
-                            @include box__size(auto, 100%);
+                            @include box(auto, 100%);
                             
                         }
     
                     }
     
                     .form__boton {
-                        margin: 0.5rem;
+                        margin: .5rem;
                         @include boton--primary;
-                        @include box__size(auto, 12rem);
+                        @include box(auto, 12rem);
     
                     }
 
                     button {
                         @include boton--primary;
                         @include flex(center, center);
-                        @include box__size(3rem, 12rem);
+                        @include box(3rem, 12rem);
 
                         i {
                             transition: all .5s;
@@ -1532,8 +1562,6 @@ main {
 
                 }
 
-
-
             }
 
         }
@@ -1543,30 +1571,31 @@ main {
     // Mis compras
 
     .my-shopping {
-        @include box__size(100vh, 100%);
+        @include box(100vh, 100%);
         padding: 2rem;
         @include tablet {
             padding: 1.5rem 2rem;
         }
         @include mobile {
-            padding:  0 .5rem;
+            padding: .5rem;
         }
 
         h2 {
-            color: $color4;
-            font-weight: bolder;
+            color: $color3;
+            font-weight: 800;
 
         }
 
         table {
             margin-top: 6rem;
-            @include box__size(auto, 100%);
+            @include box(auto, 100%);
 
             thead {
-                @include box__size(3rem, 100%);
+                @include box(3rem, 100%);
 
                 tr {
                     th {
+                        text-align: center;
                         font-size: 1.5rem;
                         padding: 10px;
                         @include mobile {
@@ -1575,10 +1604,10 @@ main {
                         }
                     }
                     th:nth-child(1) {
-                        @include box__size(100%, 70%);
+                        @include box(100%, 70%);
                     }
                     th:nth-child(2) {
-                        @include box__size(100%, 30%);
+                        @include box(100%, 30%);
                     }
 
                 }
@@ -1592,25 +1621,25 @@ main {
     // Notificaciones
 
     .notifications {
-        @include box__size(100vh, 100%);
+        @include box(100vh, 100%);
         padding: 2rem;
         @include tablet {
             padding: 1.5rem 2rem;
         }
         @include mobile {
-            padding:  0 .5rem;
+            padding: .5rem;
         }
 
         .notification__top {
             cursor: default;
             background-color: #fff;
             @include flex(start, center);
-            @include box__size(4rem, 100%);
+            @include box(4rem, 100%);
             position: relative;
 
             h2 {
                 color: $color4;
-                font-weight: bolder;
+                font-weight: 800;
 
             }
 
@@ -1628,7 +1657,7 @@ main {
 
                 i {
                     font-size: 2rem;
-                    color: $color4;
+                    color: $color3;
                     cursor: pointer;
                     margin: 0 10px;
 
@@ -1646,10 +1675,10 @@ main {
                 z-index: 999;
                 background-color: #fff;
                 padding: 1rem;
-                @include box__size(auto, 30%);
+                @include box(auto, 30%);
                 display: none;
                 @include mobile {
-                    @include box__size(auto, 70%);
+                    @include box(auto, 70%);
                     padding: 0;
                     padding-left: .5rem;
                     padding-right: 1rem;
@@ -1657,7 +1686,7 @@ main {
                 
                 li {
                     background: #fff;
-                    @include box__size(3rem, 100%);
+                    @include box(3rem, 100%);
                     @include flex(space-between, center);
 
                     label {
@@ -1672,32 +1701,33 @@ main {
         }
 
         .notification__bottom {
-            @include box__size(100%, 100%);
+            @include box(100%, 100%);
             
             table {
-                @include box__size(auto, 100%);
+                @include box(auto, 100%);
 
                 thead {
-                    @include box__size(2rem, 100%);
+                    @include box(2rem, 100%);
 
 
                     tr {
 
                         th {
                             padding: 10px;
+                            text-align: center;
                             @include mobile {
                                 font-size: 1rem;
                             }
                         }
 
                         th:nth-child(1){
-                            @include box__size(auto, 70%);
+                            @include box(auto, 70%);
                         }
                         th:nth-child(2){
-                            @include box__size(auto, 15%);
+                            @include box(auto, 15%);
                         }
                         th:nth-child(2){
-                            @include box__size(auto, 15%);
+                            @include box(auto, 15%);
                         }
 
                     }

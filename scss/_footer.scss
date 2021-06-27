@@ -1,8 +1,8 @@
 footer {
     background-color: #EBEBEB;
     cursor: default;
-    padding: $p__content;
-    @include box__size(auto, 100%);
+    padding: 1rem;
+    @include box(auto, 100%);
     @include flex(space-evenly, center);
     @include mobile {
         flex-direction: column;
@@ -11,11 +11,11 @@ footer {
     // Footer Titulo
 
     h2 {
-        font-weight: $f__weight;
-        font-size: $f__title * 1.5;
+        font-weight: 700;
+        font-size: 1.8rem;
         text-align: center;
         @include mobile {
-            font-size: $f__title;
+            font-size: 1.3rem;
         }
 
     }
@@ -34,13 +34,13 @@ footer {
                 transition: .4s;
 
                 &:hover {
-                    color: $color4;
+                    color: $color3;
 
                 }
 
                 i {
-                    padding: $p__content;
-                    font-size: $f__title;
+                    padding: 1rem;
+                    font-size: 1.8rem;
                     @include mobile {
                         padding: 0.2rem 0.5rem;
                     }
