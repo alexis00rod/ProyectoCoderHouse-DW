@@ -79,7 +79,7 @@
     <div class="banner">
             <div class="banner__left">
                 <h1><span>Mi tienda.</span></h1>
-                <p>Nos dedicamos a la venta de componentes y periféricos para computadoras, tambien brindamos servicio de reparación y armado de computadoras.</p>
+                <p>Nos dedicamos a la venta de hardware. También brindamos servicio de reparación y armado de computadoras.</p>
                 <ul>
                     <li><a href="nav/service.html">Servicios</a></li>
                     <li><a href="#catalogo">Productos</a></li>
@@ -597,6 +597,7 @@
         
                 <div class="container__post">
         
+                    <input type="radio" id="todos" name="categories" value="todos">
                     <input type="radio" id="procesador" name="categories" value="procesador">
                     <input type="radio" id="tarjeta-grafica" name="categories" value="tarjeta-grafica">
                     <input type="radio" id="memoria-ram" name="categories" value="memoria-ram">
@@ -624,6 +625,7 @@
                         <label for="category" class="category__menu"><i class="fas fa-ellipsis-v"></i>Ver categorías</label>
     
                         <div class="container__category">
+                            <label for="todos" class="category__all"><span>-Todos los productos</span></label>
                             <details open>
                                 <summary>Componentes</summary>
                                 <label for="procesador">-Procesador</label>
@@ -637,7 +639,6 @@
                                 <label for="teclado">-Teclado</label>
                                 <label for="mouse">-Mouse</label>
                                 <label for="auricular">-Auricular</label>
-
                             </details>
                         </div>
 
@@ -2006,6 +2007,154 @@
                             </div>
                             <div class="post__description">
                                 <h4>Auricular 1</h4>
+                                <span>$00,00</span>
+                                <button class="post__btn">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <!-- Teclado 2 -->
+                        <div class="post" data-category="teclado">
+                            <div class="post__img new">
+                                <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#teclado-2"><img src="multimedia/teclado-2.png" alt=""></button>
+                                <div class="modal face" id="teclado-2" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Teclado 2</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/teclado-2.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envíos a todo el país</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Características generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Tipo de swich</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de teclado</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Tipo de mecanismo</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post__description">
+                                <h4>Teclado 2</h4>
+                                <span>$00,00</span>
+                                <button class="post__btn">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <!-- Auricular 2 -->
+                        <div class="post" data-category="auricular">
+                            <div class="post__img new">
+                                <button type="button" class="post__modal" data-bs-toggle="modal" data-bs-target="#auricular-2"><img src="multimedia/auricular-2.png" alt=""></button>
+                                <div class="modal face" id="auricular-2" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalTitle">Auricular 2</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="modal__description">
+                                                    <img src="multimedia/auricular-2.png" alt="">
+                                                    <div class="modal__date">
+                                                        <div class="star-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <p class="price">$00.00</p>
+                                                        <select name="cuotas" id="cuotas">
+                                                                <option value="1">1 cuota de $00.00</option>
+                                                                <option value="2">3 cuotas de $00.00</option>
+                                                                <option value="3">6 cuotas de $00.00</option>
+                                                                <option value="4">9 cuotas de $00.00</option>
+                                                                <option value="5">12 cuotas de $00.00</option>
+                                                        </select>
+                                                        <ul>
+                                                            <li><i class="fas fa-check"></i><span>Stock disponible</span></li>
+                                                            <li><i class="fas fa-shipping-fast"></i><span>Envíos a todo el país</span></li>
+                                                        </ul>
+                                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate officia quisquam dolores.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="table-feature">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                          <tr>
+                                                            <th scope="col">Características generales</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <th scope="row">Audio</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Conexión</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th scope="row">Con micrófono</th>
+                                                            <td>Lorem, ipsum dolor.</td>
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modal__btn">Agregar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post__description">
+                                <h4>Auricular 2</h4>
                                 <span>$00,00</span>
                                 <button class="post__btn">Agregar al carrito</button>
                             </div>

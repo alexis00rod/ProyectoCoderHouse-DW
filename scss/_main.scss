@@ -514,8 +514,9 @@ main {
                 details {
                     @include box(auto, 100%);
                     text-align: center;
-
+                    
                     summary {
+                        outline: none;
                         color: $color4;
                         font-size: 1.5rem;
                         font-weight: 700;
@@ -712,6 +713,7 @@ main {
                     h4 {
                         background-color: $color1;
                         margin: 0;
+                        color: #fff;
                         @include box(4rem, 6rem);
                         @include flex(center, center);
                         border-top-left-radius: $radius-box;
@@ -833,6 +835,9 @@ main {
                     @include box(8rem, 100%);
 
                 }
+                @include small-mobile-rotate {
+                    justify-content: start;
+                }
 
                 // Barra de busqueda
             
@@ -842,6 +847,9 @@ main {
                     @include mobile {
                         @include box(5rem, 100%);
 
+                    }
+                    @include small-mobile-rotate {
+                        @include box(100%, 40%)
                     }
 
                     form {
@@ -871,7 +879,7 @@ main {
     
                             }
                             @include small-mobile-rotate {
-                                @include box(3rem, 15rem);
+                                @include box(3rem, 12rem);
                             }
 
                             
@@ -922,12 +930,14 @@ main {
                     &:checked ~ .container__category {
                         display: block;
                         @include small-mobile-rotate {
-                            display: flex;
                             left: 0;
                             @include box(auto, 100vw);
+                            display: flex;
 
                         }
-
+                        @include small-mobile {
+                            flex-direction: column;
+                        }
 
                     }
 
@@ -951,6 +961,13 @@ main {
                         @include box(auto, 100%);
                         margin-left: .5rem;
 
+                    }
+                    @include small-mobile-rotate {
+                        @include box(100%, 60%);
+
+                    }
+                    @include small-mobile {
+                        @include box(100%, 100%);
                     }
 
                     i {
@@ -979,16 +996,45 @@ main {
                         @include box(auto, 100vw);
 
                     }
-                    
+
+                    .category__all {
+                        cursor: pointer;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        padding: .5rem 1rem;     
+                        @include small-mobile-rotate {
+                            font-size: 1.2rem;
+                            @include box(auto, 20%);
+
+                        }
+                        @include small-mobile {
+                            @include box(auto, 100%);
+
+                        }
+
+                        &:hover {
+                            color: $color4;
+
+                        }
+                    }
 
                     details {
                         @include flex(center, center);
                         flex-direction: column;
                         padding: .5rem 1rem;
+                        @include box(auto, 100%);
+                        @include small-mobile-rotate {
+                            @include box(auto, 40%);
+                            
+                        }
+                        @include small-mobile {
+                            @include box(auto, 100%);
+                            
+                        }
 
                         summary {
                             font-size: 1.5rem;
-                            font-weight: bold;
+                            font-weight: 700;
                             @include small-mobile-rotate {
                                 font-size: 1.2rem;
                             }
@@ -1134,6 +1180,7 @@ main {
                         align-items: center;
                         background-color: $color2;
                         padding: 1rem;
+                        position: relative;
                         border-top-left-radius: 10px;
                         border-top-right-radius: 10px;
                         @include box(auto, 100%);
@@ -1256,6 +1303,25 @@ main {
                         }
 
 
+                    }
+
+                    .new {
+                        &::before {
+                            content: 'NUEVO';
+                            position: absolute;
+                            padding: 10px;
+                            background-color: #22D658;
+                            top: 1rem;
+                            left: 0;
+                            color: #fff;
+                            border-top-right-radius: $radius-item;
+                            border-bottom-right-radius: $radius-item;
+                            @include tablet {
+                                left: .5rem;
+
+                            }
+    
+                        }
                     }
 
                     .post__description {

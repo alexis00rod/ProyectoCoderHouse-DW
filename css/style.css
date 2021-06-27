@@ -717,6 +717,7 @@ main {
           width: 100%;
           text-align: center; }
           main article .article__right .questions details summary {
+            outline: none;
             color: #b6c238;
             font-size: 1.5rem;
             font-weight: 700; }
@@ -854,6 +855,7 @@ main {
           main section .shopping__info ul li h4 {
             background-color: #4d89e1;
             margin: 0;
+            color: #fff;
             height: 4rem;
             width: 6rem;
             display: flex;
@@ -954,6 +956,9 @@ main {
             flex-direction: column;
             height: 8rem;
             width: 100%; } }
+        @media only screen and (max-height: 568px) {
+          main .catalogo .container__post nav {
+            justify-content: start; } }
         main .catalogo .container__post nav .search__section {
           height: 6rem;
           width: 50%;
@@ -964,6 +969,10 @@ main {
             main .catalogo .container__post nav .search__section {
               height: 5rem;
               width: 100%; } }
+          @media only screen and (max-height: 568px) {
+            main .catalogo .container__post nav .search__section {
+              height: 100%;
+              width: 40%; } }
           main .catalogo .container__post nav .search__section form {
             height: auto;
             width: 100%;
@@ -996,7 +1005,7 @@ main {
               @media only screen and (max-height: 568px) {
                 main .catalogo .container__post nav .search__section form fieldset {
                   height: 3rem;
-                  width: 15rem; } }
+                  width: 12rem; } }
               main .catalogo .container__post nav .search__section form fieldset input {
                 height: auto;
                 width: calc(100% - 2rem);
@@ -1024,10 +1033,13 @@ main {
             display: block; }
             @media only screen and (max-height: 568px) {
               main .catalogo .container__post nav #category:checked ~ .container__category {
-                display: flex;
                 left: 0;
                 height: auto;
-                width: 100vw; } }
+                width: 100vw;
+                display: flex; } }
+            @media only screen and (max-width: 320px) {
+              main .catalogo .container__post nav #category:checked ~ .container__category {
+                flex-direction: column; } }
         main .catalogo .container__post nav .category__menu {
           display: flex;
           justify-content: center;
@@ -1051,6 +1063,14 @@ main {
               height: auto;
               width: 100%;
               margin-left: .5rem; } }
+          @media only screen and (max-height: 568px) {
+            main .catalogo .container__post nav .category__menu {
+              height: 100%;
+              width: 60%; } }
+          @media only screen and (max-width: 320px) {
+            main .catalogo .container__post nav .category__menu {
+              height: 100%;
+              width: 100%; } }
           main .catalogo .container__post nav .category__menu i {
             margin: 0 8px; }
           main .catalogo .container__post nav .category__menu:hover {
@@ -1070,15 +1090,41 @@ main {
               left: 0;
               height: auto;
               width: 100vw; } }
+          main .catalogo .container__post nav .container__category .category__all {
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: .5rem 1rem; }
+            @media only screen and (max-height: 568px) {
+              main .catalogo .container__post nav .container__category .category__all {
+                font-size: 1.2rem;
+                height: auto;
+                width: 20%; } }
+            @media only screen and (max-width: 320px) {
+              main .catalogo .container__post nav .container__category .category__all {
+                height: auto;
+                width: 100%; } }
+            main .catalogo .container__post nav .container__category .category__all:hover {
+              color: #b6c238; }
           main .catalogo .container__post nav .container__category details {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: .5rem 1rem; }
+            padding: .5rem 1rem;
+            height: auto;
+            width: 100%; }
+            @media only screen and (max-height: 568px) {
+              main .catalogo .container__post nav .container__category details {
+                height: auto;
+                width: 40%; } }
+            @media only screen and (max-width: 320px) {
+              main .catalogo .container__post nav .container__category details {
+                height: auto;
+                width: 100%; } }
             main .catalogo .container__post nav .container__category details summary {
               font-size: 1.5rem;
-              font-weight: bold; }
+              font-weight: 700; }
               @media only screen and (max-height: 568px) {
                 main .catalogo .container__post nav .container__category details summary {
                   font-size: 1.2rem; } }
@@ -1188,6 +1234,7 @@ main {
             align-items: center;
             background-color: #2860b5;
             padding: 1rem;
+            position: relative;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             height: auto;
@@ -1275,6 +1322,19 @@ main {
               box-shadow: 1px 2px 5px grey; }
               main .catalogo .container__post .posts .post .post__img .modal__btn:hover {
                 opacity: 0.7; }
+          main .catalogo .container__post .posts .post .new::before {
+            content: 'NUEVO';
+            position: absolute;
+            padding: 10px;
+            background-color: #22D658;
+            top: 1rem;
+            left: 0;
+            color: #fff;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px; }
+            @media only screen and (max-width: 768px) {
+              main .catalogo .container__post .posts .post .new::before {
+                left: .5rem; } }
           main .catalogo .container__post .posts .post .post__description {
             margin: 0;
             padding: 1rem;
