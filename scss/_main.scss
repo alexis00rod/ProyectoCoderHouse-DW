@@ -1316,10 +1316,6 @@ main {
                             color: #fff;
                             border-top-right-radius: $radius-item;
                             border-bottom-right-radius: $radius-item;
-                            @include tablet {
-                                left: .5rem;
-
-                            }
     
                         }
                     }

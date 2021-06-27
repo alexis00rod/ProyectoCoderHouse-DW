@@ -1332,9 +1332,6 @@ main {
             color: #fff;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px; }
-            @media only screen and (max-width: 768px) {
-              main .catalogo .container__post .posts .post .new::before {
-                left: .5rem; } }
           main .catalogo .container__post .posts .post .post__description {
             margin: 0;
             padding: 1rem;
